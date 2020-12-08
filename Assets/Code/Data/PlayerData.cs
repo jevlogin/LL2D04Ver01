@@ -10,6 +10,11 @@ namespace JevLogin
     {
         #region Fields
 
+        public PlayerStruct PlayerStruct;
+        public PlayerComponents PlayerComponents;
+        public PlayerSettingsData PlayerSettingsData;
+
+
         [SerializeField] private Material _materialTrailRenderer;
         [SerializeField] private Sprite _sprite;
 
@@ -17,9 +22,11 @@ namespace JevLogin
         [SerializeField] private Color _endColor = Color.blue;
 
         [SerializeField, Range(0, 100)] private float _speed;
+        [SerializeField, Range(0, 100)] private float _acceleration;
         [SerializeField, Range(0, 1)] private float _startWidth;
         [SerializeField, Range(0, 1)] private float _endWidth;
         [SerializeField, Range(0, 1)] private float _time;
+
 
         #endregion
 

@@ -66,15 +66,20 @@
   <ItemGroup>
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />
+    <Compile Include="Assets\Code\Controller\IPlayerFactory.cs" />
     <Compile Include="Assets\Code\Controller\IUserInputProxy.cs" />
     <Compile Include="Assets\Code\Controller\InputInitialization.cs" />
     <Compile Include="Assets\Code\Controller\PCInputHorizontal.cs" />
     <Compile Include="Assets\Code\Controller\PCInputVertical.cs" />
     <Compile Include="Assets\Code\Controller\PlayerFactory.cs" />
+    <Compile Include="Assets\Code\Controller\PlayerInitialization.cs" />
     <Compile Include="Assets\Code\Data\Data.cs" />
     <Compile Include="Assets\Code\Data\EnemyData.cs" />
     <Compile Include="Assets\Code\Data\LightData.cs" />
+    <Compile Include="Assets\Code\Data\PlayerComponents.cs" />
     <Compile Include="Assets\Code\Data\PlayerData.cs" />
+    <Compile Include="Assets\Code\Data\PlayerSettingsData.cs" />
+    <Compile Include="Assets\Code\Data\PlayerStruct.cs" />
     <Compile Include="Assets\Code\Helper\BuilderExtentions.cs" />
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />
     <Compile Include="Assets\Code\Interface\IController.cs" />

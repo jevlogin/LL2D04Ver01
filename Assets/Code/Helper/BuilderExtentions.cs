@@ -20,8 +20,9 @@ namespace JevLogin
             return gameObject;
         }
 
-        public static GameObject AddTrailRenderer(this GameObject gameObject)
+        public static GameObject AddTrailRenderer<T>(this GameObject gameObject, T _data)
         {
+
             var componentInChildren = gameObject.GetComponentInChildren<TrailRenderer>();
             if (componentInChildren)
             {
@@ -29,15 +30,24 @@ namespace JevLogin
             }
             var lineRendererGameObject = new GameObject("TrailRenderer");
             var lineRenderer = lineRendererGameObject.GetOrAddComponent<TrailRenderer>();
-            lineRenderer.startWidth = 0.1f;
-            lineRenderer.endWidth = 0.01f;
-            lineRenderer.time = 0.1f;
-            lineRenderer.material = new Material(Shader.Find("Mobile/Particles/Additive"));
-            lineRenderer.startColor = Color.red;
-            lineRenderer.endColor = Color.blue;
+            TrailRendererConfig(_data, lineRenderer);
+
             lineRendererGameObject.transform.SetParent(gameObject.transform);
-            
+
             return gameObject;
+        }
+
+        private static void TrailRendererConfig<T>(T _data, TrailRenderer lineRenderer)
+        {
+            if (_data is PlayerData playerData)
+            {
+                lineRenderer.startWidth = playerData.StartWidth;
+                lineRenderer.endWidth = playerData.EndWidth;
+                lineRenderer.time = playerData.Time;
+                lineRenderer.material = playerData.MaterialTrailRenderer;
+                lineRenderer.startColor = playerData.StartColor;
+                lineRenderer.endColor = playerData.EndColor;
+            }
         }
 
         private static T GetOrAddComponent<T>(this GameObject gameObject) where T : Component

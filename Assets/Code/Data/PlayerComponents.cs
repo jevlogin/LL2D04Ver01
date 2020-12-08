@@ -7,9 +7,8 @@ namespace JevLogin
     [Serializable]
     public sealed class PlayerComponents
     {
-        public Rigidbody Rigidbody;
-        public AudioSource AudioSource;
-        public Animator Animator;
+        public SpriteRenderer SpriteRenderer;
+        public CircleCollider2D CircleCollider2D;
         public Transform Transform;
     }
 }

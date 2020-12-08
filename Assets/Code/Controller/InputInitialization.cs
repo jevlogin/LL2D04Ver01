@@ -16,13 +16,23 @@
         {
             _pcInputHorizontal = new PCInputHorizontal();
             _pcInputVertical = new PCInputVertical();
+        }
+
+        #endregion
+
+
+        #region IInitialization
+
+        public void Initialization()
+        {
         } 
 
         #endregion
 
-        public void Initialization()
+        public (IUserInputProxy inputHorizontal, IUserInputProxy inputVertical) GetInput()
         {
-            throw new System.NotImplementedException();
+            (IUserInputProxy inputHorizontal, IUserInputProxy inputVertical) result = (_pcInputHorizontal, _pcInputVertical);
+            return result;
         }
     }
 }

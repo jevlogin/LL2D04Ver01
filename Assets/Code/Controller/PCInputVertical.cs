@@ -1,14 +1,15 @@
 ﻿using System;
+using UnityEngine;
 
 namespace JevLogin
 {
     internal class PCInputVertical : IUserInputProxy
     {
-        public event Action<float> AxisOnChange;
+        public event Action<float> AxisOnChange = delegate (float f) { };
 
         public void GetAxis()
         {
-            throw new NotImplementedException();
+            AxisOnChange.Invoke(Input.GetAxis(AxisManager.VERTICAL));
         }
     }
 }

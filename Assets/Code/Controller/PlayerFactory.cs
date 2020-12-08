@@ -13,7 +13,7 @@ namespace JevLogin
 
         public Transform CreatePlayer()
         {
-            return new GameObject("Player").AddSprite(_playerData.Sprite);
+            return new GameObject("Player").AddSprite(_playerData.Sprite).AddCircleCollider2D().transform;
         }
 
     }

@@ -5,10 +5,18 @@ namespace JevLogin
 {
     public static partial class BuilderExtentions
     {
+        #region Methods
+
         public static GameObject AddSprite(this GameObject gameObject, Sprite sprite)
         {
             var component = gameObject.GetOrAddComponent<SpriteRenderer>();
             component.sprite = sprite;
+            return gameObject;
+        }
+
+        public static GameObject AddCircleCollider2D(this GameObject gameObject)
+        {
+            gameObject.GetOrAddComponent<CircleCollider2D>();
             return gameObject;
         }
 
@@ -20,6 +28,8 @@ namespace JevLogin
                 result = gameObject.AddComponent<T>();
             }
             return result;
-        }
+        } 
+
+        #endregion
     }
 }

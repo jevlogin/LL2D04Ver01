@@ -13,6 +13,7 @@ namespace JevLogin
         private void Start()
         {
             var inputInitialization = new InputInitialization();
+            var playerFactory = new PlayerFactory(_data.Player);
         }
     }
 }

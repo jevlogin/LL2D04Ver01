@@ -70,10 +70,12 @@
     <Compile Include="Assets\Code\Controller\InputInitialization.cs" />
     <Compile Include="Assets\Code\Controller\PCInputHorizontal.cs" />
     <Compile Include="Assets\Code\Controller\PCInputVertical.cs" />
+    <Compile Include="Assets\Code\Controller\PlayerFactory.cs" />
     <Compile Include="Assets\Code\Data\Data.cs" />
     <Compile Include="Assets\Code\Data\EnemyData.cs" />
     <Compile Include="Assets\Code\Data\LightData.cs" />
     <Compile Include="Assets\Code\Data\PlayerData.cs" />
+    <Compile Include="Assets\Code\Helper\BuilderExtentions.cs" />
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />
     <Compile Include="Assets\Code\Interface\IController.cs" />
     <Compile Include="Assets\Code\Interface\IExecute.cs" />

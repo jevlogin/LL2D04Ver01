@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace JevLogin
 {
-    internal class PCInputHorizontal : IUserInputProxy
+    internal sealed class PCInputHorizontal : IUserInputProxy
     {
         public event Action<float> AxisOnChange = delegate(float f) { };
 

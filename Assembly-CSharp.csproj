@@ -66,12 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />
-    <Compile Include="Assets\Code\Controller\IPlayerFactory.cs" />
-    <Compile Include="Assets\Code\Controller\IUserInputProxy.cs" />
     <Compile Include="Assets\Code\Controller\InputInitialization.cs" />
-    <Compile Include="Assets\Code\Controller\PCInputHorizontal.cs" />
-    <Compile Include="Assets\Code\Controller\PCInputVertical.cs" />
-    <Compile Include="Assets\Code\Controller\PlayerFactory.cs" />
     <Compile Include="Assets\Code\Controller\PlayerInitialization.cs" />
     <Compile Include="Assets\Code\Data\Data.cs" />
     <Compile Include="Assets\Code\Data\EnemyData.cs" />
@@ -86,8 +81,13 @@
     <Compile Include="Assets\Code\Interface\IExecute.cs" />
     <Compile Include="Assets\Code\Interface\IInitialization.cs" />
     <Compile Include="Assets\Code\Interface\ILateUpdate.cs" />
+    <Compile Include="Assets\Code\Interface\IPlayerFactory.cs" />
+    <Compile Include="Assets\Code\Interface\IUserInputProxy.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />
+    <Compile Include="Assets\Code\Player\PlayerFactory.cs" />
+    <Compile Include="Assets\Code\UserInput\PCInputHorizontal.cs" />
+    <Compile Include="Assets\Code\UserInput\PCInputVertical.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/UnityProjects/LL2D04Ver01/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

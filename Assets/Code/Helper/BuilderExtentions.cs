@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 namespace JevLogin
@@ -20,7 +21,7 @@ namespace JevLogin
             return gameObject;
         }
 
-        public static GameObject AddTrailRenderer<T>(this GameObject gameObject, T _data)
+        public static GameObject AddTrailRenderer<T>(this GameObject gameObject, T data)
         {
             var componentInChildren = gameObject.GetComponentInChildren<TrailRenderer>();
             if (componentInChildren)
@@ -29,18 +30,35 @@ namespace JevLogin
             }
             var lineRendererGameObject = new GameObject("TrailRenderer");
             var lineRenderer = lineRendererGameObject.GetOrAddComponent<TrailRenderer>();
-            TrailRendererConfig(_data, lineRenderer);
+            TrailRendererConfig(data, lineRenderer);
 
             lineRendererGameObject.transform.SetParent(gameObject.transform);
 
             return gameObject;
         }
 
+
+        public static GameObject AddParticleSystem<T>(this GameObject gameObject, T data, string name)
+        {
+            var componentInChildren = gameObject.GetComponentInChildren<ParticleSystem>();
+            if (componentInChildren)
+            {
+                return gameObject;
+            }
+            var psObject = new GameObject(name);
+            var ps = psObject.GetOrAddComponent<ParticleSystem>();
+            var particleSystem = Resources.Load<ParticleSystem>(name);
+            ps = particleSystem;
+
+            psObject.transform.SetParent(gameObject.transform);
+
+            return gameObject;
+        }
+
+
         public static GameObject AddChildrenTransform(this GameObject gameObject, string name)
         {
             var transformObject = new GameObject(name).transform;
-
-            transformObject.transform.position = new Vector2(-0.13f, 0.4f);
             transformObject.SetParent(gameObject.transform);
 
             return gameObject;
@@ -58,6 +76,8 @@ namespace JevLogin
                 lineRenderer.endColor = playerData.PlayerSettingsData.EndColor;
             }
         }
+
+
 
         private static T GetOrAddComponent<T>(this GameObject gameObject) where T : Component
         {

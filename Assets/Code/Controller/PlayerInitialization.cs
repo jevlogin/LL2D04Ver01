@@ -10,7 +10,7 @@ namespace JevLogin
         public PlayerInitialization(PlayerFactory playerFactory)
         {
             _playerFactory = playerFactory;
-            _player = _playerFactory.CreatePlayer();
+            _player = _playerFactory.PlayerModel.PlayerComponents.Player;
         }
 
     }

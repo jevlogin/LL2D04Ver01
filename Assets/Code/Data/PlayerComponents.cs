@@ -9,6 +9,6 @@ namespace JevLogin
     {
         public SpriteRenderer SpriteRenderer;
         public CircleCollider2D CircleCollider2D;
-        public Transform Transform;
+        public Transform Player;
     }
 }

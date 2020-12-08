@@ -5,6 +5,6 @@ namespace JevLogin
 {
     public interface IPlayerFactory
     {
-        Transform CreatePlayer();
+        GameObject CreatePlayer();
     }
 }

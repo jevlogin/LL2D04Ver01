@@ -10,15 +10,15 @@ namespace JevLogin
         #region Fields
         
         [SerializeField, Range(0, 100)] private float _speed;
-        [SerializeField, Range(0, 100)] private float _acceleration; 
+        [SerializeField, Range(0, 100)] private float _acceleration;
 
         #endregion
 
 
         #region Properties
 
-        public float Speed => _speed;
-        public float Acceleration => _acceleration;
+        public float Speed { get => _speed; set => _speed = value; }
+        public float Acceleration { get => _acceleration; set => _acceleration = value; }
 
         #endregion
     }

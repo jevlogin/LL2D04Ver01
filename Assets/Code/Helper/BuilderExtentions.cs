@@ -41,12 +41,12 @@ namespace JevLogin
         {
             if (_data is PlayerData playerData)
             {
-                lineRenderer.startWidth = playerData.StartWidth;
-                lineRenderer.endWidth = playerData.EndWidth;
-                lineRenderer.time = playerData.Time;
-                lineRenderer.material = playerData.MaterialTrailRenderer;
-                lineRenderer.startColor = playerData.StartColor;
-                lineRenderer.endColor = playerData.EndColor;
+                lineRenderer.startWidth = playerData.PlayerSettingsData.StartWidth;
+                lineRenderer.endWidth = playerData.PlayerSettingsData.EndWidth;
+                lineRenderer.time = playerData.PlayerSettingsData.Time;
+                lineRenderer.material = playerData.PlayerSettingsData.MaterialTrailRenderer;
+                lineRenderer.startColor = playerData.PlayerSettingsData.StartColor;
+                lineRenderer.endColor = playerData.PlayerSettingsData.EndColor;
             }
         }
 

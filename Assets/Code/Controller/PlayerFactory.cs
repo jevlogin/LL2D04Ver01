@@ -25,7 +25,7 @@ namespace JevLogin
 
         public Transform CreatePlayer()
         {
-            return new GameObject("Player").AddSprite(_playerData.Sprite).AddCircleCollider2D().AddTrailRenderer(_playerData).transform;
+            return new GameObject("Player").AddSprite(_playerData.PlayerSettingsData.Sprite).AddCircleCollider2D().AddTrailRenderer(_playerData).transform;
         }
 
         #endregion

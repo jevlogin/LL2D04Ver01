@@ -12,7 +12,7 @@ namespace JevLogin
 
         private void Start()
         {
-
+            var inputInitialization = new InputInitialization();
         }
     }
 }

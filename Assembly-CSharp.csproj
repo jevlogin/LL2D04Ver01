@@ -66,6 +66,8 @@
   <ItemGroup>
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />
+    <Compile Include="Assets\Code\Controller\IUserInputProxy.cs" />
+    <Compile Include="Assets\Code\Controller\InputInitialization.cs" />
     <Compile Include="Assets\Code\Data\Data.cs" />
     <Compile Include="Assets\Code\Data\EnemyData.cs" />
     <Compile Include="Assets\Code\Data\LightData.cs" />

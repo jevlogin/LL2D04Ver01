@@ -22,7 +22,6 @@ namespace JevLogin
 
         public static GameObject AddTrailRenderer<T>(this GameObject gameObject, T _data)
         {
-
             var componentInChildren = gameObject.GetComponentInChildren<TrailRenderer>();
             if (componentInChildren)
             {
@@ -33,6 +32,16 @@ namespace JevLogin
             TrailRendererConfig(_data, lineRenderer);
 
             lineRendererGameObject.transform.SetParent(gameObject.transform);
+
+            return gameObject;
+        }
+
+        public static GameObject AddChildrenTransform(this GameObject gameObject, string name)
+        {
+            var transformObject = new GameObject(name).transform;
+
+            transformObject.transform.position = new Vector2(-0.13f, 0.4f);
+            transformObject.SetParent(gameObject.transform);
 
             return gameObject;
         }

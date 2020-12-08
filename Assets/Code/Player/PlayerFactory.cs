@@ -23,9 +23,19 @@ namespace JevLogin
 
         #region Methods
 
+        public PlayerModel GetPlayerModel()
+        {
+
+        }
         public Transform CreatePlayer()
         {
-            return new GameObject("Player").AddSprite(_playerData.PlayerSettingsData.Sprite).AddCircleCollider2D().AddTrailRenderer(_playerData).transform;
+            var player = new GameObject("Player")
+                .AddSprite(_playerData.PlayerSettingsData.Sprite)
+                .AddCircleCollider2D()
+                .AddChildrenTransform("Bullet")
+                .AddTrailRenderer(_playerData).transform;
+
+            return player;
         }
 
         #endregion

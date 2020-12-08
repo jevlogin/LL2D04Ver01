@@ -14,6 +14,7 @@ namespace JevLogin
         {
             var inputInitialization = new InputInitialization();
             var playerFactory = new PlayerFactory(_data.Player);
+            var playerModel = new PlayerModel(playerFactory);
             var playerInitialization = new PlayerInitialization(playerFactory);
 
         }

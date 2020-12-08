@@ -64,12 +64,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\Controller\Controllers.cs" />
+    <Compile Include="Assets\Code\Controller\GameController.cs" />
+    <Compile Include="Assets\Code\Controller\ICleanup.cs" />
+    <Compile Include="Assets\Code\Controller\IExecute.cs" />
+    <Compile Include="Assets\Code\Controller\IInitialization.cs" />
+    <Compile Include="Assets\Code\Controller\IlateUpdate.cs" />
     <Compile Include="Assets\Code\Data\Data.cs" />
     <Compile Include="Assets\Code\Data\EnemyData.cs" />
     <Compile Include="Assets\Code\Data\LightData.cs" />
     <Compile Include="Assets\Code\Data\PlayerData.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />
-    <Compile Include="Assets\GameController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/UnityProjects/LL2D04Ver01/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

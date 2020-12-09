@@ -36,25 +36,6 @@ namespace JevLogin
             return gameObject;
         }
 
-
-        public static GameObject AddParticleSystem<T>(this GameObject gameObject, T data, string name)
-        {
-            var componentInChildren = gameObject.GetComponentInChildren<ParticleSystem>();
-            if (componentInChildren)
-            {
-                return gameObject;
-            }
-            if (data is PlayerData playerData)
-            {
-                var newChildrenObject = playerData.PlayerSettingsData.ParticleSystem;
-
-                newChildrenObject.transform.SetParent(gameObject.transform);
-            }
-
-            return gameObject;
-        }
-
-
         public static GameObject AddChildrenTransform(this GameObject gameObject, string name)
         {
             var transformObject = new GameObject(name).transform;

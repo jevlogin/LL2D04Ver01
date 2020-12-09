@@ -13,6 +13,9 @@ namespace JevLogin
             _playerFactory = playerFactory;
             _playerModel = _playerFactory.CreatePlayerModel();
             _player = _playerModel.PlayerComponents.Player;
+            _playerModel.PlayerComponents.BulletRigidbody = _playerFactory.CreateBulletRigidBody();
+
+
         }
 
     }

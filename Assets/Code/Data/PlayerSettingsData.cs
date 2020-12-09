@@ -9,7 +9,8 @@ namespace JevLogin
     {
         #region Fields
 
-        [SerializeField, Header("Спрайт для корабля"), Space(5)] private Sprite _sprite;
+        [SerializeField, Header("Спрайт для корабля"), Space(5)] private Sprite _spritePlayer;
+        [SerializeField, Header("Спрайт для Bullet"), Space(5)] private GameObject _bulletPrefab;
         [SerializeField, Header("Система частиц для корабля"), Space(20)] private GameObject _particleSystem;
         [SerializeField, Space(10), Header("Настройки для TrailRenderer"), Space(20)] private Material _materialTrailRenderer;
 
@@ -28,7 +29,8 @@ namespace JevLogin
         #region Properties
 
         public Material MaterialTrailRenderer => _materialTrailRenderer;
-        public Sprite Sprite => _sprite;
+        public Sprite SpritePlayer => _spritePlayer;
+        public GameObject BulletPrefab => _bulletPrefab;
         public GameObject ParticleSystem => _particleSystem;
         public Color StartColor => _startColor;
         public Color EndColor => _endColor;

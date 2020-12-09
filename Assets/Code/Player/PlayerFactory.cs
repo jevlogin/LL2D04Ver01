@@ -24,10 +24,17 @@ namespace JevLogin
 
         #region Methods
 
+        public Rigidbody2D CreateBulletRigidBody()
+        {
+            var bullet = _playerData.PlayerSettingsData.BulletPrefab;
+
+            return bullet.GetComponent<Rigidbody2D>();
+        }
+
         public GameObject CreatePlayer()
         {
             var player = new GameObject("Player")
-                .AddSprite(_playerData.PlayerSettingsData.Sprite)
+                .AddSprite(_playerData.PlayerSettingsData.SpritePlayer)
                 .AddCircleCollider2D()
                 .AddTrailRenderer(_playerData);
 

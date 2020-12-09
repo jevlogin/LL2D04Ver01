@@ -14,11 +14,19 @@ namespace JevLogin
             return gameObject;
         }
 
+        public static GameObject AddRigidbody2D(this GameObject gameObject)
+        {
+            gameObject.GetOrAddComponent<Rigidbody2D>();
+            return gameObject;
+        }
+
         public static GameObject AddCircleCollider2D(this GameObject gameObject)
         {
             gameObject.GetOrAddComponent<CircleCollider2D>();
             return gameObject;
         }
+
+
 
         public static GameObject AddTrailRenderer<T>(this GameObject gameObject, T data)
         {

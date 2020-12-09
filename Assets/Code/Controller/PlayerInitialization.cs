@@ -6,11 +6,13 @@ namespace JevLogin
     {
         private PlayerFactory _playerFactory;
         private Transform _player;
+        private PlayerModel _playerModel;
 
         public PlayerInitialization(PlayerFactory playerFactory)
         {
             _playerFactory = playerFactory;
-            _player = _playerFactory.PlayerModel.PlayerComponents.Player;
+            _playerModel = _playerFactory.CreatePlayerModel();
+            _player = _playerModel.PlayerComponents.Player;
         }
 
     }

@@ -46,7 +46,7 @@ namespace JevLogin
 
                 var bullet = new GameObject("Barrel");
                 bullet.transform.SetParent(spawnPlayer.transform);
-                bullet.transform.position = new Vector2(-0.13f, 0.4f);
+                bullet.transform.position = new Vector2(_playerData.PlayerSettingsData.OffsetVector.x, _playerData.PlayerSettingsData.OffsetVector.y);
 
                 var dustParticles = new GameObject("Dust Particles");
 

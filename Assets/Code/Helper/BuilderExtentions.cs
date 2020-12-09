@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 namespace JevLogin
@@ -45,12 +44,12 @@ namespace JevLogin
             {
                 return gameObject;
             }
-            var psObject = new GameObject(name);
-            var ps = psObject.GetOrAddComponent<ParticleSystem>();
-            var particleSystem = Resources.Load<ParticleSystem>(name);
-            ps = particleSystem;
+            if (data is PlayerData playerData)
+            {
+                var newChildrenObject = playerData.PlayerSettingsData.ParticleSystem;
 
-            psObject.transform.SetParent(gameObject.transform);
+                newChildrenObject.transform.SetParent(gameObject.transform);
+            }
 
             return gameObject;
         }
@@ -87,7 +86,7 @@ namespace JevLogin
                 result = gameObject.AddComponent<T>();
             }
             return result;
-        } 
+        }
 
         #endregion
     }

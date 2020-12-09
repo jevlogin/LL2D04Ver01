@@ -10,6 +10,7 @@ namespace JevLogin
         #region Fields
 
         [SerializeField, Header("Спрайт для корабля"), Space(5)] private Sprite _sprite;
+        [SerializeField, Header("Система частиц для корабля"), Space(20)] private GameObject _particleSystem;
         [SerializeField, Space(10), Header("Настройки для TrailRenderer"), Space(20)] private Material _materialTrailRenderer;
 
         [SerializeField, ] private Color _startColor = Color.red;
@@ -28,6 +29,7 @@ namespace JevLogin
 
         public Material MaterialTrailRenderer => _materialTrailRenderer;
         public Sprite Sprite => _sprite;
+        public GameObject ParticleSystem => _particleSystem;
         public Color StartColor => _startColor;
         public Color EndColor => _endColor;
         public Vector2 OffsetVector => _offsetVector;

@@ -21,8 +21,12 @@ MonoBehaviour:
     SpriteRenderer: {fileID: 0}
     CircleCollider2D: {fileID: 0}
     Player: {fileID: 0}
+    BulletRigidbody: {fileID: 2392112446273878076, guid: 9a572210d3106af4890a5cb10c0a70f5,
+      type: 3}
   PlayerSettingsData:
-    _sprite: {fileID: 21300000, guid: 321573bf9fddc804c9996dd5b634aadb, type: 3}
+    _spritePlayer: {fileID: 21300000, guid: 321573bf9fddc804c9996dd5b634aadb, type: 3}
+    _bulletPrefab: {fileID: 589203787139018274, guid: 9a572210d3106af4890a5cb10c0a70f5,
+      type: 3}
     _particleSystem: {fileID: 183190, guid: d5df69f26ca20724080d29c39b68a606, type: 3}
     _materialTrailRenderer: {fileID: 2100000, guid: 2c4e5e06887cff44d82b94a36efb4a0c,
       type: 2}

@@ -64,12 +64,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\Controller\CompositeMove.cs" />
+    <Compile Include="Assets\Code\Controller\Controllers.cs" />
+    <Compile Include="Assets\Code\Controller\EnemyInitialization.cs" />
+    <Compile Include="Assets\Code\Controller\GameController.cs" />
+    <Compile Include="Assets\Code\Controller\InputInitialization.cs" />
+    <Compile Include="Assets\Code\Controller\PlayerInitialization.cs" />
     <Compile Include="Assets\Code\Data\Data.cs" />
-    <Compile Include="Assets\Code\Data\EnemyData.cs" />
+    <Compile Include="Assets\Code\Data\Enemy\EnemyComponents.cs" />
+    <Compile Include="Assets\Code\Data\Enemy\EnemyData.cs" />
+    <Compile Include="Assets\Code\Data\Enemy\EnemySettingsData.cs" />
+    <Compile Include="Assets\Code\Data\Enemy\EnemyStruct.cs" />
     <Compile Include="Assets\Code\Data\LightData.cs" />
-    <Compile Include="Assets\Code\Data\PlayerData.cs" />
+    <Compile Include="Assets\Code\Data\Player\PlayerComponents.cs" />
+    <Compile Include="Assets\Code\Data\Player\PlayerData.cs" />
+    <Compile Include="Assets\Code\Data\Player\PlayerSettingsData.cs" />
+    <Compile Include="Assets\Code\Data\Player\PlayerStruct.cs" />
+    <Compile Include="Assets\Code\Enemy\EnemyFactory.cs" />
+    <Compile Include="Assets\Code\Enemy\EnemyModel.cs" />
+    <Compile Include="Assets\Code\Helper\BuilderExtentions.cs" />
+    <Compile Include="Assets\Code\Interface\ICleanup.cs" />
+    <Compile Include="Assets\Code\Interface\IController.cs" />
+    <Compile Include="Assets\Code\Interface\IEnemy.cs" />
+    <Compile Include="Assets\Code\Interface\IEnemyFactory.cs" />
+    <Compile Include="Assets\Code\Interface\IExecute.cs" />
+    <Compile Include="Assets\Code\Interface\IInitialization.cs" />
+    <Compile Include="Assets\Code\Interface\ILateUpdate.cs" />
+    <Compile Include="Assets\Code\Interface\IMove.cs" />
+    <Compile Include="Assets\Code\Interface\IPlayerFactory.cs" />
+    <Compile Include="Assets\Code\Interface\IUserInputProxy.cs" />
+    <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />
-    <Compile Include="Assets\GameController.cs" />
+    <Compile Include="Assets\Code\Player\PlayerFactory.cs" />
+    <Compile Include="Assets\Code\Player\PlayerModel.cs" />
+    <Compile Include="Assets\Code\UserInput\PCInputHorizontal.cs" />
+    <Compile Include="Assets\Code\UserInput\PCInputVertical.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/UnityProjects/LL2D04Ver01/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

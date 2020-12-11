@@ -28,7 +28,7 @@ namespace JevLogin
             {
                 if (_player == null)
                 {
-                    _player = Load<PlayerData>(Path.Combine(ManagerPath.Data, _playerDataPath));
+                    _player = Load<PlayerData>(Path.Combine(ManagerPath.DATA, _playerDataPath));
                 }
                 return _player;
             }
@@ -40,7 +40,7 @@ namespace JevLogin
             {
                 if (_enemy == null)
                 {
-                    _enemy = Load<EnemyData>(Path.Combine(ManagerPath.Data, _enemyDataPath));
+                    _enemy = Load<EnemyData>(Path.Combine(ManagerPath.DATA, _enemyDataPath));
                 }
                 return _enemy;
             }
@@ -52,7 +52,7 @@ namespace JevLogin
             {
                 if (_directionLight == null)
                 {
-                    _directionLight = Load<LightData>(Path.Combine(ManagerPath.Data, _directionLightPath));
+                    _directionLight = Load<LightData>(Path.Combine(ManagerPath.DATA, _directionLightPath));
                 }
                 return _directionLight;
             }

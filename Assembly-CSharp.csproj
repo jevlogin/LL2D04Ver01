@@ -91,6 +91,7 @@
     <Compile Include="Assets\Code\Interface\IInput.cs" />
     <Compile Include="Assets\Code\Interface\ILateUpdate.cs" />
     <Compile Include="Assets\Code\Interface\IMove.cs" />
+    <Compile Include="Assets\Code\Interface\IPlatform.cs" />
     <Compile Include="Assets\Code\Interface\IPlayerFactory.cs" />
     <Compile Include="Assets\Code\Interface\IUserInputProxy.cs" />
     <Compile Include="Assets\Code\Interface\IWindow.cs" />
@@ -103,6 +104,8 @@
     <Compile Include="Assets\Code\UserInput\PCInput.cs" />
     <Compile Include="Assets\Code\UserInput\PCInputHorizontal.cs" />
     <Compile Include="Assets\Code\UserInput\PCInputVertical.cs" />
+    <Compile Include="Assets\Code\UserInput\Platform.cs" />
+    <Compile Include="Assets\Code\UserInput\PlatformFactory.cs" />
     <Compile Include="Assets\Code\Window\ConsoleWindow.cs" />
     <Compile Include="Assets\Code\Window\PCWindow.cs" />
     <Compile Include="Assets\Code\Window\WindowFactory.cs" />

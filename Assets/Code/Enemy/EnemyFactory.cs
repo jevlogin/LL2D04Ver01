@@ -21,7 +21,7 @@ namespace JevLogin
                 .AddRigidbody2D()
                 .AddSprite(spriteAsteroid[(int)Random.Range(0.0f, spriteAsteroid.Length)]);
 
-            return Object.Instantiate(enemy);
+            return enemy;
         }
 
         public EnemyModel CreateEnemyModel()

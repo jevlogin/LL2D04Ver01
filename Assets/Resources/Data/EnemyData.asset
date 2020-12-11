@@ -12,3 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee77c7f67512494f9720379ec0b1d43, type: 3}
   m_Name: EnemyData
   m_EditorClassIdentifier: 
+  EnemyStruct:
+    Speed: 10.4
+    HealthPoint: 46
+  EnemyComponents:
+    EnemyTransform: {fileID: 0}
+    Rigidbody2D: {fileID: 0}
+  EnemySettingsData:
+    _spritesAsteroids:
+    - {fileID: 21300000, guid: f0d28786e8565a441996ad29717fa5da, type: 3}
+    - {fileID: 21300000, guid: e1c3334dfa2bcbd419706b1685b0ed8e, type: 3}
+    _countEnemy: 20

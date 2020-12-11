@@ -64,24 +64,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\Controller\CompositeMove.cs" />
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
+    <Compile Include="Assets\Code\Controller\EnemyInitialization.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />
     <Compile Include="Assets\Code\Controller\InputInitialization.cs" />
     <Compile Include="Assets\Code\Controller\PlayerInitialization.cs" />
     <Compile Include="Assets\Code\Data\Data.cs" />
-    <Compile Include="Assets\Code\Data\EnemyComponents.cs" />
-    <Compile Include="Assets\Code\Data\EnemyData.cs" />
-    <Compile Include="Assets\Code\Data\EnemySettingsData.cs" />
-    <Compile Include="Assets\Code\Data\EnemyStruct.cs" />
+    <Compile Include="Assets\Code\Data\Enemy\EnemyComponents.cs" />
+    <Compile Include="Assets\Code\Data\Enemy\EnemyData.cs" />
+    <Compile Include="Assets\Code\Data\Enemy\EnemySettingsData.cs" />
+    <Compile Include="Assets\Code\Data\Enemy\EnemyStruct.cs" />
     <Compile Include="Assets\Code\Data\LightData.cs" />
-    <Compile Include="Assets\Code\Data\PlayerComponents.cs" />
-    <Compile Include="Assets\Code\Data\PlayerData.cs" />
-    <Compile Include="Assets\Code\Data\PlayerSettingsData.cs" />
-    <Compile Include="Assets\Code\Data\PlayerStruct.cs" />
+    <Compile Include="Assets\Code\Data\Player\PlayerComponents.cs" />
+    <Compile Include="Assets\Code\Data\Player\PlayerData.cs" />
+    <Compile Include="Assets\Code\Data\Player\PlayerSettingsData.cs" />
+    <Compile Include="Assets\Code\Data\Player\PlayerStruct.cs" />
     <Compile Include="Assets\Code\Enemy\EnemyFactory.cs" />
-    <Compile Include="Assets\Code\Enemy\EnemyType.cs" />
+    <Compile Include="Assets\Code\Enemy\EnemyModel.cs" />
     <Compile Include="Assets\Code\Helper\BuilderExtentions.cs" />
-    <Compile Include="Assets\Code\Interface\EnemyModel.cs" />
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />
     <Compile Include="Assets\Code\Interface\IController.cs" />
     <Compile Include="Assets\Code\Interface\IEnemy.cs" />

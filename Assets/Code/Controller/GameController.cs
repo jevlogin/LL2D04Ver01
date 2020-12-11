@@ -16,6 +16,8 @@ namespace JevLogin
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
             var enemyFactory = new EnemyFactory(_data.Enemy);
+            var enemyInitialization = new EnemyInitialization(enemyFactory);
+            enemyInitialization.GetEnemy();
         }
     }
 }

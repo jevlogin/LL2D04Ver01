@@ -103,6 +103,9 @@
     <Compile Include="Assets\Code\UserInput\PCInput.cs" />
     <Compile Include="Assets\Code\UserInput\PCInputHorizontal.cs" />
     <Compile Include="Assets\Code\UserInput\PCInputVertical.cs" />
+    <Compile Include="Assets\Code\Window\ConsoleWindow.cs" />
+    <Compile Include="Assets\Code\Window\PCWindow.cs" />
+    <Compile Include="Assets\Code\Window\WindowFactory.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/UnityProjects/LL2D04Ver01/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

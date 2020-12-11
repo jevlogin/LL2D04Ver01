@@ -10,7 +10,7 @@ namespace JevLogin
         public EnemyInitialization(EnemyFactory enemyFactory)
         {
             _enemyFactory = enemyFactory;
-            
+            _enemy = new CompositeMove();
         }
 
         public GameObject GetEnemy()

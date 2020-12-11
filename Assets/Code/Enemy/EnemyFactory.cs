@@ -43,6 +43,8 @@ namespace JevLogin
 
         public IEnemy CreateIEnemy()
         {
+            var enemyProvider = _enemyData.GetEnemy();
+
             return Object.Instantiate(CreateEnemyModel());
         }
     }

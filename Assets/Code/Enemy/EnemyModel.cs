@@ -26,7 +26,12 @@ namespace JevLogin
         {
             if ((EnemyComponents.EnemyTransform.localPosition - point).sqrMagnitude >= EnemySettingsData.StoppingDistance * EnemySettingsData.StoppingDistance)
             {
-
+                var direction = (point - EnemyComponents.EnemyTransform.localPosition).normalized;
+                EnemyComponents.Rigidbody2D.velocity = direction * EnemyStruct.Speed;
+            }
+            else
+            {
+                EnemyComponents.Rigidbody2D.velocity = Vector2.zero;
             }
         }
 

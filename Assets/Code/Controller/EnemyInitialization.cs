@@ -14,9 +14,9 @@ namespace JevLogin
             _enemy.AddUnit(_enemyFactory.CreateEnemyModel());
         }
 
-        public GameObject GetEnemy()
+        public IMove GetEnemy()
         {
-            return _enemyFactory.CreateEnemy();
+            return _enemy;
         }
 
         public void Initialization()

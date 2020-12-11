@@ -78,9 +78,14 @@
     <Compile Include="Assets\Code\Data\Player\PlayerData.cs" />
     <Compile Include="Assets\Code\Data\Player\PlayerSettingsData.cs" />
     <Compile Include="Assets\Code\Data\Player\PlayerStruct.cs" />
+    <Compile Include="Assets\Code\Enemy\Asteroid.cs" />
+    <Compile Include="Assets\Code\Enemy\AsteroidFactory.cs" />
+    <Compile Include="Assets\Code\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Code\Enemy\HealthPoint.cs" />
     <Compile Include="Assets\Code\Helper\BuilderExtentions.cs" />
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />
     <Compile Include="Assets\Code\Interface\IController.cs" />
+    <Compile Include="Assets\Code\Interface\IEnemyFactory.cs" />
     <Compile Include="Assets\Code\Interface\IExecute.cs" />
     <Compile Include="Assets\Code\Interface\IInitialization.cs" />
     <Compile Include="Assets\Code\Interface\ILateUpdate.cs" />

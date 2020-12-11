@@ -19,6 +19,14 @@ namespace JevLogin
 
             _controllers = new Controllers();
             _controllers.Add(playerInitialization);
+
+            Enemy.CreateAsteroidEnemy(new HealthPoint(100, Random.Range(0, 100)));
+
+            IEnemyFactory enemyFactory = new AsteroidFactory();
+            enemyFactory.Create(new HealthPoint(100.0f, 100.0f));
+
+            Enemy.Factory.Create(new HealthPoint(100.0f, 100.0f));
+
         }
     }
 }

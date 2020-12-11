@@ -40,5 +40,10 @@ namespace JevLogin
 
             return _enemyModel;
         }
+
+        public IEnemy CreateIEnemy()
+        {
+            return Object.Instantiate(CreateEnemyModel());
+        }
     }
 }

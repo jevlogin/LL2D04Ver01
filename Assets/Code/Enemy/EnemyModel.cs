@@ -1,6 +1,8 @@
-﻿namespace JevLogin
+﻿using UnityEngine;
+
+namespace JevLogin
 {
-    public class EnemyModel
+    public class EnemyModel : MonoBehaviour, IMove
     {
         #region Fields
 
@@ -18,6 +20,14 @@
             EnemyStruct = enemyStruct;
             EnemyComponents = enemyComponents;
             EnemySettingsData = enemySettings;
+        }
+
+        public void Move(Vector3 point)
+        {
+            if ((EnemyComponents.EnemyTransform.localPosition - point).sqrMagnitude >= EnemySettingsData.StoppingDistance * EnemySettingsData.StoppingDistance)
+            {
+
+            }
         }
 
         #endregion

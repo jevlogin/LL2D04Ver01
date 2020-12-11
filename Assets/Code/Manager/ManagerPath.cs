@@ -2,6 +2,6 @@
 {
     public static class ManagerPath
     {
-        public const string Data = "Data";
+        public const string DATA = "Data";
     }
 }

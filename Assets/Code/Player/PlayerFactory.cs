@@ -1,0 +1,72 @@
+﻿using UnityEngine;
+
+namespace JevLogin
+{
+    internal sealed class PlayerFactory : IPlayerFactory
+    {
+        #region Fields
+
+        private readonly PlayerData _playerData;
+        private PlayerModel _playerModel;
+
+        #endregion
+
+
+        #region Properties
+
+        public PlayerFactory(PlayerData playerData)
+        {
+            _playerData = playerData;
+        }
+
+        #endregion
+
+
+        #region Methods
+
+        public Rigidbody2D CreateBulletRigidBody()
+        {
+            var bullet = _playerData.PlayerSettingsData.BulletPrefab;
+
+            return bullet.GetComponent<Rigidbody2D>();
+        }
+
+        public GameObject CreatePlayer()
+        {
+            var player = new GameObject("Player")
+                .AddSprite(_playerData.PlayerSettingsData.SpritePlayer)
+                .AddCircleCollider2D()
+                .AddTrailRenderer(_playerData);
+
+            return player;
+        }
+
+        public PlayerModel CreatePlayerModel()
+        {
+            if (_playerModel == null)
+            {
+                var playerStruct = _playerData.PlayerStruct;
+                var playerSettings = _playerData.PlayerSettingsData;
+                var playerComponents = _playerData.PlayerComponents;
+
+                var spawnPlayer = CreatePlayer();
+
+                var bullet = new GameObject("Barrel");
+                bullet.transform.SetParent(spawnPlayer.transform);
+                bullet.transform.position = new Vector2(_playerData.PlayerSettingsData.OffsetVector.x, _playerData.PlayerSettingsData.OffsetVector.y);
+
+                var childrenObjectParticleSystem = Object.Instantiate(_playerData.PlayerSettingsData.ParticleSystem, spawnPlayer.transform);
+                childrenObjectParticleSystem.name = "Dust Particles";
+
+                playerComponents.Player = spawnPlayer.transform;
+
+                _playerModel = new PlayerModel(playerStruct, playerComponents, playerSettings);
+            }
+
+            return _playerModel;
+        }
+
+        #endregion
+
+    }
+}

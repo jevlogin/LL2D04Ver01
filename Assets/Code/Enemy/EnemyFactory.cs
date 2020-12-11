@@ -6,7 +6,7 @@ namespace JevLogin
     {
         private readonly EnemyData _enemyData;
         private EnemyModel _enemyModel;
-
+        
 
         public EnemyFactory(EnemyData enemy)
         {
@@ -23,6 +23,7 @@ namespace JevLogin
 
             return enemy;
         }
+
 
         public EnemyModel CreateEnemyModel()
         {

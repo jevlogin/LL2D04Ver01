@@ -11,6 +11,7 @@ namespace JevLogin
         {
             _enemyFactory = enemyFactory;
             _enemy = new CompositeMove();
+            _enemy.AddUnit(_enemyFactory.CreateEnemyModel());
         }
 
         public GameObject GetEnemy()

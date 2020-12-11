@@ -17,6 +17,11 @@ namespace JevLogin
             var playerInitialization = new PlayerInitialization(playerFactory);
             var enemyFactory = new EnemyFactory(_data.Enemy);
             var enemyInitialization = new EnemyInitialization(enemyFactory);
+
+
+            _controllers = new Controllers();
+            _controllers.Add(playerInitialization);
+            _controllers.Add(enemyInitialization);
             
         }
     }

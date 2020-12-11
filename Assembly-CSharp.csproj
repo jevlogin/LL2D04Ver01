@@ -64,9 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Code\Controller\CompositeMove.cs" />
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
-    <Compile Include="Assets\Code\Controller\EnemyInitialization.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />
     <Compile Include="Assets\Code\Controller\InputInitialization.cs" />
     <Compile Include="Assets\Code\Controller\PlayerInitialization.cs" />
@@ -80,13 +78,9 @@
     <Compile Include="Assets\Code\Data\Player\PlayerData.cs" />
     <Compile Include="Assets\Code\Data\Player\PlayerSettingsData.cs" />
     <Compile Include="Assets\Code\Data\Player\PlayerStruct.cs" />
-    <Compile Include="Assets\Code\Enemy\EnemyFactory.cs" />
-    <Compile Include="Assets\Code\Enemy\EnemyModel.cs" />
     <Compile Include="Assets\Code\Helper\BuilderExtentions.cs" />
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />
     <Compile Include="Assets\Code\Interface\IController.cs" />
-    <Compile Include="Assets\Code\Interface\IEnemy.cs" />
-    <Compile Include="Assets\Code\Interface\IEnemyFactory.cs" />
     <Compile Include="Assets\Code\Interface\IExecute.cs" />
     <Compile Include="Assets\Code\Interface\IInitialization.cs" />
     <Compile Include="Assets\Code\Interface\ILateUpdate.cs" />

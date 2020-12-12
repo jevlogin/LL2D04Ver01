@@ -96,6 +96,7 @@
     <Compile Include="Assets\Code\Interface\IUserInputProxy.cs" />
     <Compile Include="Assets\Code\Interface\IWindow.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
+    <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />
     <Compile Include="Assets\Code\Player\PlayerFactory.cs" />
     <Compile Include="Assets\Code\Player\PlayerModel.cs" />

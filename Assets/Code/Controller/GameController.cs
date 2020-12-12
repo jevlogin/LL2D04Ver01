@@ -31,9 +31,7 @@ namespace JevLogin
 
             yield return new WaitForSeconds(3);
 
-            enemy.gameObject.AddRigidbody2D();
-            enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 2);
-
+            BulletPool bulletPool = new BulletPool(5, playerInitialization.GetPlayer());
         }
     }
 }

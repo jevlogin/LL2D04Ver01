@@ -4,8 +4,7 @@ using UnityEngine;
 
 namespace JevLogin
 {
-    [CreateAssetMenu(fileName = "NewBullet", menuName = ManagerPath.BULLET_DATA_PATH, order = 51)]
-    public sealed class Bullet : ScriptableObject
+    public sealed class Bullet : MonoBehaviour
     {
         #region Fields
 
@@ -35,7 +34,15 @@ namespace JevLogin
             {
                 if (_bulletSprite == null)
                 {
-                    _bulletSprite = Resources.Load<Sprite>(ManagerPath.BULLET_PATH);
+                    var spriteRenderer = GetComponent<SpriteRenderer>();
+                    if (spriteRenderer)
+                    {
+                        _bulletSprite = spriteRenderer.sprite;
+                    }
+                    else
+                    {
+                        _bulletSprite = Resources.Load<SpriteRenderer>(ManagerPath.BULLET_PATH).sprite;
+                    }
                 }
                 return _bulletSprite;
             }

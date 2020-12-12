@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -31,9 +32,11 @@ namespace JevLogin
 
         public Bullet GetBullet()
         {
-            Bullet result = Resources.Load<Bullet>(ManagerPath.BULLET_DATA_PATH);
+            Bullet result = Resources.Load<Bullet>(ManagerPath.BULLET_PATH);
 
             return result;
         }
+
+
     }
 }

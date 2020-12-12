@@ -30,8 +30,10 @@ namespace JevLogin
             enemy.gameObject.SetActive(true);
 
 
-            //BulletPool bulletPool = new BulletPool(5, playerInitialization.GetPlayer());
-            //var bullet = bulletPool.GetBullet("Bullet");
+            BulletPool bulletPool = new BulletPool(5, playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform);
+            var bullet = bulletPool.GetBullet("Bullet");
+            //bullet.transform.position = playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform.position;
+            bullet.gameObject.SetActive(true);
         }
     }
 }

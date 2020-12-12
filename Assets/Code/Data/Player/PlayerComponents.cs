@@ -10,6 +10,7 @@ namespace JevLogin
         public SpriteRenderer SpriteRenderer;
         public CircleCollider2D CircleCollider2D;
         public Transform Player;
+        public Transform BarrelTransform;
         public Rigidbody2D BulletRigidbody;
     }
 }

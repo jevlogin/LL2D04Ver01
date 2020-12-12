@@ -51,9 +51,10 @@ namespace JevLogin
 
                 var spawnPlayer = CreatePlayer();
 
-                var bullet = new GameObject("Barrel");
-                bullet.transform.SetParent(spawnPlayer.transform);
-                bullet.transform.position = new Vector2(_playerData.PlayerSettingsData.OffsetVector.x, _playerData.PlayerSettingsData.OffsetVector.y);
+                var barrel = new GameObject("Barrel");
+                playerComponents.BarrelTransform = barrel.transform;
+                barrel.transform.SetParent(spawnPlayer.transform);
+                barrel.transform.position = new Vector2(_playerData.PlayerSettingsData.OffsetVector.x, _playerData.PlayerSettingsData.OffsetVector.y);
 
                 var childrenObjectParticleSystem = Object.Instantiate(_playerData.PlayerSettingsData.ParticleSystem, spawnPlayer.transform);
                 childrenObjectParticleSystem.name = "Dust Particles";

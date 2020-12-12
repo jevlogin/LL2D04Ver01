@@ -9,7 +9,6 @@ namespace JevLogin
         #region Fields
 
         [SerializeField] private int _damageAttack;
-        [SerializeField] private Sprite _bulletSprite;
 
         #endregion
 
@@ -25,26 +24,6 @@ namespace JevLogin
                     _damageAttack = 10;
                 }
                 return _damageAttack;
-            }
-        }
-
-        public Sprite BulletSprite
-        {
-            get
-            {
-                if (_bulletSprite == null)
-                {
-                    var spriteRenderer = GetComponent<SpriteRenderer>();
-                    if (spriteRenderer)
-                    {
-                        _bulletSprite = spriteRenderer.sprite;
-                    }
-                    else
-                    {
-                        _bulletSprite = Resources.Load<SpriteRenderer>(ManagerPath.BULLET_PATH).sprite;
-                    }
-                }
-                return _bulletSprite;
             }
         }
 

@@ -7,8 +7,12 @@ namespace JevLogin
 {
     public sealed class GameController : MonoBehaviour
     {
+        #region Fields
+
         [SerializeField] private Data _data;
         private Controllers _controllers;
+
+        #endregion
 
         private void Start()
         {
@@ -20,15 +24,11 @@ namespace JevLogin
             _controllers = new Controllers();
             _controllers.Add(playerInitialization);
 
-            Enemy.CreateAsteroidEnemy(new HealthPoint(100, Random.Range(0, 100)));
+            EnemyPool enemyPool = new EnemyPool(10);
+            var enemy = enemyPool.GetEnemy("Asteroid");
+            enemy.transform.position = Vector2.one;
+            enemy.gameObject.SetActive(true);
 
-            IEnemyFactory enemyFactory = new AsteroidFactory();
-            enemyFactory.Create(new HealthPoint(100.0f, 100.0f));
-
-            Enemy.Factory = new AsteroidFactory();
-            Enemy.Factory.Create(new HealthPoint(100.0f, 100.0f));
-
-            var platform = new PlatformFactory().Create(Application.platform);
         }
     }
 }

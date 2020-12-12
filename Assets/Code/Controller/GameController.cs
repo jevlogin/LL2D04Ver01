@@ -14,7 +14,7 @@ namespace JevLogin
 
         #endregion
 
-        private void Start()
+        private IEnumerator Start()
         {
             var inputInitialization = new InputInitialization();
             var playerFactory = new PlayerFactory(_data.Player);
@@ -28,6 +28,11 @@ namespace JevLogin
             var enemy = enemyPool.GetEnemy("Asteroid");
             enemy.transform.position = Vector2.one;
             enemy.gameObject.SetActive(true);
+
+            yield return new WaitForSeconds(3);
+
+            enemy.gameObject.AddRigidbody2D();
+            enemy.GetComponent<Rigidbody2D>().velocity = new Vector2(10, 2);
 
         }
     }

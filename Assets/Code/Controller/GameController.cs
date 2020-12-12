@@ -31,7 +31,8 @@ namespace JevLogin
 
             yield return new WaitForSeconds(3);
 
-            BulletPool bulletPool = new BulletPool(5, playerInitialization.GetPlayer());
+            //BulletPool bulletPool = new BulletPool(5, playerInitialization.GetPlayer());
+            //var bullet = bulletPool.GetBullet("Bullet");
         }
     }
 }

@@ -71,10 +71,10 @@ namespace JevLogin
 
         private void ReturnToPool(Transform transform)
         {
-            transform.localPosition = transform.position;
             transform.localRotation = Quaternion.identity;
             transform.gameObject.SetActive(false);
             transform.SetParent(_rootPool);
+            transform.localPosition = Vector2.zero;
         }
 
         private HashSet<Bullet> GetListEnemies(string name)

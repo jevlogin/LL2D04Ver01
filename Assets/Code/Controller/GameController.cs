@@ -14,7 +14,7 @@ namespace JevLogin
 
         #endregion
 
-        private IEnumerator Start()
+        private void Start()
         {
             var inputInitialization = new InputInitialization();
             var playerFactory = new PlayerFactory(_data.Player);
@@ -29,7 +29,6 @@ namespace JevLogin
             enemy.transform.position = Vector2.one;
             enemy.gameObject.SetActive(true);
 
-            yield return new WaitForSeconds(3);
 
             //BulletPool bulletPool = new BulletPool(5, playerInitialization.GetPlayer());
             //var bullet = bulletPool.GetBullet("Bullet");

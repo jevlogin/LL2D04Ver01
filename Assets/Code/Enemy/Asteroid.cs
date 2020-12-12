@@ -8,9 +8,9 @@ namespace JevLogin
 {
     public sealed class Asteroid : Enemy
     {
-        internal void DependencyInjectHealth(HealthPoint healthPoint)
+        public void DependencyInjectHealth(HealthPoint healthPoint)
         {
-            throw new Exception();
+            HealthPoint = healthPoint;
         }
     }
 }

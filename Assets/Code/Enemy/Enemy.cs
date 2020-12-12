@@ -8,7 +8,9 @@ namespace JevLogin
     public abstract class Enemy : MonoBehaviour
     {
         public static IEnemyFactory Factory;
-        public HealthPoint HealthPoint { get; private set; }
+        private HealthPoint healthPoint;
+
+        public HealthPoint HealthPoint { get => healthPoint; protected set => healthPoint = value; }
 
         public static Asteroid CreateAsteroidEnemy(HealthPoint healthPoint)
         {

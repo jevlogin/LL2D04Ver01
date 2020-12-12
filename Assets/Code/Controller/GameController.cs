@@ -22,6 +22,11 @@ namespace JevLogin
 
             Enemy.CreateAsteroidEnemy(new HealthPoint(100, Random.Range(0, 100)));
 
+            IEnemyFactory enemyFactory = new AsteroidFactory();
+            enemyFactory.Create(new HealthPoint(100.0f, 100.0f));
+
+            Enemy.Factory = new AsteroidFactory();
+            Enemy.Factory.Create(new HealthPoint(100.0f, 100.0f));
 
             var platform = new PlatformFactory().Create(Application.platform);
         }

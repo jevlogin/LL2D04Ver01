@@ -11,7 +11,7 @@
 
 
         #region Properties
-        
+
         public InputInitialization()
         {
             _pcInputHorizontal = new PCInputHorizontal();
@@ -25,14 +25,19 @@
 
         public void Initialization()
         {
-        } 
+        }
 
         #endregion
+
+
+        #region Methods
 
         public (IUserInputProxy inputHorizontal, IUserInputProxy inputVertical) GetInput()
         {
             (IUserInputProxy inputHorizontal, IUserInputProxy inputVertical) result = (_pcInputHorizontal, _pcInputVertical);
             return result;
         }
+
+        #endregion
     }
 }

@@ -64,8 +64,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\Controller\CameraController.cs" />
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />
+    <Compile Include="Assets\Code\Controller\InputController.cs" />
+    <Compile Include="Assets\Code\Controller\MoveController.cs" />
     <Compile Include="Assets\Code\Data\Data.cs" />
     <Compile Include="Assets\Code\Data\Enemy\EnemyComponents.cs" />
     <Compile Include="Assets\Code\Data\Enemy\EnemyData.cs" />
@@ -92,7 +95,7 @@
     <Compile Include="Assets\Code\Interface\IExecute.cs" />
     <Compile Include="Assets\Code\Interface\IInitialization.cs" />
     <Compile Include="Assets\Code\Interface\IInput.cs" />
-    <Compile Include="Assets\Code\Interface\ILateUpdate.cs" />
+    <Compile Include="Assets\Code\Interface\ILateExecute.cs" />
     <Compile Include="Assets\Code\Interface\IMove.cs" />
     <Compile Include="Assets\Code\Interface\IPlatform.cs" />
     <Compile Include="Assets\Code\Interface\IPlayerFactory.cs" />

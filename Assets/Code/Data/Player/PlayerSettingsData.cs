@@ -20,6 +20,7 @@ namespace JevLogin
         [SerializeField, Range(0, 1)] private float _startWidth;
         [SerializeField, Range(0, 1)] private float _endWidth;
         [SerializeField, Range(0, 1)] private float _time;
+        [SerializeField, Header("Вектор смещения для Трайл рендера")] private Vector2 _offsetVectorTrailrenderer;
 
         [SerializeField, Space(10), Header("Вектор смещения для свтола пушки"), Space(20)] private Vector2 _offsetVector;
 
@@ -34,10 +35,12 @@ namespace JevLogin
         public GameObject ParticleSystem => _particleSystem;
         public Color StartColor => _startColor;
         public Color EndColor => _endColor;
+        public Vector2 OffsetVectorTrailrenderer => _offsetVectorTrailrenderer;
         public Vector2 OffsetVector => _offsetVector;
         public float StartWidth => _startWidth;
         public float EndWidth => _endWidth;
         public float Time => _time;
+
 
         #endregion
 

@@ -36,6 +36,10 @@ namespace JevLogin
                 return gameObject;
             }
             var lineRendererGameObject = new GameObject("TrailRenderer");
+            if (data is PlayerData playerData)
+            {
+                lineRendererGameObject.transform.position = playerData.PlayerSettingsData.OffsetVectorTrailrenderer;
+            }
             var lineRenderer = lineRendererGameObject.GetOrAddComponent<TrailRenderer>();
             TrailRendererConfig(data, lineRenderer);
 

@@ -20,20 +20,25 @@ namespace JevLogin
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
 
-
-            _controllers = new Controllers();
-            _controllers.Add(playerInitialization);
+            BulletPool bulletPool = new BulletPool(playerInitialization.GetPlayerModel().PlayerStruct.GetBulletPool().CapacityPool,
+               playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform);
+            playerInitialization.GetPlayerModel().PlayerStruct.SetBulletPool(bulletPool);
+            var bullet = bulletPool.GetBullet("Bullet");
+            bullet.gameObject.SetActive(true);
 
             EnemyPool enemyPool = new EnemyPool(10);
             var enemy = enemyPool.GetEnemy("Asteroid");
             enemy.transform.position = Vector2.one;
             enemy.gameObject.SetActive(true);
 
+            EnemyPool enemyShipPool = new EnemyPool(20);
+            var enemyShip = enemyShipPool.GetEnemy("Ship");
+            enemyShip.transform.position = new Vector2(Random.Range(3, 10), Random.Range(3, 10));
+            enemyShip.gameObject.SetActive(true);
 
-            BulletPool bulletPool = new BulletPool(5, playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform);
-            var bullet = bulletPool.GetBullet("Bullet");
-            //bullet.transform.position = playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform.position;
-            bullet.gameObject.SetActive(true);
+            _controllers = new Controllers();
+            _controllers.Add(playerInitialization);
+
         }
     }
 }

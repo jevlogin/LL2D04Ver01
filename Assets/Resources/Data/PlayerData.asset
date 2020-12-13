@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   PlayerStruct:
+    bulletPool:
+      _capacityPool: 100
     _speed: 5
     _acceleration: 10
     _healthPoint: 100
@@ -21,6 +23,7 @@ MonoBehaviour:
     SpriteRenderer: {fileID: 0}
     CircleCollider2D: {fileID: 0}
     Player: {fileID: 0}
+    BarrelTransform: {fileID: 0}
     BulletRigidbody: {fileID: 2392112446273878076, guid: 9a572210d3106af4890a5cb10c0a70f5,
       type: 3}
   PlayerSettingsData:

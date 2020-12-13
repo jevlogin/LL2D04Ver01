@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 
 namespace JevLogin
@@ -31,10 +30,31 @@ namespace JevLogin
                 case "Asteroid":
                     result = GetAsteroid(GetListEnemies(type));
                     break;
+                case "Ship":
+                    result = GetShip(GetListEnemies(type));
+                    break;
                 default:
                     throw new System.ArgumentOutOfRangeException(nameof(type), type, "Не предусмотрен в программе");
             }
             return result;
+        }
+
+        private Enemy GetShip(HashSet<Enemy> hashSets)
+        {
+            var enemy = hashSets.FirstOrDefault(s => !s.gameObject.activeSelf);
+            if (enemy == null)
+            {
+                var ship = Resources.Load<Ship>(ManagerPath.ENEMY_PATH_SHIP);
+                for (int i = 0; i < _capacityPool; i++)
+                {
+                    var instantiate = Object.Instantiate(ship);
+                    ReturnToPool(instantiate.transform);
+                    hashSets.Add(instantiate);
+                }
+                GetAsteroid(hashSets);
+            }
+            enemy = hashSets.FirstOrDefault(s => !s.gameObject.activeSelf);
+            return enemy;
         }
 
         private Enemy GetAsteroid(HashSet<Enemy> enemies)

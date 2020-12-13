@@ -7,11 +7,14 @@ using UnityEngine;
 
 namespace JevLogin
 {
+    [Serializable]
     public sealed class BulletPool
     {
         private readonly Dictionary<string, HashSet<Bullet>> _bulletsPool;
-        private readonly int _capacityPool;
+        [SerializeField] private int _capacityPool;
         private Transform _rootPool;
+
+        public int CapacityPool => _capacityPool;
 
         public BulletPool(int capacityPool, Transform playerTransform)
         {
@@ -27,7 +30,7 @@ namespace JevLogin
                 {
                     _rootPool = new GameObject(ManagerName.POOL_BULLETS).transform;
                     _rootPool.SetParent(playerTransform);
-                    _rootPool.localPosition = Vector2.zero;
+                    _rootPool.localPosition = new Vector2(0, 0.5f);
                 }
             }
         }
@@ -55,7 +58,7 @@ namespace JevLogin
             {
                 var bullet = Resources.Load<Bullet>(ManagerPath.BULLET_PATH);
 
-                for (int i = 0; i < _capacityPool; i++)
+                for (int i = 0; i < CapacityPool; i++)
                 {
                     var instantiate = UnityEngine.Object.Instantiate(bullet);
                     ReturnToPool(instantiate.transform);

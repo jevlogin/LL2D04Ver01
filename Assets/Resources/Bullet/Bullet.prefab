@@ -95,4 +95,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageAttack: 10
-  _bulletSprite: {fileID: 0}

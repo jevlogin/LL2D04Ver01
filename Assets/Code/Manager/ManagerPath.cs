@@ -6,5 +6,6 @@
         public const string ASTEROID_PATH = "Enemy/Asteroid";
         public const string BULLET_DATA_PATH = "Data/Bullet";
         public const string BULLET_PATH = "Bullet/Bullet";
+        public const string ENEMY_PATH_SHIP = "Enemy/Ship";
     }
 }

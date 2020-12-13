@@ -82,6 +82,7 @@
     <Compile Include="Assets\Code\Enemy\AsteroidFactory.cs" />
     <Compile Include="Assets\Code\Enemy\Enemy.cs" />
     <Compile Include="Assets\Code\Enemy\HealthPoint.cs" />
+    <Compile Include="Assets\Code\Enemy\Ship.cs" />
     <Compile Include="Assets\Code\Helper\BuilderExtentions.cs" />
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />
     <Compile Include="Assets\Code\Interface\IController.cs" />

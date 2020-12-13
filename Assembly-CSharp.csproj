@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\Controller\BulletInitialization.cs" />
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
     <Compile Include="Assets\Code\Controller\EnemyInitialization.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />

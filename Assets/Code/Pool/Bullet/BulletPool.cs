@@ -15,8 +15,11 @@ namespace JevLogin
 
         public int CapacityPool => _capacityPool;
 
+        public PlayerInitialization PlayerInitialization { get; }
+
         public BulletPool(PlayerInitialization playerInitialization)
         {
+            PlayerInitialization = playerInitialization;
             Transform playerTransform = playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
             _capacityPool = playerInitialization.GetPlayerModel().PlayerStruct.GetBulletPool().CapacityPool;
 

@@ -23,15 +23,13 @@ namespace JevLogin
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
 
-            BulletPool bulletPool = new BulletPool(playerInitialization);
-            playerInitialization.GetPlayerModel().PlayerStruct.SetBulletPool(bulletPool);
-            var bullet = bulletPool.GetBullet(ManagerName.BULLET);
-            bullet.gameObject.SetActive(true);
+            var bulletInitialization = new BulletInitialization(new BulletPool(playerInitialization));
 
             var enemyInitialization = new EnemyInitialization(new EnemyPool(10, ManagerName.POOL_ENEMY));
 
             _controllers = new Controllers();
             _controllers.Add(playerInitialization);
+            _controllers.Add(bulletInitialization);
             _controllers.Add(enemyInitialization);
 
 

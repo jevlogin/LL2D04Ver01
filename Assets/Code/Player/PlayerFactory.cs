@@ -2,7 +2,7 @@
 
 namespace JevLogin
 {
-    internal sealed class PlayerFactory : IPlayerFactory
+    public sealed class PlayerFactory : IPlayerFactory
     {
         #region Fields
 

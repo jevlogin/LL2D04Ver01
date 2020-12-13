@@ -2,7 +2,7 @@
 
 namespace JevLogin
 {
-    internal class PlayerInitialization : IInitialization
+    public class PlayerInitialization : IInitialization
     {
         #region Fields
 

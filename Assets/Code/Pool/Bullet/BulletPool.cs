@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,10 +15,12 @@ namespace JevLogin
 
         public int CapacityPool => _capacityPool;
 
-        public BulletPool(int capacityPool, Transform playerTransform)
+        public BulletPool(PlayerInitialization playerInitialization)
         {
+            Transform playerTransform = playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
+            _capacityPool = playerInitialization.GetPlayerModel().PlayerStruct.GetBulletPool().CapacityPool;
+
             _bulletsPool = new Dictionary<string, HashSet<Bullet>>();
-            _capacityPool = capacityPool;
             if (!_rootPool)
             {
                 if (playerTransform == null)
@@ -33,6 +34,11 @@ namespace JevLogin
                     _rootPool.localPosition = new Vector2(0, 0.5f);
                 }
             }
+        }
+
+        internal object GetBullet(object bULLET)
+        {
+            throw new NotImplementedException();
         }
 
         internal Bullet GetBullet(string name)

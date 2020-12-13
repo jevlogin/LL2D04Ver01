@@ -14,33 +14,32 @@ namespace JevLogin
 
         #endregion
 
+
+        #region UnityMethods
+
         private void Start()
         {
             var inputInitialization = new InputInitialization();
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
 
-            BulletPool bulletPool = new BulletPool(playerInitialization.GetPlayerModel().PlayerStruct.GetBulletPool().CapacityPool,
-               playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform);
+            BulletPool bulletPool = new BulletPool(playerInitialization);
             playerInitialization.GetPlayerModel().PlayerStruct.SetBulletPool(bulletPool);
-            var bullet = bulletPool.GetBullet("Bullet");
+            var bullet = bulletPool.GetBullet(ManagerName.BULLET);
             bullet.gameObject.SetActive(true);
 
-            var enemyPool = new EnemyPool(10, ManagerName.POOL_ASTEROIDS);
-            var enemyInitialization = new EnemyInitialization(enemyPool);
-
-            enemyInitialization.AddPoolEnemy(enemyPool);
-            
-
-            EnemyPool enemyShipPool = new EnemyPool(20, ManagerName.POOL_ENEMY_SHIP);
-            var enemyShip = enemyShipPool.GetEnemy("Ship");
-            enemyShip.transform.position = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
-            enemyShip.gameObject.SetActive(true);
+            var enemyInitialization = new EnemyInitialization(new EnemyPool(10, ManagerName.POOL_ENEMY));
 
             _controllers = new Controllers();
             _controllers.Add(playerInitialization);
+            _controllers.Add(enemyInitialization);
 
-            Enemy.CreateShipEnemy(new HealthPoint(100.0f, 50.0f));
+
+            _controllers.Initialization();
+            //TODO только лишь чтобы показать что сделал статичный метод
+            //Enemy.CreateShipEnemy(new HealthPoint(100.0f, 50.0f));
         }
+
+        #endregion
     }
 }

@@ -99,6 +99,7 @@
     <Compile Include="Assets\Code\Interface\IMove.cs" />
     <Compile Include="Assets\Code\Interface\IPlatform.cs" />
     <Compile Include="Assets\Code\Interface\IPlayerFactory.cs" />
+    <Compile Include="Assets\Code\Interface\IRotation.cs" />
     <Compile Include="Assets\Code\Interface\IUserInputProxy.cs" />
     <Compile Include="Assets\Code\Interface\IWindow.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />

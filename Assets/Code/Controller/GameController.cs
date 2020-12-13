@@ -22,10 +22,9 @@ namespace JevLogin
             var inputInitialization = new InputInitialization();
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
-
             var bulletInitialization = new BulletInitialization(new BulletPool(playerInitialization));
-
             var enemyInitialization = new EnemyInitialization(new EnemyPool(10, ManagerName.POOL_ENEMY));
+
 
             _controllers = new Controllers();
             _controllers.Add(playerInitialization);

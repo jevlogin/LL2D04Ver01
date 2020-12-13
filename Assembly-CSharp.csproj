@@ -64,12 +64,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Code\Controller\BulletInitialization.cs" />
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
-    <Compile Include="Assets\Code\Controller\EnemyInitialization.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />
-    <Compile Include="Assets\Code\Controller\InputInitialization.cs" />
-    <Compile Include="Assets\Code\Controller\PlayerInitialization.cs" />
     <Compile Include="Assets\Code\Data\Data.cs" />
     <Compile Include="Assets\Code\Data\Enemy\EnemyComponents.cs" />
     <Compile Include="Assets\Code\Data\Enemy\EnemyData.cs" />
@@ -86,6 +82,10 @@
     <Compile Include="Assets\Code\Enemy\HealthPoint.cs" />
     <Compile Include="Assets\Code\Enemy\Ship.cs" />
     <Compile Include="Assets\Code\Helper\BuilderExtentions.cs" />
+    <Compile Include="Assets\Code\Initialization\BulletInitialization.cs" />
+    <Compile Include="Assets\Code\Initialization\EnemyInitialization.cs" />
+    <Compile Include="Assets\Code\Initialization\InputInitialization.cs" />
+    <Compile Include="Assets\Code\Initialization\PlayerInitialization.cs" />
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />
     <Compile Include="Assets\Code\Interface\IController.cs" />
     <Compile Include="Assets\Code\Interface\IEnemyFactory.cs" />

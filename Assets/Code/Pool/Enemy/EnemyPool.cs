@@ -12,13 +12,13 @@ namespace JevLogin
         private readonly int _capacityPool;
         private Transform _rootPool;
 
-        public EnemyPool(int capacityPool)
+        public EnemyPool(int capacityPool, string name)
         {
             _enemyPool = new Dictionary<string, HashSet<Enemy>>();
             _capacityPool = capacityPool;
             if (!_rootPool)
             {
-                _rootPool = new GameObject(ManagerName.POOL_ASTEROIDS).transform;
+                _rootPool = new GameObject(name).transform;
             }
         }
 

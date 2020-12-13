@@ -55,11 +55,20 @@ namespace JevLogin
 
         public static Asteroid CreateAsteroidEnemy(HealthPoint healthPoint)
         {
-            var enemy = Instantiate(Resources.Load<Asteroid>("Enemy/Asteroid"));
+            var enemy = Instantiate(Resources.Load<Asteroid>(ManagerPath.ASTEROID_PATH));
 
             enemy.HealthPoint = healthPoint;
 
             return enemy;
+        }
+
+        public static Ship CreateShipEnemy(HealthPoint healthPoint)
+        {
+            var ship = Instantiate(Resources.Load<Ship>(ManagerPath.ENEMY_PATH_SHIP));
+
+            ship.HealthPoint = healthPoint;
+
+            return ship;
         }
     }
 }

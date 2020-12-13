@@ -26,19 +26,20 @@ namespace JevLogin
             var bullet = bulletPool.GetBullet("Bullet");
             bullet.gameObject.SetActive(true);
 
-            EnemyPool enemyPool = new EnemyPool(10);
+            EnemyPool enemyPool = new EnemyPool(10, ManagerName.POOL_ASTEROIDS);
             var enemy = enemyPool.GetEnemy("Asteroid");
             enemy.transform.position = Vector2.one;
             enemy.gameObject.SetActive(true);
 
-            EnemyPool enemyShipPool = new EnemyPool(20);
+            EnemyPool enemyShipPool = new EnemyPool(20, ManagerName.POOL_ENEMY_SHIP);
             var enemyShip = enemyShipPool.GetEnemy("Ship");
-            enemyShip.transform.position = new Vector2(Random.Range(3, 10), Random.Range(3, 10));
+            enemyShip.transform.position = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
             enemyShip.gameObject.SetActive(true);
 
             _controllers = new Controllers();
             _controllers.Add(playerInitialization);
 
+            Enemy.CreateShipEnemy(new HealthPoint(100.0f, 50.0f));
         }
     }
 }

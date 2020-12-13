@@ -29,6 +29,7 @@ namespace JevLogin
             var enemyPool = new EnemyPool(10, ManagerName.POOL_ASTEROIDS);
             var enemyInitialization = new EnemyInitialization(enemyPool);
 
+            enemyInitialization.AddPoolEnemy(enemyPool);
             
 
             EnemyPool enemyShipPool = new EnemyPool(20, ManagerName.POOL_ENEMY_SHIP);

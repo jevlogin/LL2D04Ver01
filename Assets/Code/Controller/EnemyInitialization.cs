@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+
 
 namespace JevLogin
 {
@@ -19,6 +21,11 @@ namespace JevLogin
         public Enemy GetEnemy()
         {
             return _enemy;
+        }
+
+        internal void AddPoolEnemy(EnemyPool enemyPool)
+        {
+
         }
     }
 }

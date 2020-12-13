@@ -65,7 +65,7 @@ namespace JevLogin
                 var asteroid = Resources.Load<Asteroid>(ManagerPath.ASTEROID_PATH);
                 for (int i = 0; i < _capacityPool; i++)
                 {
-                    var instantiate = UnityEngine.Object.Instantiate(asteroid);
+                    var instantiate = Object.Instantiate(asteroid);
                     ReturnToPool(instantiate.transform);
                     enemies.Add(instantiate);
                 }
@@ -91,7 +91,7 @@ namespace JevLogin
 
         public void RemovePool()
         {
-            UnityEngine.Object.Destroy(_rootPool.gameObject);
+            Object.Destroy(_rootPool.gameObject);
         }
     }
 }

@@ -26,10 +26,10 @@ namespace JevLogin
             var bullet = bulletPool.GetBullet("Bullet");
             bullet.gameObject.SetActive(true);
 
-            EnemyPool enemyPool = new EnemyPool(10, ManagerName.POOL_ASTEROIDS);
-            var enemy = enemyPool.GetEnemy("Asteroid");
-            enemy.transform.position = Vector2.one;
-            enemy.gameObject.SetActive(true);
+            var enemyPool = new EnemyPool(10, ManagerName.POOL_ASTEROIDS);
+            var enemyInitialization = new EnemyInitialization(enemyPool);
+
+            
 
             EnemyPool enemyShipPool = new EnemyPool(20, ManagerName.POOL_ENEMY_SHIP);
             var enemyShip = enemyShipPool.GetEnemy("Ship");

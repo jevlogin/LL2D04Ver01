@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
+    <Compile Include="Assets\Code\Controller\EnemyInitialization.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />
     <Compile Include="Assets\Code\Controller\InputInitialization.cs" />
     <Compile Include="Assets\Code\Controller\PlayerInitialization.cs" />

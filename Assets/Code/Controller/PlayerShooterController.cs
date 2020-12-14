@@ -1,21 +1,25 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Object = UnityEngine.Object;
+﻿using UnityEngine;
+
 
 namespace JevLogin
 {
     public sealed class PlayerShooterController : IExecute, ICleanup
     {
+        #region Fields
+
         private readonly PlayerInitialization _playerInitialization;
         private readonly Rigidbody2D _bullet;
         private readonly Transform _barrel;
-        
+
         private IUserInputMouse _userInputMouse;
 
         private readonly float _force;
         private bool _valueChange;
+
+        #endregion
+
+
+        #region Properties
 
         public PlayerShooterController(IUserInputMouse userInputMouse, PlayerInitialization playerInitialization)
         {
@@ -30,10 +34,10 @@ namespace JevLogin
             _userInputMouse.MouseOnChange += BoolOnAxisMouseOnChange;
         }
 
-        private void BoolOnAxisMouseOnChange(bool value)
-        {
-            _valueChange = value;
-        }
+        #endregion
+
+
+        #region IExecute
 
         public void Execute(float deltaTime)
         {
@@ -44,10 +48,26 @@ namespace JevLogin
             }
         }
 
+        #endregion
+
+
+        #region ICleanup
+
         public void Cleanup()
         {
             _userInputMouse.MouseOnChange -= BoolOnAxisMouseOnChange;
         }
 
+        #endregion
+
+
+        #region Methods
+
+        private void BoolOnAxisMouseOnChange(bool value)
+        {
+            _valueChange = value;
+        }
+
+        #endregion
     }
 }

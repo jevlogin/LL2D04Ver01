@@ -31,7 +31,7 @@ namespace JevLogin
         {
             _bulletPool.PlayerInitialization.GetPlayerModel().PlayerStruct.SetBulletPool(_bulletPool);
             _bullet = _bulletPool.GetBullet(ManagerName.BULLET);
-            _bullet.gameObject.SetActive(true);
+            //_bullet.gameObject.SetActive(true);
         }
 
         #endregion

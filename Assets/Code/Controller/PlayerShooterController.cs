@@ -8,8 +8,9 @@ namespace JevLogin
         #region Fields
 
         private readonly PlayerInitialization _playerInitialization;
-        private readonly Rigidbody2D _bullet;
+        private readonly Rigidbody2D _bulletRigidbody;
         private readonly Transform _barrel;
+        private Bullet _bullet;
 
         private IUserInputMouse _userInputMouse;
 
@@ -21,13 +22,18 @@ namespace JevLogin
 
         #region Properties
 
-        public PlayerShooterController(IUserInputMouse userInputMouse, PlayerInitialization playerInitialization)
+        public PlayerShooterController(IUserInputMouse userInputMouse, PlayerInitialization playerInitialization, Bullet bullet)
         {
             _userInputMouse = userInputMouse;
 
             _playerInitialization = playerInitialization;
+            _bullet = bullet;
 
-            _bullet = _playerInitialization.GetPlayerModel().PlayerComponents.BulletRigidbody;
+            //_bulletRigidbody = _playerInitialization.GetPlayerModel().PlayerComponents.BulletRigidbody;
+            _bulletRigidbody = _bullet.GetComponent<Rigidbody2D>();
+
+            if (_bulletRigidbody == null) _bulletRigidbody.gameObject.AddRigidbody2D();
+
             _barrel = _playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
             _force = _playerInitialization.GetPlayerModel().PlayerStruct.Force;
 
@@ -43,7 +49,8 @@ namespace JevLogin
         {
             if (_valueChange)
             {
-                var bullet = Object.Instantiate(_bullet, _barrel.position, _barrel.rotation);
+                //var bullet = Object.Instantiate(_bulletRigidbody, _barrel.position, _barrel.rotation);
+                var bullet = Object.Instantiate(_bulletRigidbody);
                 bullet.AddForce(_barrel.up * _force);
             }
         }

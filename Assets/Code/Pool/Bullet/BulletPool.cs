@@ -39,11 +39,6 @@ namespace JevLogin
             }
         }
 
-        internal object GetBullet(object bULLET)
-        {
-            throw new NotImplementedException();
-        }
-
         internal Bullet GetBullet(string name)
         {
             Bullet result;
@@ -54,7 +49,7 @@ namespace JevLogin
                     result = GetAsteroid(GetListEnemies(name));
                     break;
                 default:
-                    throw new System.ArgumentOutOfRangeException(nameof(name), name, "Не предусмотрен в программе");
+                    throw new ArgumentOutOfRangeException(nameof(name), name, "Не предусмотрен в программе");
             }
             return result;
         }

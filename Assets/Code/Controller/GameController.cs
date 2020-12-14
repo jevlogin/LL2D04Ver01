@@ -37,7 +37,7 @@ namespace JevLogin
             _controllers.Add(new MoveController(inputInitialization.GetInput(), playerInitialization.GetPlayer(), playerInitialization.GetPlayerModel().PlayerStruct.Speed));
             _controllers.Add(new CameraController(playerInitialization.GetPlayer(), camera.transform));
 
-            _controllers.Add(new PlayerShooterController(inputInitialization.GetInputMouse(), playerInitialization, bulletInitialization.GetBullet()));
+            _controllers.Add(new PlayerShooterController(inputInitialization.GetInputMouse(), playerInitialization, bulletInitialization));
 
             _controllers.Initialization();
 

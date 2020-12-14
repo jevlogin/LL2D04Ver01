@@ -117,6 +117,7 @@
     <Compile Include="Assets\Code\UserInput\InputFactory.cs" />
     <Compile Include="Assets\Code\UserInput\PCInput.cs" />
     <Compile Include="Assets\Code\UserInput\PCInputHorizontal.cs" />
+    <Compile Include="Assets\Code\UserInput\PCInputMouse.cs" />
     <Compile Include="Assets\Code\UserInput\PCInputVertical.cs" />
     <Compile Include="Assets\Code\UserInput\Platform.cs" />
     <Compile Include="Assets\Code\UserInput\PlatformFactory.cs" />

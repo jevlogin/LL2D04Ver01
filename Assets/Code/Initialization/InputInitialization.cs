@@ -1,11 +1,12 @@
 ﻿namespace JevLogin
 {
-    internal class InputInitialization : IInitialization
+    internal sealed class InputInitialization : IInitialization
     {
         #region Fields
 
         private IUserInputProxy _pcInputHorizontal;
         private IUserInputProxy _pcInputVertical;
+        private IUserInputMouse _inputMouse;
 
         #endregion
 
@@ -16,6 +17,7 @@
         {
             _pcInputHorizontal = new PCInputHorizontal();
             _pcInputVertical = new PCInputVertical();
+            _inputMouse = new PCInputMouse();
         }
 
         #endregion
@@ -36,6 +38,11 @@
         {
             (IUserInputProxy inputHorizontal, IUserInputProxy inputVertical) result = (_pcInputHorizontal, _pcInputVertical);
             return result;
+        }
+
+        public IUserInputMouse GetInputMouse()
+        {
+            return _inputMouse;
         }
 
         #endregion

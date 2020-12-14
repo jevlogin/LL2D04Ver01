@@ -30,8 +30,7 @@ namespace JevLogin
 
         public void Rotation(Vector3 direction)
         {
-            var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            angle -= _offset;
+            var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - _offset;
             _playerTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Code\Controller\GameController.cs" />
     <Compile Include="Assets\Code\Controller\InputController.cs" />
     <Compile Include="Assets\Code\Controller\MoveController.cs" />
+    <Compile Include="Assets\Code\Controller\PlayerShooter.cs" />
     <Compile Include="Assets\Code\Controller\RotationPlayerController.cs" />
     <Compile Include="Assets\Code\Data\Data.cs" />
     <Compile Include="Assets\Code\Data\Enemy\EnemyComponents.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Assets\Code\Interface\IPlatform.cs" />
     <Compile Include="Assets\Code\Interface\IPlayerFactory.cs" />
     <Compile Include="Assets\Code\Interface\IRotation.cs" />
+    <Compile Include="Assets\Code\Interface\IUserInputMouse.cs" />
     <Compile Include="Assets\Code\Interface\IUserInputProxy.cs" />
     <Compile Include="Assets\Code\Interface\IWindow.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />

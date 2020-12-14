@@ -70,6 +70,7 @@
     <Compile Include="Assets\Code\Controller\InputController.cs" />
     <Compile Include="Assets\Code\Controller\MoveController.cs" />
     <Compile Include="Assets\Code\Controller\PlayerShooter.cs" />
+    <Compile Include="Assets\Code\Controller\PlayerShooterController.cs" />
     <Compile Include="Assets\Code\Controller\RotationPlayerController.cs" />
     <Compile Include="Assets\Code\Data\Data.cs" />
     <Compile Include="Assets\Code\Data\Enemy\EnemyComponents.cs" />

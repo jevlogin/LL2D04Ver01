@@ -39,14 +39,14 @@ namespace JevLogin
             }
         }
 
-        internal Bullet GetBullet(string name)
+        internal Bullet GetBulletName(string name)
         {
             Bullet result;
 
             switch (name)
             {
                 case "Bullet":
-                    result = GetAsteroid(GetListEnemies(name));
+                    result = GetBullet(GetListEnemies(name));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(name), name, "Не предусмотрен в программе");
@@ -54,7 +54,7 @@ namespace JevLogin
             return result;
         }
 
-        private Bullet GetAsteroid(HashSet<Bullet> bulletsPool)
+        private Bullet GetBullet(HashSet<Bullet> bulletsPool)
         {
             var result = bulletsPool.FirstOrDefault(a => !a.gameObject.activeSelf);
 
@@ -69,7 +69,7 @@ namespace JevLogin
                     bulletsPool.Add(instantiate);
                 }
 
-                GetAsteroid(bulletsPool);
+                GetBullet(bulletsPool);
             }
             result = bulletsPool.FirstOrDefault(a => !a.gameObject.activeSelf);
 

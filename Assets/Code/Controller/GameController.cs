@@ -32,9 +32,9 @@ namespace JevLogin
             _controllers.Add(bulletInitialization);
             _controllers.Add(enemyInitialization);
             _controllers.Add(new InputController(inputInitialization.GetInput()));
+            _controllers.Add(new RotationPlayerController(playerInitialization.GetPlayer(), camera));
             _controllers.Add(new MoveController(inputInitialization.GetInput(), playerInitialization.GetPlayer(), playerInitialization.GetPlayerModel().PlayerStruct.Speed));
             _controllers.Add(new CameraController(playerInitialization.GetPlayer(), camera.transform));
-            _controllers.Add(new RotationPlayerController(playerInitialization.GetPlayer(), camera));
             _controllers.Initialization();
             //TODO только лишь чтобы показать что сделал статичный метод
             //Enemy.CreateShipEnemy(new HealthPoint(100.0f, 50.0f));

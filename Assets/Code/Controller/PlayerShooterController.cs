@@ -31,7 +31,6 @@ namespace JevLogin
 
             //_bulletRigidbody = _playerInitialization.GetPlayerModel().PlayerComponents.BulletRigidbody;
             var bulletPool = _bulletInitialization.GetBulletPool();
-            var bullet = bulletPool.GetBullet();
 
             if (_bulletRigidbody == null) _bulletRigidbody.gameObject.AddRigidbody2D();
 

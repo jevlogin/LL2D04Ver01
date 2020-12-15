@@ -8,7 +8,7 @@ namespace JevLogin
         #region Fields
 
         private readonly PlayerInitialization _playerInitialization;
-        private readonly Rigidbody2D _bulletRigidbody;
+        private Rigidbody2D _bulletRigidbody;
         private readonly Transform _barrel;
         private BulletInitialization _bulletInitialization;
 
@@ -29,10 +29,6 @@ namespace JevLogin
             _playerInitialization = playerInitialization;
             _bulletInitialization = bulletInitialization;
 
-            var bulletPool = _bulletInitialization.GetBulletPool();
-
-            if (_bulletRigidbody == null) _bulletRigidbody.gameObject.AddRigidbody2D();
-
             _barrel = _playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
             _force = _playerInitialization.GetPlayerModel().PlayerStruct.Force;
 
@@ -48,10 +44,27 @@ namespace JevLogin
         {
             if (_valueChange)
             {
-                var bullet = Object.Instantiate(_bulletRigidbody, _barrel.position, _barrel.rotation);
-                //var bullet = Object.Instantiate(_bulletRigidbody);
-                bullet.AddForce(_barrel.up * _force);
+                //var bullet = Object.Instantiate(_bulletRigidbody, _barrel.position, _barrel.rotation);
+                
+                //bullet.AddForce(_barrel.up * _force);
+
+                SpawnFromPool(deltaTime);
+
             }
+        }
+
+        private void SpawnFromPool(float deltaTime)
+        {
+            var bulletPool = _bulletInitialization.GetBulletPool();
+
+            if (_bulletRigidbody == null)
+            {
+                _bulletRigidbody = bulletPool.GetBulletByName(ManagerName.BULLET).GetComponent<Rigidbody2D>();
+            }
+            _bulletRigidbody.gameObject.SetActive(true);
+
+            var bullet = Object.Instantiate(_bulletRigidbody);
+            bullet.AddForce(_barrel.up *_force, ForceMode2D.Force);
         }
 
         #endregion

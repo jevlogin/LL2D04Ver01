@@ -10,12 +10,14 @@ namespace JevLogin
     public sealed class BulletPool
     {
         private readonly Dictionary<string, HashSet<Bullet>> _bulletsPool;
-        [SerializeField] private int _capacityPool;
         private Transform _rootPool;
+
+        [SerializeField] private int _capacityPool;
 
         public int CapacityPool => _capacityPool;
 
         public PlayerInitialization PlayerInitialization { get; }
+
 
         public BulletPool(PlayerInitialization playerInitialization)
         {

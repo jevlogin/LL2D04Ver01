@@ -29,8 +29,7 @@ namespace JevLogin
 
         public void Initialization()
         {
-            _bulletPool.PlayerInitialization.GetPlayerModel().PlayerStruct.SetBulletPool(_bulletPool);
-            _bullet = _bulletPool.GetBulletName(ManagerName.BULLET);
+            _bullet = _bulletPool.GetBulletByName(ManagerName.BULLET);
             //_bullet.gameObject.SetActive(true);
         }
 

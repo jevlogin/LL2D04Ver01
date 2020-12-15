@@ -13,20 +13,20 @@ namespace JevLogin
 
         private Transform _rootPool;
 
-        [SerializeField] private int _capacityPool;
+        [SerializeField] private Pool _pool;
 
-        public int CapacityPool => _capacityPool;
+        public Pool Pool { get => _pool; private set => _pool = value; }
 
         public PlayerInitialization PlayerInitialization { get; }
 
         private List<Bullet> _poolsBullet;
 
-        public BulletPool(PlayerInitialization playerInitialization)
+        public BulletPool(PlayerInitialization playerInitialization, Pool pool)
         {
             PlayerInitialization = playerInitialization;
 
             Transform playerTransform = playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
-            _capacityPool = playerInitialization.GetPlayerModel().PlayerStruct.GetBulletPool().CapacityPool;
+            _pool = pool;
 
             _bulletsPool = new Dictionary<string, HashSet<Bullet>>();
             _poolsBullet = new List<Bullet>();
@@ -46,14 +46,14 @@ namespace JevLogin
             }
         }
 
-        internal Bullet GetBulletName(string name)
+        internal Bullet GetBulletByName(string name)
         {
             Bullet result;
 
             switch (name)
             {
-                case "Bullet":
-                    result = GetBullet(GetListEnemies(name));
+                case ManagerName.BULLET:
+                    result = GetBullet(GetHashSetFromDictionary(name));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(name), name, "Не предусмотрен в программе");
@@ -67,9 +67,11 @@ namespace JevLogin
 
             if (result == null)
             {
-                var bullet = Resources.Load<Bullet>(ManagerPath.BULLET_PATH);
+                _pool.Prefab = Resources.Load<Bullet>(ManagerPath.BULLET_PATH).gameObject;
 
-                for (int i = 0; i < CapacityPool; i++)
+                var bullet = _pool.Prefab.GetComponent<Bullet>();
+
+                for (int i = 0; i < _pool.Size; i++)
                 {
                     var instantiate = UnityEngine.Object.Instantiate(bullet);
                     ReturnToPool(instantiate.transform);
@@ -85,13 +87,13 @@ namespace JevLogin
 
         private void ReturnToPool(Transform transform)
         {
-            transform.localRotation = Quaternion.identity;
             transform.gameObject.SetActive(false);
+            transform.localRotation = Quaternion.identity;
             transform.SetParent(_rootPool);
             transform.localPosition = Vector2.zero;
         }
 
-        private HashSet<Bullet> GetListEnemies(string name)
+        private HashSet<Bullet> GetHashSetFromDictionary(string name)
         {
             return _bulletsPool.ContainsKey(name) ? _bulletsPool[name] : _bulletsPool[name] = new HashSet<Bullet>();
         }

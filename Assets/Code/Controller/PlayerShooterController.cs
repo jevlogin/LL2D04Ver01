@@ -45,15 +45,14 @@ namespace JevLogin
             if (_valueChange)
             {
                 //var bullet = Object.Instantiate(_bulletRigidbody, _barrel.position, _barrel.rotation);
-                
+
                 //bullet.AddForce(_barrel.up * _force);
 
                 SpawnFromPool(deltaTime);
-
             }
         }
 
-        private void SpawnFromPool(float deltaTime)
+        private GameObject SpawnFromPool(float deltaTime)
         {
             var bulletPool = _bulletInitialization.GetBulletPool();
 
@@ -63,8 +62,10 @@ namespace JevLogin
             }
             _bulletRigidbody.gameObject.SetActive(true);
 
-            var bullet = Object.Instantiate(_bulletRigidbody);
-            bullet.AddForce(_barrel.up *_force, ForceMode2D.Force);
+            var bullet = Object.Instantiate(_bulletRigidbody, _barrel.position, _barrel.rotation);
+            bullet.AddForce(_barrel.up * _force, ForceMode2D.Force);
+
+            return bullet.gameObject;
         }
 
         #endregion

@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   PlayerStruct:
-    bulletPool:
-      _capacityPool: 20
     _speed: 5
     _acceleration: 10
     _healthPoint: 100
-    _force: 275
+    _force: 625
   PlayerComponents:
     SpriteRenderer: {fileID: 0}
     CircleCollider2D: {fileID: 0}

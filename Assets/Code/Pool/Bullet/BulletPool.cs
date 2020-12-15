@@ -9,7 +9,7 @@ namespace JevLogin
     [Serializable]
     public sealed class BulletPool
     {
-        private readonly Dictionary<string, HashSet<Bullet>> _bulletsPool;
+        private readonly Dictionary<string, Queue<GameObject>> _bulletsPool;
 
         private Transform _rootPool;
 

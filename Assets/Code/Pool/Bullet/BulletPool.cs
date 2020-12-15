@@ -26,9 +26,11 @@ namespace JevLogin
             PlayerInitialization = playerInitialization;
 
             Transform playerTransform = playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
-            _pool = pool;
+            Pool = pool;
 
-            _bulletsPool = new Dictionary<string, HashSet<Bullet>>();
+            Pool.Prefab = Resources.Load<Bullet>(ManagerPath.BULLET_PATH).gameObject;
+
+            _bulletsPool = new Dictionary<string, Queue<GameObject>>();
             _poolsBullet = new List<Bullet>();
 
             if (!_rootPool)
@@ -46,9 +48,9 @@ namespace JevLogin
             }
         }
 
-        internal Bullet GetBulletByName(string name)
+        internal GameObject GetBulletByName(string name)
         {
-            Bullet result;
+            GameObject result;
 
             switch (name)
             {
@@ -61,21 +63,18 @@ namespace JevLogin
             return result;
         }
 
-        private Bullet GetBullet(HashSet<Bullet> bulletsPool)
+        private GameObject GetBullet(Queue<GameObject> bulletsPool)
         {
             var result = bulletsPool.FirstOrDefault(a => !a.gameObject.activeSelf);
 
             if (result == null)
             {
-                _pool.Prefab = Resources.Load<Bullet>(ManagerPath.BULLET_PATH).gameObject;
 
-                var bullet = _pool.Prefab.GetComponent<Bullet>();
-
-                for (int i = 0; i < _pool.Size; i++)
+                for (int i = 0; i < Pool.Size; i++)
                 {
-                    var instantiate = UnityEngine.Object.Instantiate(bullet);
+                    var instantiate = UnityEngine.Object.Instantiate(Pool.Prefab);
                     ReturnToPool(instantiate.transform);
-                    bulletsPool.Add(instantiate);
+                    bulletsPool.Enqueue(instantiate);
                 }
 
                 GetBullet(bulletsPool);
@@ -93,9 +92,9 @@ namespace JevLogin
             transform.localPosition = Vector2.zero;
         }
 
-        private HashSet<Bullet> GetHashSetFromDictionary(string name)
+        private Queue<GameObject> GetHashSetFromDictionary(string name)
         {
-            return _bulletsPool.ContainsKey(name) ? _bulletsPool[name] : _bulletsPool[name] = new HashSet<Bullet>();
+            return _bulletsPool.ContainsKey(name) ? _bulletsPool[name] : _bulletsPool[name] = new Queue<GameObject>();
         }
     }
 }

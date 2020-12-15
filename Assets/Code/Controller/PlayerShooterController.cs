@@ -44,10 +44,6 @@ namespace JevLogin
         {
             if (_valueChange)
             {
-                //var bullet = Object.Instantiate(_bulletRigidbody, _barrel.position, _barrel.rotation);
-
-                //bullet.AddForce(_barrel.up * _force);
-
                 SpawnFromPool(deltaTime);
             }
         }

@@ -10,7 +10,7 @@ namespace JevLogin
         #region Fields
 
         private BulletPool _bulletPool;
-        private Bullet _bullet;
+        private GameObject _bulletObject;
 
         #endregion
 
@@ -29,8 +29,7 @@ namespace JevLogin
 
         public void Initialization()
         {
-            _bullet = _bulletPool.GetBulletByName(ManagerName.BULLET);
-            //_bullet.gameObject.SetActive(true);
+            _bulletObject = _bulletPool.GetBulletByName(ManagerName.BULLET);
         }
 
         #endregion
@@ -38,9 +37,9 @@ namespace JevLogin
 
         #region Methods
 
-        public Bullet GetBullet()
+        public GameObject GetBullet()
         {
-            return _bullet;
+            return _bulletObject;
         }
 
         public BulletPool GetBulletPool()

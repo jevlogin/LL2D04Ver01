@@ -9,7 +9,7 @@ namespace JevLogin
     {
         #region Fields
 
-        [SerializeField] private BulletPool bulletPool;
+        [SerializeField] private BulletPool _bulletPool;
 
         [SerializeField, Range(0, 100)] private float _speed;
         [SerializeField, Range(0, 100)] private float _acceleration;
@@ -28,12 +28,12 @@ namespace JevLogin
 
         public BulletPool GetBulletPool()
         {
-            return bulletPool;
+            return _bulletPool;
         }
 
         public void SetBulletPool(BulletPool value)
         {
-            bulletPool = value;
+            _bulletPool = value;
         }
 
         #endregion

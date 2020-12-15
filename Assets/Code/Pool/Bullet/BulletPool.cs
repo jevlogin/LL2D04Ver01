@@ -10,6 +10,7 @@ namespace JevLogin
     public sealed class BulletPool
     {
         private readonly Dictionary<string, HashSet<Bullet>> _bulletsPool;
+
         private Transform _rootPool;
 
         [SerializeField] private int _capacityPool;
@@ -18,14 +19,18 @@ namespace JevLogin
 
         public PlayerInitialization PlayerInitialization { get; }
 
+        private List<Bullet> _poolsBullet;
 
         public BulletPool(PlayerInitialization playerInitialization)
         {
             PlayerInitialization = playerInitialization;
+
             Transform playerTransform = playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
             _capacityPool = playerInitialization.GetPlayerModel().PlayerStruct.GetBulletPool().CapacityPool;
 
             _bulletsPool = new Dictionary<string, HashSet<Bullet>>();
+            _poolsBullet = new List<Bullet>();
+
             if (!_rootPool)
             {
                 if (playerTransform == null)
@@ -36,7 +41,7 @@ namespace JevLogin
                 {
                     _rootPool = new GameObject(ManagerName.POOL_BULLETS).transform;
                     _rootPool.SetParent(playerTransform);
-                    _rootPool.localPosition = new Vector2(0, 0.5f);
+                    _rootPool.localPosition = Vector2.zero;
                 }
             }
         }

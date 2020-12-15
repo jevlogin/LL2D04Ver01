@@ -22,6 +22,7 @@ namespace JevLogin
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
             var bulletInitialization = new BulletInitialization(new BulletPool(playerInitialization));
+
             var enemyInitialization = new EnemyInitialization(new EnemyPool(10, ManagerName.POOL_ENEMY));
 
             _controllers = new Controllers();
@@ -37,7 +38,7 @@ namespace JevLogin
             _controllers.Add(new MoveController(inputInitialization.GetInput(), playerInitialization.GetPlayer(), playerInitialization.GetPlayerModel().PlayerStruct.Speed));
             _controllers.Add(new CameraController(playerInitialization.GetPlayer(), camera.transform));
 
-            _controllers.Add(new PlayerShooterController(inputInitialization.GetInputMouse(), playerInitialization, bulletInitialization));
+            //_controllers.Add(new PlayerShooterController(inputInitialization.GetInputMouse(), playerInitialization, bulletInitialization));
 
             _controllers.Initialization();
 

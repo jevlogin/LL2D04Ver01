@@ -26,6 +26,7 @@ namespace JevLogin
             }
         }
 
+        //TODO - убрать MonoBehaviour
         public void Update()
         {
             float deltaTime = Time.deltaTime;

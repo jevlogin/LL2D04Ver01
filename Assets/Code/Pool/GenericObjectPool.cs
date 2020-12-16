@@ -9,6 +9,7 @@ namespace JevLogin
         private Queue<T> objects = new Queue<T>();
         public Pool<T> Pool;
 
+        //TODO - возможно следует сделать свойство
         private Transform _transform;
 
 

@@ -46,36 +46,24 @@ namespace JevLogin
             if (_valueChange)
             {
                 Debug.Log("Срабатывает");
-                SpawnFromPool();
-            }
-        }
 
-        private void SpawnFromPool()
-        {
-            var bulletPool = _bulletInitialization.GetBulletPool();
+                var bulletPool = _bulletInitialization.GetBulletPool();
 
-            var bullet = bulletPool.BulletsPool[ManagerName.BULLET].Dequeue();
+                var bullet = bulletPool.BulletsPool[ManagerName.BULLET].Dequeue();
 
-            if (bullet.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidbody))
-            {
-                for (int i = 0; i < bulletPool.BulletsPool.Count; i++)
+                if (bullet.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidbody))
                 {
-                    rigidbody.gameObject.SetActive(true);
+                    for (int i = 0; i < bulletPool.BulletsPool.Count; i++)
+                    {
+                        rigidbody.gameObject.SetActive(true);
 
-                    float xForce = Random.Range(-0.1f, 1.0f);
-                    float yForce = Random.Range(1.0f / 2.0f, 1.0f);
-
-                    Vector3 force = new Vector3(xForce, yForce, 0);
-
-                    rigidbody.velocity = force * _force;
+                        rigidbody.velocity = rigidbody.transform.up * _force;
+                    }
                 }
 
-
+                //bullet.SetActive(false);
+                //bulletPool.BulletsPool[ManagerName.BULLET].Enqueue(bullet);
             }
-
-            //bullet.SetActive(false);
-            //bulletPool.BulletsPool[ManagerName.BULLET].Enqueue(bullet);
-
         }
 
         #endregion

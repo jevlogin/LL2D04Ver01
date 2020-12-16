@@ -9,7 +9,7 @@ namespace JevLogin
         public float MoveSpeed = 30.0f;
 
         private float _lifeTime;
-        private float _maxLifeTime = 10.0f;
+        private float _maxLifeTime = 5.0f;
 
         private void OnEnable()
         {

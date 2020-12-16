@@ -18,7 +18,6 @@ namespace JevLogin
         {
             Instance = this;
             Pool = pool;
-            Pool.Prefab = Resources.Load<T>(ManagerPath.BULLET_PATH);
             _playerInitialization = playerInitialization;
         }
 

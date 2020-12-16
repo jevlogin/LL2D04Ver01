@@ -53,8 +53,11 @@ namespace JevLogin
             _fireTimer += deltaTime;
             if (_fireTimer >= _refireTimer)
             {
-                _fireTimer = 0;
-                Fire();
+                if (_valueChange)
+                {
+                    _fireTimer = 0;
+                    Fire();
+                }
             }
         }
 
@@ -67,7 +70,7 @@ namespace JevLogin
             //Здесь надо вытащить пулю из пулла
             var bullet = BulletPool.Instance.Get();
             bullet.transform.localRotation = _barrel.localRotation;
-            bullet.transform.localPosition= _barrel.localPosition;
+            bullet.transform.localPosition = _barrel.localPosition;
             bullet.gameObject.SetActive(true);
         }
 

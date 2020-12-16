@@ -6,5 +6,11 @@ namespace JevLogin
     {
         public T Prefab;
         public int Size;
+
+        public Pool(int count, string path)
+        {
+            Size = count;
+            Prefab = Resources.Load<T>(path);
+        }
     }
 }

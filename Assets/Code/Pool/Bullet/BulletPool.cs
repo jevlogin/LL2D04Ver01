@@ -11,8 +11,6 @@ namespace JevLogin
     {
         public BulletPool(Pool<Bullet> pool, PlayerInitialization playerInitialization) : base(pool, playerInitialization)
         {
-            Pool.Prefab = playerInitialization.GetPlayerModel().PlayerSettingsData.BulletPrefab.GetComponent<Bullet>();
-            //Pool.Prefab = Resources.Load<Bullet>(ManagerPath.BULLET_PATH);
         }
     }
 }

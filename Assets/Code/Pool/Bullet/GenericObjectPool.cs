@@ -8,17 +8,15 @@ namespace JevLogin
     {
         private Queue<T> objects = new Queue<T>();
         public Pool<T> Pool;
-        private PlayerInitialization _playerInitialization;
 
         #region Singleton
 
         public static GenericObjectPool<T> Instance { get; private set; }
 
-        protected GenericObjectPool(Pool<T> pool, PlayerInitialization playerInitialization)
+        public GenericObjectPool(Pool<T> pool, PlayerInitialization playerInitialization)
         {
             Instance = this;
             Pool = pool;
-            _playerInitialization = playerInitialization;
         }
 
 
@@ -28,7 +26,7 @@ namespace JevLogin
         {
             if (objects.Count == 0)
             {
-                AddObjects(1);
+                AddObjects(Pool.Size);
             }
             return objects.Dequeue();
         }
@@ -41,10 +39,12 @@ namespace JevLogin
 
         private void AddObjects(int count)
         {
-            var newObject = Object.Instantiate(Pool.Prefab);
-            newObject.gameObject.SetActive(false);
-            objects.Enqueue(newObject);
-
+            for (int i = 0; i < count; i++)
+            {
+                var newObject = Object.Instantiate(Pool.Prefab);
+                newObject.gameObject.SetActive(false);
+                objects.Enqueue(newObject);
+            }
         }
 
     }

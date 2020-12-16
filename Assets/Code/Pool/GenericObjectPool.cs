@@ -43,11 +43,17 @@ namespace JevLogin
 
         private void AddObjects(int count)
         {
+            var pool = new GameObject(ManagerName.POOL_BULLETS);
+
             for (int i = 0; i < count; i++)
             {
                 var newObject = Object.Instantiate(Pool.Prefab);
-                newObject.transform.localPosition = _transform.localPosition;
-                newObject.transform.localRotation = _transform.localRotation;
+                
+                newObject.transform.SetParent(pool.transform);
+
+                newObject.transform.position = _transform.position;
+                newObject.transform.rotation = _transform.rotation;
+
                 newObject.gameObject.SetActive(false);
                 objects.Enqueue(newObject);
             }

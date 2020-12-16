@@ -3,31 +3,15 @@
 
 namespace JevLogin
 {
-    [System.Serializable]
-    public sealed class Pool
+    public sealed class Pool<T> where T : Component
     {
-        private string _tag;
-        private int _size;
+        public T Prefab;
+        public int Size;
 
-        public Pool(string tag, int size)
+        public Pool(int count, string path)
         {
-            Tag = tag;
-            Size = size;
+            Size = count;
+            Prefab = Resources.Load<T>(path);
         }
-
-        public string Tag
-        {
-            get
-            {
-                return _tag;
-            }
-            private set
-            {
-                _tag = value;
-            }
-        }
-
-        public GameObject Prefab { get; set; }
-        public int Size { get { return _size; } private set => _size = value; }
     }
 }

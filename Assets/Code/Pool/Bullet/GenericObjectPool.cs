@@ -9,6 +9,9 @@ namespace JevLogin
         private Queue<T> objects = new Queue<T>();
         public Pool<T> Pool;
 
+        private Transform _transform;
+
+
         #region Singleton
 
         public static GenericObjectPool<T> Instance { get; private set; }
@@ -17,6 +20,7 @@ namespace JevLogin
         {
             Instance = this;
             Pool = pool;
+            _transform = playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
         }
 
 
@@ -42,6 +46,8 @@ namespace JevLogin
             for (int i = 0; i < count; i++)
             {
                 var newObject = Object.Instantiate(Pool.Prefab);
+                newObject.transform.localPosition = _transform.localPosition;
+                newObject.transform.localRotation = _transform.localRotation;
                 newObject.gameObject.SetActive(false);
                 objects.Enqueue(newObject);
             }

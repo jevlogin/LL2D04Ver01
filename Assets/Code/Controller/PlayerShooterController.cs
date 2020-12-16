@@ -45,20 +45,15 @@ namespace JevLogin
         {
             if (_valueChange)
             {
-                Debug.Log("Срабатывает");
-
                 var bulletPool = _bulletInitialization.GetBulletPool();
 
                 var bullet = bulletPool.BulletsPool[ManagerName.BULLET].Dequeue();
 
+                bullet.transform.SetParent(null);
                 if (bullet.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidbody))
                 {
-                    for (int i = 0; i < bulletPool.BulletsPool.Count; i++)
-                    {
-                        rigidbody.gameObject.SetActive(true);
-
-                        rigidbody.velocity = rigidbody.transform.up * _force;
-                    }
+                    rigidbody.gameObject.SetActive(true);
+                    rigidbody.velocity = rigidbody.transform.up * _force;
                 }
 
                 //bullet.SetActive(false);

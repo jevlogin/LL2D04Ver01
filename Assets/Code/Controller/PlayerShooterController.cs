@@ -22,8 +22,8 @@ namespace JevLogin
 
         /*******************/
 
-        private float _refireTimer = 2.0f;
-        private float _fireTimer = 0.0f;
+        private float _refireTimer = 0.3f;
+        private float _fireTimer;
 
         #endregion
 
@@ -39,7 +39,7 @@ namespace JevLogin
 
             _barrel = _playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
             _force = _playerInitialization.GetPlayerModel().PlayerStruct.Force;
-
+            _fireTimer = _refireTimer;
             _userInputMouse.MouseOnChange += BoolOnAxisMouseOnChange;
         }
 

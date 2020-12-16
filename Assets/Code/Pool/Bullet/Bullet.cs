@@ -18,7 +18,7 @@ namespace JevLogin
 
         public void Execute(float deltaTime)
         {
-            transform.Translate(Vector3.forward * MoveSpeed * deltaTime);
+            transform.Translate(Vector3.up * MoveSpeed * deltaTime);
             _lifeTime += deltaTime;
             if (_lifeTime > _maxLifeTime)
             {
@@ -30,7 +30,9 @@ namespace JevLogin
         public void Update()
         {
             float deltaTime = Time.deltaTime;
-            transform.Translate(Vector3.forward * MoveSpeed * deltaTime);
+            
+            GetComponent<Rigidbody2D>().velocity = transform.up * MoveSpeed * deltaTime;
+
             _lifeTime += deltaTime;
             if (_lifeTime > _maxLifeTime)
             {

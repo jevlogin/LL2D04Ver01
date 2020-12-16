@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 
 namespace JevLogin
@@ -44,24 +45,37 @@ namespace JevLogin
         {
             if (_valueChange)
             {
-                SpawnFromPool(deltaTime);
+                Debug.Log("Срабатывает");
+                SpawnFromPool();
             }
         }
 
-        private GameObject SpawnFromPool(float deltaTime)
+        private void SpawnFromPool()
         {
             var bulletPool = _bulletInitialization.GetBulletPool();
 
-            if (_bulletRigidbody == null)
+            var bullet = bulletPool.BulletsPool[ManagerName.BULLET].Dequeue();
+
+            if (bullet.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidbody))
             {
-                _bulletRigidbody = bulletPool.GetBulletByName(ManagerName.BULLET).GetComponent<Rigidbody2D>();
+                for (int i = 0; i < bulletPool.BulletsPool.Count; i++)
+                {
+                    rigidbody.gameObject.SetActive(true);
+
+                    float xForce = Random.Range(-0.1f, 1.0f);
+                    float yForce = Random.Range(1.0f / 2.0f, 1.0f);
+
+                    Vector3 force = new Vector3(xForce, yForce, 0);
+
+                    rigidbody.velocity = force * _force;
+                }
+
+
             }
-            _bulletRigidbody.gameObject.SetActive(true);
 
-            var bullet = Object.Instantiate(_bulletRigidbody, _barrel.position, _barrel.rotation);
-            bullet.AddForce(_barrel.up * _force, ForceMode2D.Force);
+            //bullet.SetActive(false);
+            //bulletPool.BulletsPool[ManagerName.BULLET].Enqueue(bullet);
 
-            return bullet.gameObject;
         }
 
         #endregion

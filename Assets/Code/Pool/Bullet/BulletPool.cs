@@ -19,7 +19,8 @@ namespace JevLogin
 
         public PlayerInitialization PlayerInitialization { get; }
 
-        private List<Bullet> _poolsBullet;
+        public Dictionary<string, Queue<GameObject>> BulletsPool => _bulletsPool;
+
 
         public BulletPool(PlayerInitialization playerInitialization, Pool pool)
         {
@@ -31,7 +32,6 @@ namespace JevLogin
             Pool.Prefab = Resources.Load<Bullet>(ManagerPath.BULLET_PATH).gameObject;
 
             _bulletsPool = new Dictionary<string, Queue<GameObject>>();
-            _poolsBullet = new List<Bullet>();
 
             if (!_rootPool)
             {
@@ -94,7 +94,7 @@ namespace JevLogin
 
         private Queue<GameObject> GetHashSetFromDictionary(string name)
         {
-            return _bulletsPool.ContainsKey(name) ? _bulletsPool[name] : _bulletsPool[name] = new Queue<GameObject>();
+            return BulletsPool.ContainsKey(name) ? BulletsPool[name] : BulletsPool[name] = new Queue<GameObject>();
         }
     }
 }

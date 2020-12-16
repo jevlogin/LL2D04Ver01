@@ -17,6 +17,7 @@ namespace JevLogin
         {
             Instance = this;
             Pool = pool;
+            Pool.Prefab = Resources.Load<T>(ManagerPath.BULLET_PATH);
         }
 
 
@@ -40,6 +41,9 @@ namespace JevLogin
         private void AddObjects(int count)
         {
             var newObject = Object.Instantiate(Pool.Prefab);
+            newObject.gameObject.SetActive(false);
+            objects.Enqueue(newObject);
+
         }
 
     }

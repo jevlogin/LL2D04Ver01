@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 
@@ -6,6 +7,8 @@ namespace JevLogin
 {
     public sealed class PlayerShooterController : IExecute, ICleanup
     {
+        //TODO - BlasterWithGeneric
+
         #region Fields
 
         private readonly PlayerInitialization _playerInitialization;
@@ -51,6 +54,7 @@ namespace JevLogin
             if (_fireTimer >= _refireTimer)
             {
                 _fireTimer = 0;
+                Fire();
             }
         }
 
@@ -58,7 +62,12 @@ namespace JevLogin
 
 
         #region Methods
-
+        private void Fire()
+        {
+            //Здесь надо вытащить пулю из пулла
+            var bullet = BulletPool.Instance.Get();
+            bullet.gameObject.SetActive(true);
+        }
 
         #endregion
 

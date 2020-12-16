@@ -22,6 +22,10 @@ namespace JevLogin
             _bulletPool = bulletPool;
         }
 
+        public BulletInitialization()
+        {
+        }
+
         #endregion
 
 
@@ -29,7 +33,7 @@ namespace JevLogin
 
         public void Initialization()
         {
-            _bulletObject = _bulletPool.GetBulletByName(ManagerName.BULLET);
+
         }
 
         #endregion

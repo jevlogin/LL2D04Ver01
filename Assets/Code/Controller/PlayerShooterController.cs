@@ -9,7 +9,6 @@ namespace JevLogin
         #region Fields
 
         private readonly PlayerInitialization _playerInitialization;
-        private Rigidbody2D _bulletRigidbody;
         private readonly Transform _barrel;
         private BulletInitialization _bulletInitialization;
 
@@ -17,6 +16,11 @@ namespace JevLogin
 
         private readonly float _force;
         private bool _valueChange;
+
+        /*******************/
+
+        private float _refireTimer = 2.0f;
+        private float _fireTimer = 0.0f;
 
         #endregion
 
@@ -43,23 +47,18 @@ namespace JevLogin
 
         public void Execute(float deltaTime)
         {
-            if (_valueChange)
+            _fireTimer += deltaTime;
+            if (_fireTimer >= _refireTimer)
             {
-                var bulletPool = _bulletInitialization.GetBulletPool();
-
-                var bullet = bulletPool.BulletsPool[ManagerName.BULLET].Dequeue();
-
-                bullet.transform.SetParent(null);
-                if (bullet.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidbody))
-                {
-                    rigidbody.gameObject.SetActive(true);
-                    rigidbody.velocity = rigidbody.transform.up * _force;
-                }
-
-                //bullet.SetActive(false);
-                //bulletPool.BulletsPool[ManagerName.BULLET].Enqueue(bullet);
+                _fireTimer = 0;
             }
         }
+
+        #endregion
+
+
+        #region Methods
+
 
         #endregion
 

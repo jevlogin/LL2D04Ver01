@@ -66,6 +66,8 @@ namespace JevLogin
         {
             //Здесь надо вытащить пулю из пулла
             var bullet = BulletPool.Instance.Get();
+            bullet.transform.localRotation = _barrel.localRotation;
+            bullet.transform.localPosition= _barrel.localPosition;
             bullet.gameObject.SetActive(true);
         }
 

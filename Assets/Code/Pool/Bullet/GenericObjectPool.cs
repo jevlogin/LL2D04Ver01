@@ -8,16 +8,18 @@ namespace JevLogin
     {
         private Queue<T> objects = new Queue<T>();
         public Pool<T> Pool;
+        private PlayerInitialization _playerInitialization;
 
         #region Singleton
-        
+
         public static GenericObjectPool<T> Instance { get; private set; }
 
-        protected GenericObjectPool(Pool<T> pool)
+        protected GenericObjectPool(Pool<T> pool, PlayerInitialization playerInitialization)
         {
             Instance = this;
             Pool = pool;
             Pool.Prefab = Resources.Load<T>(ManagerPath.BULLET_PATH);
+            _playerInitialization = playerInitialization;
         }
 
 

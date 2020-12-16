@@ -55,6 +55,7 @@ namespace JevLogin
                 newObject.transform.rotation = _transform.rotation;
 
                 newObject.gameObject.SetActive(false);
+
                 objects.Enqueue(newObject);
             }
         }

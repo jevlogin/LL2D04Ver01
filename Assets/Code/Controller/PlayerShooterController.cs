@@ -7,8 +7,6 @@ namespace JevLogin
 {
     public sealed class PlayerShooterController : IExecute, ICleanup
     {
-        //TODO - BlasterWithGeneric
-
         #region Fields
 
         private readonly PlayerInitialization _playerInitialization;
@@ -17,11 +15,7 @@ namespace JevLogin
 
         private IUserInputMouse _userInputMouse;
 
-        private readonly float _force;
         private bool _valueChange;
-
-        /*******************/
-
         private float _refireTimer = 0.3f;
         private float _fireTimer;
 
@@ -38,7 +32,6 @@ namespace JevLogin
             _bulletInitialization = bulletInitialization;
 
             _barrel = _playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
-            _force = _playerInitialization.GetPlayerModel().PlayerStruct.Force;
             _fireTimer = _refireTimer;
             _userInputMouse.MouseOnChange += BoolOnAxisMouseOnChange;
         }
@@ -67,12 +60,12 @@ namespace JevLogin
         #region Methods
         private void Fire()
         {
-            //Здесь надо вытащить пулю из пулла
             var bullet = BulletPool.Instance.Get();
             bullet.transform.rotation = _barrel.rotation;
             bullet.transform.position = _barrel.position;
 
-            bullet.transform.SetParent(null);
+            //TODO - возможно придется убрать
+            //bullet.transform.SetParent(null);
 
             bullet.gameObject.SetActive(true);
         }

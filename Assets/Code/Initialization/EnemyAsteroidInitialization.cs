@@ -3,7 +3,7 @@
 
 namespace JevLogin
 {
-    internal sealed class EnemyAsteroidInitialization : IInitialization
+    public sealed class EnemyAsteroidInitialization : IInitialization
     {
         #region Fields
 

@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Code\Controller\CameraController.cs" />
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
+    <Compile Include="Assets\Code\Controller\EnemyAsteroidController.cs" />
     <Compile Include="Assets\Code\Controller\EnemyShipInitialization.cs" />
     <Compile Include="Assets\Code\Controller\EnemyShipPool.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />

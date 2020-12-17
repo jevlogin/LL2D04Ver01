@@ -1,6 +1,6 @@
 ﻿namespace JevLogin
 {
-    public interface ICleanup : IController
+    public interface ICleanup : IExecute
     {
         void Cleanup();
     }

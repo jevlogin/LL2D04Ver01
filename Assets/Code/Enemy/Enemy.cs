@@ -19,6 +19,7 @@ namespace JevLogin
                 if (_healthPoint.Current <= 0.0f)
                 {
                     ReturnToPool();
+                    EnemyAsteroidPool.Instance.ReturnToPool(this as Asteroid);
                 }
                 return _healthPoint;
             }

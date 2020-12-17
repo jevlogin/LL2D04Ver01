@@ -29,7 +29,7 @@ namespace JevLogin
 
         #region Methods
 
-        internal Controllers Add(IController controller)
+        internal Controllers Add(IExecute controller)
         {
             if (controller is IInitialization initializationController)
             {

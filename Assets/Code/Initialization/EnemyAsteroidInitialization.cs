@@ -8,7 +8,6 @@ namespace JevLogin
         #region Fields
 
         private EnemyAsteroidPool _enemyPool;
-        private Enemy _enemyAsteroid;
 
         #endregion
 
@@ -20,7 +19,7 @@ namespace JevLogin
             _enemyPool = enemyPool;
         }
 
-        public Enemy Asteroid => _enemyAsteroid;
+        public Enemy Asteroid { get; private set; }
 
         public EnemyAsteroidPool EnemyPool => _enemyPool;
 
@@ -31,9 +30,9 @@ namespace JevLogin
 
         public void Initialization()
         {
-            _enemyAsteroid = _enemyPool.Get();
-            _enemyAsteroid.transform.position = Vector2.one;
-            _enemyAsteroid.gameObject.SetActive(true);
+            Asteroid = _enemyPool.Get();
+            Asteroid.transform.position = Vector2.one;
+            Asteroid.gameObject.SetActive(true);
         }
 
         #endregion

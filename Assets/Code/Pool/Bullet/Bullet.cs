@@ -3,7 +3,7 @@
 
 namespace JevLogin
 {
-    public sealed class Bullet : MonoBehaviour, IExecute
+    public sealed class Bullet : MonoBehaviour
     {
         public int DamageAttack = 10;
         public float MoveSpeed = 200.0f;
@@ -11,33 +11,12 @@ namespace JevLogin
         private float _lifeTime;
         private float _maxLifeTime = 5.0f;
 
+        public float LifeTime { get => _lifeTime; private set => _lifeTime = value; }
+        public float MaxLifeTime { get => _maxLifeTime; }
+
         private void OnEnable()
         {
-            _lifeTime = 0.0f;
-        }
-
-        public void Execute(float deltaTime)
-        {
-            transform.Translate(Vector3.up * MoveSpeed * deltaTime);
-            _lifeTime += deltaTime;
-            if (_lifeTime > _maxLifeTime)
-            {
-                BulletPool.Instance.ReturnToPool(this);
-            }
-        }
-
-        //TODO - убрать MonoBehaviour
-        public void Update()
-        {
-            float deltaTime = Time.deltaTime;
-            
-            GetComponent<Rigidbody2D>().velocity = transform.up * MoveSpeed * deltaTime;
-
-            _lifeTime += deltaTime;
-            if (_lifeTime > _maxLifeTime)
-            {
-                BulletPool.Instance.ReturnToPool(this);
-            }
+            LifeTime = 0.0f;
         }
     }
 }

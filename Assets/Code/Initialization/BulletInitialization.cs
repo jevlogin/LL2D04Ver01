@@ -1,16 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
-namespace JevLogin
+﻿namespace JevLogin
 {
-    public sealed class BulletInitialization : IInitialization
+    public sealed class BulletInitialization
     {
         #region Fields
 
         private BulletPool _bulletPool;
-        private GameObject _bulletObject;
 
         #endregion
 
@@ -29,22 +23,7 @@ namespace JevLogin
         #endregion
 
 
-        #region IInitialization
-
-        public void Initialization()
-        {
-
-        }
-
-        #endregion
-
-
         #region Methods
-
-        public GameObject GetBullet()
-        {
-            return _bulletObject;
-        }
 
         public BulletPool GetBulletPool()
         {

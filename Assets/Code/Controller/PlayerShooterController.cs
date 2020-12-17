@@ -49,7 +49,8 @@ namespace JevLogin
                 if (_valueChange)
                 {
                     _fireTimer = 0;
-                    Fire();
+                    var bullet = GetBullet();
+                    ShootBullet(bullet, deltaTime);
                 }
             }
         }
@@ -58,16 +59,24 @@ namespace JevLogin
 
 
         #region Methods
-        private void Fire()
+        private Bullet GetBullet()
         {
             var bullet = BulletPool.Instance.Get();
             bullet.transform.rotation = _barrel.rotation;
             bullet.transform.position = _barrel.position;
-
-            //TODO - возможно придется убрать
-            //bullet.transform.SetParent(null);
-
             bullet.gameObject.SetActive(true);
+
+            return bullet;
+        }
+
+        private void ShootBullet(Bullet bullet, float deltaTime)
+        {
+            bullet.transform.Translate(Vector3.up * bullet.MoveSpeed * deltaTime);
+            bullet.LifeTime += deltaTime;
+            if (_lifeTime > _maxLifeTime)
+            {
+                BulletPool.Instance.ReturnToPool(this);
+            }
         }
 
         #endregion

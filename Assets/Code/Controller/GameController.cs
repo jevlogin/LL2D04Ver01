@@ -21,10 +21,10 @@ namespace JevLogin
             var inputInitialization = new InputInitialization();
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
-            
+
             var poolBullet = new Pool<Bullet>(20, ManagerPath.BULLET_PATH);
 
-            var bulletInitialization = new BulletInitialization(new BulletPool(new Pool<Bullet>(10, ManagerPath.BULLET_PATH), playerInitialization));
+            var bulletInitialization = new BulletInitialization(new BulletPool(poolBullet, playerInitialization));
 
             var enemyInitialization = new EnemyInitialization(new EnemyPool(10, ManagerName.POOL_ENEMY));
 
@@ -32,7 +32,6 @@ namespace JevLogin
 
             _controllers.Add(inputInitialization);
             _controllers.Add(playerInitialization);
-            _controllers.Add(bulletInitialization);
             _controllers.Add(enemyInitialization);
 
             _controllers.Add(new InputController(inputInitialization.GetInput(), inputInitialization.GetInputMouse()));

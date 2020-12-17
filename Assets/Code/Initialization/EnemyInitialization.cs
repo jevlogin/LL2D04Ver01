@@ -34,13 +34,9 @@ namespace JevLogin
 
         public void Initialization()
         {
-            _enemyAsteroid = _enemyPool.GetEnemy(ManagerName.ASTEROID);
+            _enemyAsteroid = _enemyPool.Get();
             _enemyAsteroid.transform.position = Vector2.one;
             _enemyAsteroid.gameObject.SetActive(true);
-
-            _enemyShip = _enemyPool.GetEnemy("Ship");
-            _enemyShip.transform.position = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
-            _enemyShip.gameObject.SetActive(true);
         }
 
         #endregion

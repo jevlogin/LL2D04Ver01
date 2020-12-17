@@ -6,7 +6,7 @@ namespace JevLogin
     public sealed class Bullet : MonoBehaviour, IExecute
     {
         public int DamageAttack = 10;
-        public float MoveSpeed = 300.0f;
+        public float MoveSpeed = 200.0f;
 
         private float _lifeTime;
         private float _maxLifeTime = 5.0f;
@@ -31,7 +31,7 @@ namespace JevLogin
         {
             float deltaTime = Time.deltaTime;
             
-            GetComponent<Rigidbody2D>().velocity = transform.up * MoveSpeed;
+            GetComponent<Rigidbody2D>().velocity = transform.up * MoveSpeed * deltaTime;
 
             _lifeTime += deltaTime;
             if (_lifeTime > _maxLifeTime)

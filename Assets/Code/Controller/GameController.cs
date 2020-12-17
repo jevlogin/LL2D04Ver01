@@ -21,6 +21,9 @@ namespace JevLogin
             var inputInitialization = new InputInitialization();
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
+            
+            var poolBullet = new Pool<Bullet>(20, ManagerPath.BULLET_PATH);
+
             var bulletInitialization = new BulletInitialization(new BulletPool(new Pool<Bullet>(10, ManagerPath.BULLET_PATH), playerInitialization));
 
             var enemyInitialization = new EnemyInitialization(new EnemyPool(10, ManagerName.POOL_ENEMY));

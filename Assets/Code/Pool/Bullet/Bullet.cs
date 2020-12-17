@@ -5,12 +5,19 @@ namespace JevLogin
 {
     public sealed class Bullet : MonoBehaviour
     {
+        #region Fields
+
         //TODO - переделать на ScriptableOb
         public int DamageAttack;
         public float MoveSpeed;
 
         private float _lifeTime;
         private float _maxLifeTime = 5.0f;
+
+        #endregion
+
+
+        #region UnityMethods
 
         private void OnEnable()
         {
@@ -37,5 +44,7 @@ namespace JevLogin
                 BulletPool.Instance.ReturnToPool(this);
             }
         }
+
+        #endregion
     }
 }

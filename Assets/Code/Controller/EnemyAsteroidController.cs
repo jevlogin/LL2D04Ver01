@@ -9,7 +9,6 @@ namespace JevLogin
         private EnemyAsteroidInitialization _enemyAsteroidInitialization;
         private Transform _transformPlayer;
         private List<Asteroid> _listAsteroids;
-        private float _speed = 50;
         private Vector3 _offset;
 
 
@@ -24,7 +23,7 @@ namespace JevLogin
             for (int i = 0; i < _listAsteroids.Count; i++)
             {
                 _listAsteroids[i].gameObject.SetActive(true);
-                var newVector2 = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10)) * 2;
+                var newVector2 = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10)) * Random.Range(1, 10);
 
                 _listAsteroids[i].transform.position = newVector2;
             }

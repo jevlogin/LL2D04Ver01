@@ -6,7 +6,7 @@ using Object = UnityEngine.Object;
 
 namespace JevLogin
 {
-    public sealed class EnemyPool
+    public sealed class EnemyPool : GenericObjectPool<Asteroid>
     {
         private readonly Dictionary<string, HashSet<Enemy>> _enemyPool;
         private readonly int _capacityPool;
@@ -20,6 +20,11 @@ namespace JevLogin
             {
                 _rootPool = new GameObject(name).transform;
             }
+        }
+
+        public EnemyPool(Pool<Asteroid> poolAsteroid, Transform parentTransform) : base(poolAsteroid, parentTransform)
+        {
+
         }
 
         public Enemy GetEnemy(string type)

@@ -6,11 +6,13 @@ namespace JevLogin
 {
     public abstract class GenericObjectPool<T> where T : Component
     {
+        private readonly Dictionary<string, HashSet<Enemy>> _genericDictionaryPool;
+
         private Queue<T> objects = new Queue<T>();
         public Pool<T> Pool;
 
         //TODO - возможно следует сделать свойство
-        private Transform _transform;
+        private Transform _transformParent;
         private Transform _transformPool;
 
 
@@ -22,7 +24,14 @@ namespace JevLogin
         {
             Instance = this;
             Pool = pool;
-            _transform = transformParen;
+            _transformParent = transformParen;
+
+            /****************/
+            _genericDictionaryPool = new Dictionary<string, HashSet<Enemy>>();
+            if (!_transformParent)
+            {
+                _transformParent = new GameObject(nameof(Pool.Prefab)).transform;
+            }
         }
 
 
@@ -50,7 +59,7 @@ namespace JevLogin
         {
             _transformPool = new GameObject(ManagerName.POOL_BULLETS).transform;
 
-            _transformPool.SetParent(_transform);
+            _transformPool.SetParent(_transformParent);
 
             for (int i = 0; i < count; i++)
             {

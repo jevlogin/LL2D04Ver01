@@ -5,6 +5,7 @@ namespace JevLogin
 {
     public sealed class Bullet : MonoBehaviour
     {
+        //TODO - переделать на ScriptableObject
         public int DamageAttack = 10;
         public float MoveSpeed = 200.0f;
 

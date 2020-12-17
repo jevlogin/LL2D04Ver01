@@ -18,11 +18,11 @@ namespace JevLogin
 
         public static GenericObjectPool<T> Instance { get; private set; }
 
-        public GenericObjectPool(Pool<T> pool, PlayerInitialization playerInitialization)
+        public GenericObjectPool(Pool<T> pool, Transform transformParen)
         {
             Instance = this;
             Pool = pool;
-            _transform = playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
+            _transform = transformParen;
         }
 
 

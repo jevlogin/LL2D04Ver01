@@ -24,7 +24,7 @@ namespace JevLogin
 
             var poolBullet = new Pool<Bullet>(20, ManagerPath.BULLET_PATH);
 
-            var bulletInitialization = new BulletInitialization(new BulletPool(poolBullet, playerInitialization));
+            var bulletInitialization = new BulletInitialization(new BulletPool(poolBullet, playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform));
 
             var enemyInitialization = new EnemyInitialization(new EnemyPool(10, ManagerName.POOL_ENEMY));
 

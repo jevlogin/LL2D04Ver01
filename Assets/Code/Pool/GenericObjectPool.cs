@@ -39,8 +39,8 @@ namespace JevLogin
         public void ReturnToPool(T objectToReturn)
         {
             objectToReturn.gameObject.SetActive(false);
-            objectToReturn.transform.position = _transform.position;
-            objectToReturn.transform.rotation = _transform.rotation;
+            //objectToReturn.transform.position = _transform.position;
+            //objectToReturn.transform.rotation = _transform.rotation;
             objects.Enqueue(objectToReturn);
         }
 

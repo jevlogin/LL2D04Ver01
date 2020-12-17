@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7265920271352410107}
   - component: {fileID: 5880647992423137859}
   - component: {fileID: 460840971214023586}
-  - component: {fileID: 4758769608612197738}
+  - component: {fileID: 5385539649978531609}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageAttack: 10
-  MoveSpeed: 5
---- !u!50 &4758769608612197738
+  MoveSpeed: 10
+--- !u!50 &5385539649978531609
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

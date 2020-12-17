@@ -68,8 +68,10 @@ namespace JevLogin
         private void GetBullet()
         {
             var bullet = BulletPool.Instance.Get();
+
             bullet.transform.rotation = _barrel.rotation;
             bullet.transform.position = _barrel.position;
+
             bullet.gameObject.SetActive(true);
         }
 

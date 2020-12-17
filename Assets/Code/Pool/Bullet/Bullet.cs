@@ -12,7 +12,7 @@ namespace JevLogin
         private float _lifeTime;
         private float _maxLifeTime = 5.0f;
 
-        public float LifeTime { get => _lifeTime; private set => _lifeTime = value; }
+        public float LifeTime { get => _lifeTime; set => _lifeTime = value; }
         public float MaxLifeTime { get => _maxLifeTime; }
 
         private void OnEnable()

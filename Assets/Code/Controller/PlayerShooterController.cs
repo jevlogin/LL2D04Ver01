@@ -59,6 +59,7 @@ namespace JevLogin
 
 
         #region Methods
+
         private Bullet GetBullet()
         {
             var bullet = BulletPool.Instance.Get();
@@ -73,9 +74,9 @@ namespace JevLogin
         {
             bullet.transform.Translate(Vector3.up * bullet.MoveSpeed * deltaTime);
             bullet.LifeTime += deltaTime;
-            if (_lifeTime > _maxLifeTime)
+            if (bullet.LifeTime > bullet.MaxLifeTime)
             {
-                BulletPool.Instance.ReturnToPool(this);
+                BulletPool.Instance.ReturnToPool(bullet);
             }
         }
 

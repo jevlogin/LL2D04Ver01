@@ -7,7 +7,7 @@ namespace JevLogin
     {
         #region Fields
 
-        private EnemyPool _enemyPool;
+        private EnemyAsteroidPool _enemyPool;
         private Enemy _enemyAsteroid;
 
         #endregion
@@ -15,14 +15,14 @@ namespace JevLogin
 
         #region Properties
 
-        public EnemyAsteroidInitialization(EnemyPool enemyPool)
+        public EnemyAsteroidInitialization(EnemyAsteroidPool enemyPool)
         {
             _enemyPool = enemyPool;
         }
 
         public Enemy Asteroid => _enemyAsteroid;
 
-        public EnemyPool EnemyPool => _enemyPool;
+        public EnemyAsteroidPool EnemyPool => _enemyPool;
 
         #endregion
 

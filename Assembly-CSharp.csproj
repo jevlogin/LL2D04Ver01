@@ -114,7 +114,7 @@
     <Compile Include="Assets\Code\Player\PlayerModel.cs" />
     <Compile Include="Assets\Code\Pool\Bullet\Bullet.cs" />
     <Compile Include="Assets\Code\Pool\Bullet\BulletPool.cs" />
-    <Compile Include="Assets\Code\Pool\Enemy\EnemyPool.cs" />
+    <Compile Include="Assets\Code\Pool\Enemy\EnemyAsteroidPool.cs" />
     <Compile Include="Assets\Code\Pool\GenericObjectPool.cs" />
     <Compile Include="Assets\Code\Pool\Pool.cs" />
     <Compile Include="Assets\Code\UserInput\ConsoleInput.cs" />

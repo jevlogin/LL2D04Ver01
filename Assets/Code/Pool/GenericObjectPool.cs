@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 
@@ -49,7 +48,7 @@ namespace JevLogin
 
         private void AddObjects(int count)
         {
-            switch (typeof(T).ToString())
+            switch (typeof(T).Name)
             {
                 case ManagerName.BULLET:
                     _transformPool = new GameObject(ManagerName.POOL_BULLETS).transform;
@@ -58,7 +57,7 @@ namespace JevLogin
                     _transformPool = new GameObject(ManagerName.POOL_ASTEROIDS).transform;
                     break;
                 default:
-                    throw new System.ArgumentException("Нет такого типа");
+                    throw new System.ArgumentException("Нет такого типа", nameof(T));
             }
 
             _transformPool.SetParent(_transformParent);

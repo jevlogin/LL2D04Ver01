@@ -1,6 +1,6 @@
 ﻿namespace JevLogin
 {
-    public interface IExecute
+    public interface IController
     {
     }
 }

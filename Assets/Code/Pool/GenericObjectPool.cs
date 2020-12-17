@@ -8,7 +8,7 @@ namespace JevLogin
     {
         #region Fields
 
-        private Queue<T> objects = new Queue<T>();
+        private Queue<T> _objects = new Queue<T>();
         public Pool<T> Pool;
         private Transform _transformParent;
         private Transform _transformPool;
@@ -39,11 +39,27 @@ namespace JevLogin
 
         public T Get()
         {
-            if (objects.Count == 0)
+            if (_objects.Count == 0)
             {
                 AddObjects(Pool.Size);
             }
-            return objects.Dequeue();
+            return _objects.Dequeue();
+        }
+
+        public List<T> GetList()
+        {
+            List<T> result = new List<T>();
+
+            if (_objects.Count == 0)
+            {
+                AddObjects(Pool.Size);
+            }
+            foreach (var item in _objects)
+            {
+                result.Add(item);
+            }
+
+            return result;
         }
 
         private void AddObjects(int count)
@@ -73,7 +89,7 @@ namespace JevLogin
 
                 newObject.gameObject.SetActive(false);
 
-                objects.Enqueue(newObject);
+                _objects.Enqueue(newObject);
             }
         }
 
@@ -83,8 +99,8 @@ namespace JevLogin
 
             objectToReturn.transform.SetParent(_transformPool);
 
-            objects.Enqueue(objectToReturn);
-        } 
+            _objects.Enqueue(objectToReturn);
+        }
 
         #endregion
     }

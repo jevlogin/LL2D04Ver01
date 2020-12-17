@@ -3,7 +3,7 @@
 
 namespace JevLogin
 {
-    public interface IRotation : IExecute
+    public interface IRotation : IController
     {
         void Rotation(Vector3 direction);
     }

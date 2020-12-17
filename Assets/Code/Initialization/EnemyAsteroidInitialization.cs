@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 
 namespace JevLogin
@@ -8,6 +9,8 @@ namespace JevLogin
         #region Fields
 
         private EnemyAsteroidPool _enemyPool;
+        private List<Asteroid> _listAsteroids;
+
 
         #endregion
 
@@ -17,6 +20,8 @@ namespace JevLogin
         public EnemyAsteroidInitialization(EnemyAsteroidPool enemyPool)
         {
             _enemyPool = enemyPool;
+            _listAsteroids = new List<Asteroid>();
+            _listAsteroids.AddRange(_enemyPool.GetList());
         }
 
         public Enemy Asteroid { get; private set; }
@@ -31,8 +36,8 @@ namespace JevLogin
         public void Initialization()
         {
             Asteroid = _enemyPool.Get();
-            Asteroid.transform.position = Vector2.one;
-            Asteroid.gameObject.SetActive(true);
+            //Asteroid.transform.position = Vector2.one;
+            //Asteroid.gameObject.SetActive(true);
         }
 
         #endregion

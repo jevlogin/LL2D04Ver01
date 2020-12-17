@@ -1,6 +1,6 @@
 ﻿namespace JevLogin
 {
-    public interface ILateExecute : IExecute
+    public interface ILateExecute : IController
     {
         void LateExecute(float deltaTime);
     }

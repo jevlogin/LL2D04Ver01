@@ -1,6 +1,6 @@
 ﻿namespace JevLogin
 {
-    public interface IInitialization : IExecute
+    public interface IInitialization : IController
     {
         void Initialization();
     }

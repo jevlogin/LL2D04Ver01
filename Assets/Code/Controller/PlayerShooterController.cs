@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 namespace JevLogin
@@ -18,11 +16,6 @@ namespace JevLogin
         private bool _valueChange;
         private float _refireTimer = 0.3f;
         private float _fireTimer;
-
-        private float _moveSpeed = 200.0f;
-
-        private float _lifeTime;
-        private float _maxLifeTime = 5.0f;
 
         #endregion
 

@@ -56,6 +56,9 @@ namespace JevLogin
                 case ManagerName.ASTEROID:
                     _transformPool = new GameObject(ManagerName.POOL_ASTEROIDS).transform;
                     break;
+                case ManagerName.SHIP:
+                    _transformPool = new GameObject(ManagerName.POOL_ENEMY_SHIP).transform;
+                    break;
                 default:
                     throw new System.ArgumentException("Нет такого типа", nameof(T));
             }

@@ -1,12 +1,27 @@
-﻿namespace JevLogin
+﻿using UnityEngine;
+
+
+namespace JevLogin
 {
-    internal class EnemyShipInitialization
+    public sealed class EnemyShipInitialization : IInitialization
     {
-        private EnemyShipPool enemyShipPool;
+        private EnemyShipPool _enemyShipPool;
+        private Enemy _enemyShip;
+
+
 
         public EnemyShipInitialization(EnemyShipPool enemyShipPool)
         {
-            this.enemyShipPool = enemyShipPool;
+            _enemyShipPool = enemyShipPool;
+        }
+
+        public Enemy EnemyShip { get => _enemyShip; private set => _enemyShip = value; }
+
+        public void Initialization()
+        {
+            EnemyShip = _enemyShipPool.Get();
+            EnemyShip.transform.position = new Vector2(Random.Range(-5, 5), Random.Range(-3, 3));
+            EnemyShip.gameObject.SetActive(true);
         }
     }
 }

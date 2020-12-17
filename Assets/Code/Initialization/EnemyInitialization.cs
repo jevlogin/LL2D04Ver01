@@ -9,7 +9,6 @@ namespace JevLogin
 
         private EnemyPool _enemyPool;
         private Enemy _enemyAsteroid;
-        private Enemy _enemyShip;
 
         #endregion
 
@@ -22,8 +21,6 @@ namespace JevLogin
         }
 
         public Enemy Asteroid => _enemyAsteroid;
-
-        public Enemy EnemyShip => _enemyShip;
 
         public EnemyPool EnemyPool => _enemyPool;
 

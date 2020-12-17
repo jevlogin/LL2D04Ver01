@@ -5,19 +5,32 @@ namespace JevLogin
 {
     public sealed class Bullet : MonoBehaviour
     {
-        //TODO - переделать на ScriptableObject
+        //TODO - переделать на ScriptableOb
         public int DamageAttack = 10;
-        public float MoveSpeed = 200.0f;
+        public float MoveSpeed = 2.0f;
 
         private float _lifeTime;
         private float _maxLifeTime = 5.0f;
 
-        public float LifeTime { get => _lifeTime; set => _lifeTime = value; }
-        public float MaxLifeTime { get => _maxLifeTime; }
-
         private void OnEnable()
         {
-            LifeTime = 0.0f;
+            _lifeTime = 0.0f;
+        }
+
+        //TODO - убрать MonoBehaviour
+        public void Update()
+        {
+            float deltaTime = Time.deltaTime;
+
+            //GetComponent<Rigidbody2D>().velocity = transform.up * MoveSpeed * deltaTime;
+
+            transform.Translate(Vector2.up * MoveSpeed );
+
+            _lifeTime += deltaTime;
+            if (_lifeTime > _maxLifeTime)
+            {
+                BulletPool.Instance.ReturnToPool(this);
+            }
         }
     }
 }

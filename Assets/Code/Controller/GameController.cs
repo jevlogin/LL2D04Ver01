@@ -42,6 +42,7 @@ namespace JevLogin
 
             _controllers.Add(new PlayerShooterController(inputInitialization.GetInputMouse(), playerInitialization, bulletInitialization));
 
+
             _controllers.Initialization();
 
             //TODO только лишь чтобы показать что сделал статичный метод

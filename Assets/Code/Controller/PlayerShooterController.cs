@@ -19,6 +19,11 @@ namespace JevLogin
         private float _refireTimer = 0.3f;
         private float _fireTimer;
 
+        private float _moveSpeed = 200.0f;
+
+        private float _lifeTime;
+        private float _maxLifeTime = 5.0f;
+
         #endregion
 
 
@@ -44,13 +49,13 @@ namespace JevLogin
         public void Execute(float deltaTime)
         {
             _fireTimer += deltaTime;
+
             if (_fireTimer >= _refireTimer)
             {
                 if (_valueChange)
                 {
                     _fireTimer = 0;
-                    var bullet = GetBullet();
-                    ShootBullet(bullet, deltaTime);
+                    GetBullet();
                 }
             }
         }
@@ -60,24 +65,12 @@ namespace JevLogin
 
         #region Methods
 
-        private Bullet GetBullet()
+        private void GetBullet()
         {
             var bullet = BulletPool.Instance.Get();
             bullet.transform.rotation = _barrel.rotation;
             bullet.transform.position = _barrel.position;
             bullet.gameObject.SetActive(true);
-
-            return bullet;
-        }
-
-        private void ShootBullet(Bullet bullet, float deltaTime)
-        {
-            bullet.transform.Translate(Vector3.up * bullet.MoveSpeed * deltaTime);
-            bullet.LifeTime += deltaTime;
-            if (bullet.LifeTime > bullet.MaxLifeTime)
-            {
-                BulletPool.Instance.ReturnToPool(bullet);
-            }
         }
 
         #endregion

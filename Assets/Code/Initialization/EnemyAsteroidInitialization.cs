@@ -3,7 +3,7 @@
 
 namespace JevLogin
 {
-    internal sealed class EnemyInitialization : IInitialization
+    internal sealed class EnemyAsteroidInitialization : IInitialization
     {
         #region Fields
 
@@ -15,7 +15,7 @@ namespace JevLogin
 
         #region Properties
 
-        public EnemyInitialization(EnemyPool enemyPool)
+        public EnemyAsteroidInitialization(EnemyPool enemyPool)
         {
             _enemyPool = enemyPool;
         }

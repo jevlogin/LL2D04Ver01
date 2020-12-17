@@ -90,7 +90,7 @@
     <Compile Include="Assets\Code\Enemy\Ship.cs" />
     <Compile Include="Assets\Code\Helper\BuilderExtentions.cs" />
     <Compile Include="Assets\Code\Initialization\BulletInitialization.cs" />
-    <Compile Include="Assets\Code\Initialization\EnemyInitialization.cs" />
+    <Compile Include="Assets\Code\Initialization\EnemyAsteroidInitialization.cs" />
     <Compile Include="Assets\Code\Initialization\InputInitialization.cs" />
     <Compile Include="Assets\Code\Initialization\PlayerInitialization.cs" />
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />

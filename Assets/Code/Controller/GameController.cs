@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 
 namespace JevLogin
@@ -26,9 +27,10 @@ namespace JevLogin
             var bulletInitialization = new BulletInitialization(new BulletPool(poolBullet, playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform));
 
             var poolAsteroid = new Pool<Asteroid>(20, ManagerPath.ASTEROID_PATH);
+            var poolEnemyShip= new Pool<Ship>(20, ManagerPath.ENEMY_PATH_SHIP);
 
             var enemyInitialization = new EnemyInitialization(new EnemyPool(poolAsteroid, new GameObject(ManagerName.POOL_ASTEROIDS).transform));
-
+            var enemyShipInitialization = new EnemyShipInitialization(new EnemyShipPool(poolEnemyShip, new GameObject(ManagerName.POOL_ENEMY_SHIP).transform));
             _controllers = new Controllers();
 
             _controllers.Add(inputInitialization);

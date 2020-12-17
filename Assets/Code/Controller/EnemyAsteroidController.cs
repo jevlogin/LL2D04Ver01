@@ -4,19 +4,21 @@ using UnityEngine;
 
 namespace JevLogin
 {
-    public sealed class EnemyAsteroidController : IExecute
+    public sealed class EnemyAsteroidController : ILateExecute
     {
         private EnemyAsteroidInitialization _enemyAsteroidInitialization;
         private Transform _transformPlayer;
         private List<Asteroid> _listAsteroids;
-        private float _speed = 10;
+        private float _speed = 50;
+        private Vector3 _offset;
+
 
         public EnemyAsteroidController(EnemyAsteroidInitialization enemyAsteroidInitialization, Transform transformPlayer)
         {
             _enemyAsteroidInitialization = enemyAsteroidInitialization;
-            
+
             _transformPlayer = transformPlayer;
-            
+
             _listAsteroids = _enemyAsteroidInitialization.EnemyPool.GetList();
 
             for (int i = 0; i < _listAsteroids.Count; i++)
@@ -28,12 +30,14 @@ namespace JevLogin
             }
         }
 
-        public void Execute(float deltaTime)
+        public void LateExecute(float deltaTime)
         {
             for (int i = 0; i < _listAsteroids.Count; i++)
             {
-                var direction = _transformPlayer.position - _listAsteroids[i].transform.position;
-                _listAsteroids[i].GetComponent<Rigidbody2D>().velocity = direction * deltaTime * _speed;
+                _offset = _transformPlayer.position - _listAsteroids[i].transform.position;
+                Vector3 desiredPosition = _listAsteroids[i].transform.position + _offset;
+                Vector3 smooth = Vector3.Lerp(_listAsteroids[i].transform.position, desiredPosition, deltaTime);
+                _listAsteroids[i].transform.position = smooth;
             }
         }
     }

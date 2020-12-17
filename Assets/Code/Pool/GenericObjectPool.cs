@@ -11,6 +11,7 @@ namespace JevLogin
 
         //TODO - возможно следует сделать свойство
         private Transform _transform;
+        private Transform _transformPool;
 
 
         #region Singleton
@@ -39,18 +40,23 @@ namespace JevLogin
         public void ReturnToPool(T objectToReturn)
         {
             objectToReturn.gameObject.SetActive(false);
+
+            objectToReturn.transform.SetParent(_transformPool);
+
             objects.Enqueue(objectToReturn);
         }
 
         private void AddObjects(int count)
         {
-            var pool = new GameObject(ManagerName.POOL_BULLETS);
+            _transformPool = new GameObject(ManagerName.POOL_BULLETS).transform;
+
+            _transformPool.SetParent(_transform);
 
             for (int i = 0; i < count; i++)
             {
                 var newObject = Object.Instantiate(Pool.Prefab);
                 
-                newObject.transform.SetParent(pool.transform);
+                newObject.transform.SetParent(_transformPool);
 
                 newObject.gameObject.SetActive(false);
 

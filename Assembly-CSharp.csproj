@@ -67,7 +67,6 @@
     <Compile Include="Assets\Code\Controller\CameraController.cs" />
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
     <Compile Include="Assets\Code\Controller\EnemyAsteroidController.cs" />
-    <Compile Include="Assets\Code\Controller\EnemyShipInitialization.cs" />
     <Compile Include="Assets\Code\Controller\EnemyShipPool.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />
     <Compile Include="Assets\Code\Controller\InputController.cs" />
@@ -92,6 +91,7 @@
     <Compile Include="Assets\Code\Helper\BuilderExtentions.cs" />
     <Compile Include="Assets\Code\Initialization\BulletInitialization.cs" />
     <Compile Include="Assets\Code\Initialization\EnemyAsteroidInitialization.cs" />
+    <Compile Include="Assets\Code\Initialization\EnemyShipInitialization.cs" />
     <Compile Include="Assets\Code\Initialization\InputInitialization.cs" />
     <Compile Include="Assets\Code\Initialization\PlayerInitialization.cs" />
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />
@@ -111,9 +111,9 @@
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />
+    <Compile Include="Assets\Code\Player\Bullet.cs" />
     <Compile Include="Assets\Code\Player\PlayerFactory.cs" />
     <Compile Include="Assets\Code\Player\PlayerModel.cs" />
-    <Compile Include="Assets\Code\Pool\Bullet\Bullet.cs" />
     <Compile Include="Assets\Code\Pool\Bullet\BulletPool.cs" />
     <Compile Include="Assets\Code\Pool\Enemy\EnemyAsteroidPool.cs" />
     <Compile Include="Assets\Code\Pool\GenericObjectPool.cs" />

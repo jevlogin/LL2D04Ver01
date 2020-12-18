@@ -6,15 +6,12 @@ ScriptsOnlyBuild:
     - JevLogin.Data
     - JevLogin.EnemyData
     - JevLogin.GameController
-    - JevLogin.LightData
     - JevLogin.PlayerData
     - JevLogin.Ship
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -48,21 +45,19 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11446}
+      Script: {instanceID: 11450}
     - Class: 114
-      Script: {instanceID: 11640}
+      Script: {instanceID: 11646}
     - Class: 114
-      Script: {instanceID: 11944}
+      Script: {instanceID: 11952}
     - Class: 114
-      Script: {instanceID: 12616}
+      Script: {instanceID: 12626}
     - Class: 114
-      Script: {instanceID: 12730}
+      Script: {instanceID: 12740}
     - Class: 114
-      Script: {instanceID: 13040}
+      Script: {instanceID: 13050}
     - Class: 114
-      Script: {instanceID: 13410}
-    - Class: 114
-      Script: {instanceID: 14390}
+      Script: {instanceID: 14406}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -188,7 +183,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 980a6387d1b2ad80436e16686fdea48a
+      Hash: cf5460837e1f6f2a4136151c1d3e66dd
     assemblyName: Assembly-CSharp.dll
     namespaceName: JevLogin
     className: Bullet
@@ -392,7 +387,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 6823f1218cf556195da83d357a4b9740
+      Hash: 3e23a389749556b64942795a9a0e022c
     assemblyName: Assembly-CSharp.dll
     namespaceName: JevLogin
     className: PlayerData

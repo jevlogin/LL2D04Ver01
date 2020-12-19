@@ -4,15 +4,13 @@ using UnityEngine;
 
 namespace JevLogin
 {
-    public sealed class EnemyAsteroidController : ILateExecute
+    public sealed class EnemyAsteroidController : IExecute
     {
         private EnemyAsteroidInitialization _enemyAsteroidInitialization;
         private Transform _transformPlayer;
         private List<Asteroid> _listAsteroids;
         private Vector3 _offset;
-
-        private float _time = 0.0f;
-        private float _endTime = 1.0f;
+        private float _endTimer = 5.0f;
 
         public EnemyAsteroidController(EnemyAsteroidInitialization enemyAsteroidInitialization, Transform transformPlayer)
         {
@@ -24,26 +22,29 @@ namespace JevLogin
 
             for (int i = 0; i < _listAsteroids.Count; i++)
             {
+                _listAsteroids[i].MoveToPlayerDirection = _transformPlayer.position - _listAsteroids[i].transform.position;
+                var vectorSpawnPosition = new Vector3(Random.Range(-20, 20), Random.Range(-20, 20), 0.0f) * Random.Range(1, 10);
+                _listAsteroids[i].transform.localPosition = vectorSpawnPosition;
                 _listAsteroids[i].gameObject.SetActive(true);
-                var newVector2 = new Vector3(Random.Range(-20, 20), Random.Range(-20, 20)) * Random.Range(1, 20);
-
-                _listAsteroids[i].transform.position = newVector2;
             }
         }
 
-        public void LateExecute(float deltaTime)
+        public void Execute(float deltaTime)
         {
-            _time += deltaTime;
-            
             for (int i = 0; i < _listAsteroids.Count; i++)
             {
-                if (_time >= _endTime)
+                _listAsteroids[i].TimeDoNewCoordinate += deltaTime;
+                if (_listAsteroids[i].TimeDoNewCoordinate >= _endTimer)
                 {
-                    _offset = _transformPlayer.position - _listAsteroids[i].transform.position;
-                    _time = 0;
+                    _listAsteroids[i].TimeDoNewCoordinate = 0;
+                    _endTimer = Random.Range(3.0f, 10.0f);
+                    _listAsteroids[i].MoveToPlayerDirection = _transformPlayer.position - _listAsteroids[i].transform.position;
                 }
-                Vector3 desiredPosition = _listAsteroids[i].transform.position + _offset;
-                Vector3 smooth = Vector3.Lerp(_listAsteroids[i].transform.position, desiredPosition, deltaTime);
+                /*****************************/
+                //_offset = _transformPlayer.position - _listAsteroids[i].transform.position;
+
+                Vector3 desiredPosition = _listAsteroids[i].transform.position + _listAsteroids[i].MoveToPlayerDirection;
+                Vector3 smooth = Vector3.Lerp(_listAsteroids[i].transform.position, desiredPosition, deltaTime * 0.05f);
                 _listAsteroids[i].transform.position = smooth;
             }
         }

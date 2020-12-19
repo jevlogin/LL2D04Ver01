@@ -1,10 +1,7 @@
-﻿using UnityEngine;
-
-namespace JevLogin
+﻿namespace JevLogin
 {
-    public interface IEnemyFactory
+    public interface  IEnemyFactory 
     {
-        GameObject CreateEnemy();
-        EnemyModel CreateEnemyModel();
+        Enemy Create(HealthPoint healthPoint);
     }
 }

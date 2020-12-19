@@ -16,15 +16,16 @@ MonoBehaviour:
     _speed: 5
     _acceleration: 10
     _healthPoint: 100
-    _force: 96
+    _force: 571
   PlayerComponents:
     SpriteRenderer: {fileID: 0}
     CircleCollider2D: {fileID: 0}
     Player: {fileID: 0}
+    BarrelTransform: {fileID: 0}
     BulletRigidbody: {fileID: 2392112446273878076, guid: 9a572210d3106af4890a5cb10c0a70f5,
       type: 3}
   PlayerSettingsData:
-    _spritePlayer: {fileID: 21300000, guid: 321573bf9fddc804c9996dd5b634aadb, type: 3}
+    _spritePlayer: {fileID: 21300000, guid: ac2ebcc33ccacd64f8ef023e709b857f, type: 3}
     _bulletPrefab: {fileID: 589203787139018274, guid: 9a572210d3106af4890a5cb10c0a70f5,
       type: 3}
     _particleSystem: {fileID: 183190, guid: d5df69f26ca20724080d29c39b68a606, type: 3}
@@ -34,5 +35,6 @@ MonoBehaviour:
     _endColor: {r: 0, g: 0, b: 1, a: 1}
     _startWidth: 0.286
     _endWidth: 0.055
-    _time: 0.1
-    _offsetVector: {x: -0.13, y: 0.4}
+    _time: 0.25
+    _offsetVectorTrailrenderer: {x: 0, y: -0.45}
+    _offsetVector: {x: 0, y: 0.4}

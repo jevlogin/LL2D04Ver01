@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
 
+
 namespace JevLogin
 {
-    internal sealed class Controllers : IInitialization, IExecute, ILateUpdate, ICleanup
+    internal sealed class Controllers : IInitialization, IExecute, ILateExecute, ICleanup
     {
         #region Fields
 
         private readonly List<IInitialization> _initializeControllers;
         private readonly List<IExecute> _executeControllers;
-        private readonly List<ILateUpdate> _lateControllers;
+        private readonly List<ILateExecute> _lateControllers;
         private readonly List<ICleanup> _cleanupControllers;
 
         #endregion
@@ -20,7 +21,7 @@ namespace JevLogin
         {
             _initializeControllers = new List<IInitialization>();
             _executeControllers = new List<IExecute>();
-            _lateControllers = new List<ILateUpdate>();
+            _lateControllers = new List<ILateExecute>();
             _cleanupControllers = new List<ICleanup>();
         }
 
@@ -41,7 +42,7 @@ namespace JevLogin
                 _executeControllers.Add(executeController);
             }
 
-            if (controller is ILateUpdate lateUpdateController)
+            if (controller is ILateExecute lateUpdateController)
             {
                 _lateControllers.Add(lateUpdateController);
             }

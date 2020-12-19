@@ -11,6 +11,7 @@ namespace JevLogin
 
         [SerializeField] private Sprite[] _spritesAsteroids;
         [SerializeField] private int _countEnemy;
+        private int _stoppingDistance;
 
         #endregion
 
@@ -19,6 +20,7 @@ namespace JevLogin
 
         public Sprite[] SpritesAsteroids { get => _spritesAsteroids; }
         public int CountEnemy { get => _countEnemy; }
+        public int StoppingDistance { get => _stoppingDistance; }
 
         #endregion
     }

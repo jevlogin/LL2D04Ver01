@@ -26,7 +26,7 @@ namespace JevLogin
             var poolBullet = new Pool<Bullet>(20, ManagerPath.BULLET_PATH);
             var bulletInitialization = new BulletInitialization(new BulletPool(poolBullet, playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform));
 
-            var poolAsteroid = new Pool<Asteroid>(100, ManagerPath.ASTEROID_PATH);
+            var poolAsteroid = new Pool<Asteroid>(10, ManagerPath.ASTEROID_PATH);
             var enemyAsteroidInitialization = new EnemyAsteroidInitialization(new EnemyAsteroidPool(poolAsteroid, new GameObject(ManagerName.POOL_ASTEROIDS).transform));
 
             var poolEnemyShip = new Pool<Ship>(20, ManagerPath.ENEMY_PATH_SHIP);

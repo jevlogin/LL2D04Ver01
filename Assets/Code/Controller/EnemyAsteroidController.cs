@@ -11,6 +11,7 @@ namespace JevLogin
         private List<Asteroid> _listAsteroids;
         private Vector3 _offset;
         private float _endTimer = 5.0f;
+        private int _numberOfElementsInTheWave;
 
         public EnemyAsteroidController(EnemyAsteroidInitialization enemyAsteroidInitialization, Transform transformPlayer)
         {
@@ -18,15 +19,38 @@ namespace JevLogin
 
             _transformPlayer = transformPlayer;
 
-            _listAsteroids = _enemyAsteroidInitialization.EnemyPool.GetList();
+            _listAsteroids = new List<Asteroid>();
 
-            for (int i = 0; i < _listAsteroids.Count; i++)
+            _numberOfElementsInTheWave = _enemyAsteroidInitialization.EnemyPool.Pool.Size;
+            SpawnWave();
+        }
+
+        private void SpawnWave()
+        {
+            for (int i = 0; i < _numberOfElementsInTheWave; i++)
             {
-                _listAsteroids[i].MoveToPlayerDirection = _transformPlayer.position - _listAsteroids[i].transform.position;
-                var vectorSpawnPosition = new Vector3(Random.Range(-20, 20), Random.Range(-20, 20), 0.0f) * Random.Range(1, 10);
-                _listAsteroids[i].transform.localPosition = vectorSpawnPosition;
-                _listAsteroids[i].gameObject.SetActive(true);
+                var asteroid = _enemyAsteroidInitialization.EnemyPool.Get();
+                asteroid.MoveToPlayerDirection = _transformPlayer.localPosition - asteroid.transform.localPosition;
+
+                var vectorSpawnPosition = GetNewVector3(asteroid, _transformPlayer);
+
+                Debug.Log($"Уникальный вектор относительно игрока {asteroid.transform.position}");
+
+                asteroid.transform.position = vectorSpawnPosition;
+
+                _listAsteroids.Add(asteroid);
+
+                asteroid.gameObject.SetActive(true);
             }
+        }
+
+        private Vector2 GetNewVector3(Asteroid asteroid, Transform transformPlayer)
+        {
+            var res = Random.insideUnitSphere * 20;
+            res.z = 0.0f;
+            var vector = res - transformPlayer.position;
+
+            return res;
         }
 
         public void Execute(float deltaTime)
@@ -40,8 +64,6 @@ namespace JevLogin
                     _endTimer = Random.Range(3.0f, 10.0f);
                     _listAsteroids[i].MoveToPlayerDirection = _transformPlayer.position - _listAsteroids[i].transform.position;
                 }
-                /*****************************/
-                //_offset = _transformPlayer.position - _listAsteroids[i].transform.position;
 
                 Vector3 desiredPosition = _listAsteroids[i].transform.position + _listAsteroids[i].MoveToPlayerDirection;
                 Vector3 smooth = Vector3.Lerp(_listAsteroids[i].transform.position, desiredPosition, deltaTime * 0.05f);

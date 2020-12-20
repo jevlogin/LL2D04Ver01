@@ -108,6 +108,11 @@
     <Compile Include="Assets\Code\Interface\IUserInputMouse.cs" />
     <Compile Include="Assets\Code\Interface\IUserInputProxy.cs" />
     <Compile Include="Assets\Code\Interface\IWindow.cs" />
+    <Compile Include="Assets\Code\Interface\Test\ExampleServiceLocator.cs" />
+    <Compile Include="Assets\Code\Interface\Test\IIservice.cs" />
+    <Compile Include="Assets\Code\Interface\Test\Service.cs" />
+    <Compile Include="Assets\Code\Interface\Test\ServiceLocator.cs" />
+    <Compile Include="Assets\Code\Interface\Test\ServiceLocatorMonoBehaviour.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />

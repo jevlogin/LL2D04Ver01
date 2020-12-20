@@ -25,5 +25,7 @@ namespace JevLogin
 
             protected set => _healthPoint = value;
         }
+
+       
     }
 }

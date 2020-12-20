@@ -37,6 +37,7 @@ namespace JevLogin
             _bulletInitialization = bulletInitialization;
 
             _barrel = _playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
+
             _fireTimer = _refireTimer;
             _listBullets = new List<Bullet>();
 
@@ -66,6 +67,7 @@ namespace JevLogin
             bullet.transform.SetParent(null);
             bullet.transform.rotation = _barrel.rotation;
             bullet.transform.position = _barrel.position;
+
             bullet.gameObject.SetActive(true);
             return bullet;
         }

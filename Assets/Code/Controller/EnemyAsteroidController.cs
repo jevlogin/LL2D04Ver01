@@ -12,6 +12,7 @@ namespace JevLogin
         private Vector3 _offset;
         private float _endTimer = 5.0f;
         private int _numberOfElementsInTheWave;
+        private float _lifeTimeAsteroid = 2.0f;
 
         public EnemyAsteroidController(EnemyAsteroidInitialization enemyAsteroidInitialization, Transform transformPlayer)
         {
@@ -22,7 +23,7 @@ namespace JevLogin
             _listAsteroids = new List<Asteroid>();
 
             _numberOfElementsInTheWave = _enemyAsteroidInitialization.EnemyPool.Pool.Size;
-            SpawnWave();
+            _listAsteroids = _enemyAsteroidInitialization.EnemyPool.GetList();
         }
 
         private void SpawnWave()
@@ -55,6 +56,15 @@ namespace JevLogin
 
         public void Execute(float deltaTime)
         {
+            if (_lifeTimeAsteroid > 0)
+            {
+                _lifeTimeAsteroid -= deltaTime;
+            }
+            if (_lifeTimeAsteroid <= 0)
+            {
+                SpawnWave();
+                _lifeTimeAsteroid = 5.0f;
+            }
             for (int i = 0; i < _listAsteroids.Count; i++)
             {
                 _listAsteroids[i].TimeDoNewCoordinate += deltaTime;

@@ -12,10 +12,5 @@ namespace JevLogin
         {
             CollisionDetectChange.Invoke(collision.collider);
         }
-
-        public void CollisionDetect()
-        {
-            Debug.Log("Произошла коллизия через событие");
-        }
     }
 }

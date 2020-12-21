@@ -6,6 +6,8 @@ namespace JevLogin
 {
     public sealed class EnemyAsteroidController : IExecute, ICleanup
     {
+        #region Fields
+
         private EnemyAsteroidInitialization _enemyAsteroidInitialization;
         private Transform _transformPlayer;
         private List<Asteroid> _listAsteroids;
@@ -14,6 +16,12 @@ namespace JevLogin
         private float _endTimer = 5.0f;
         private int _numberOfElementsInTheWave;
         private float _lifeTimeAsteroid = 2.0f;
+        private int _activeAsteroid = 0;
+
+        #endregion
+
+
+        #region Properties
 
         public EnemyAsteroidController(EnemyAsteroidInitialization enemyAsteroidInitialization, Transform transformPlayer, ICollisionDetect collisionPlayer)
         {
@@ -23,46 +31,17 @@ namespace JevLogin
 
             _listAsteroids = new List<Asteroid>();
 
-            //_numberOfElementsInTheWave = _enemyAsteroidInitialization.EnemyPool.Pool.Size;
             _numberOfElementsInTheWave = 2;
             _listAsteroids = _enemyAsteroidInitialization.EnemyPool.GetList();
             _collisionPlayer = collisionPlayer;
             _collisionPlayer.CollisionDetectChange += ThereWasACollisionWithThePlayer;
         }
 
-        private void ThereWasACollisionWithThePlayer(Collider2D colliderPlayer)
-        {
-            if (colliderPlayer.GetComponent<Asteroid>())
-            {
-                Debug.Log("обработка события в классе EnemyAsteroidController");
-            }
-        }
+        #endregion
 
-        private void SpawnWave()
-        {
-            for (int i = 0; i < _numberOfElementsInTheWave; i++)
-            {
-                var asteroid = _enemyAsteroidInitialization.EnemyPool.Get();
-                asteroid.MoveToPlayerDirection = _transformPlayer.position - asteroid.transform.position;
 
-                var vectorSpawnPosition = GetNewVector3(asteroid, _transformPlayer);
 
-                asteroid.transform.position = vectorSpawnPosition;
-
-                _listAsteroids.Add(asteroid);
-
-                asteroid.gameObject.SetActive(true);
-            }
-        }
-
-        private Vector2 GetNewVector3(Asteroid asteroid, Transform transformPlayer)
-        {
-            var res = Random.insideUnitSphere * 20;
-            res.z = 0.0f;
-            res += transformPlayer.position;
-
-            return res;
-        }
+        #region IExecute
 
         public void Execute(float deltaTime)
         {
@@ -93,9 +72,62 @@ namespace JevLogin
             }
         }
 
+        #endregion
+
+
+        #region Methods
+
+        private void ThereWasACollisionWithThePlayer(Collider2D colliderPlayer)
+        {
+            if (colliderPlayer.TryGetComponent(out Asteroid component))
+            {
+                Debug.Log("обработка события в классе EnemyAsteroidController");
+                EnemyAsteroidPool.Instance.ReturnToPool(component);
+                _activeAsteroid--;
+            }
+        }
+
+        private void SpawnWave()
+        {
+            if (_activeAsteroid < 10)
+            {
+                for (int i = 0; i < _numberOfElementsInTheWave; i++)
+                {
+                    var asteroid = _enemyAsteroidInitialization.EnemyPool.Get();
+                    asteroid.MoveToPlayerDirection = _transformPlayer.position - asteroid.transform.position;
+
+                    var vectorSpawnPosition = GetNewVector3(asteroid, _transformPlayer);
+
+                    asteroid.transform.position = vectorSpawnPosition;
+
+                    _listAsteroids.Add(asteroid);
+
+                    asteroid.gameObject.SetActive(true);
+                    _activeAsteroid++;
+                }
+            }
+           
+        }
+
+        private Vector2 GetNewVector3(Asteroid asteroid, Transform transformPlayer)
+        {
+            var res = Random.insideUnitSphere * 20;
+            res.z = 0.0f;
+            res += transformPlayer.position;
+
+            return res;
+        }
+
+        #endregion
+
+
+        #region ICleanup
+
         public void Cleanup()
         {
             _collisionPlayer.CollisionDetectChange -= ThereWasACollisionWithThePlayer;
         }
+
+        #endregion
     }
 }

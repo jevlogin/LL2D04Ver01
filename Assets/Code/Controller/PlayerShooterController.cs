@@ -21,7 +21,6 @@ namespace JevLogin
 
         /***************/
         public float MoveSpeed = 5.0f;
-        private float _lifeTime = 0.0f;
         private readonly float _maxLifeTime = 5.0f;
 
         #endregion
@@ -54,8 +53,6 @@ namespace JevLogin
             _fireTimer += deltaTime;
             BulletShot();
             BulletControl(deltaTime);
-
-            
         }
 
         #endregion

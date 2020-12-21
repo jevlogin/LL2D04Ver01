@@ -83,7 +83,6 @@ namespace JevLogin
             {
                 Debug.Log("обработка события в классе EnemyAsteroidController");
                 _enemyAsteroidInitialization.EnemyPool.ReturnToPool(component);
-                //EnemyAsteroidPool.Instance.ReturnToPool(component);
                 _activeAsteroid--;
             }
         }

@@ -8,6 +8,7 @@ namespace JevLogin
 
         private readonly PlayerData _playerData;
         private PlayerModel _playerModel;
+        private ICollisionDetect _playerCollision;
 
         #endregion
 
@@ -18,6 +19,8 @@ namespace JevLogin
         {
             _playerData = playerData;
         }
+
+       
 
         #endregion
 
@@ -31,12 +34,13 @@ namespace JevLogin
             return bullet.GetComponent<Rigidbody2D>();
         }
 
-        public GameObject CreatePlayer()
+        public PlayerView CreatePlayer()
         {
             var player = new GameObject("Player")
                 .AddSprite(_playerData.PlayerSettingsData.SpritePlayer)
                 .AddCircleCollider2D()
-                .AddTrailRenderer(_playerData);
+                .AddTrailRenderer(_playerData)
+                .AddComponent<PlayerView>();
 
             return player;
         }
@@ -50,6 +54,8 @@ namespace JevLogin
                 var playerComponents = _playerData.PlayerComponents;
 
                 var spawnPlayer = CreatePlayer();
+
+                GetPlayerCollision = spawnPlayer;
 
                 var barrel = new GameObject("Barrel");
                 playerComponents.BarrelTransform = barrel.transform;
@@ -67,6 +73,18 @@ namespace JevLogin
             return _playerModel;
         }
 
+
+        public ICollisionDetect GetPlayerCollision
+        {
+            get
+            {
+                return _playerCollision;
+            }
+            private set
+            {
+                _playerCollision = value;
+            }
+        }
         #endregion
 
     }

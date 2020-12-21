@@ -42,13 +42,11 @@ namespace JevLogin
             _controllers.Add(enemyAsteroidInitialization);
             _controllers.Add(enemyShipInitialization);
 
-
-
             _controllers.Add(new InputController(inputInitialization.GetInput(), inputInitialization.GetInputMouse()));
             _controllers.Add(new RotationPlayerController(playerInitialization.GetPlayer(), camera));
             _controllers.Add(new MoveController(inputInitialization.GetInput(), playerInitialization.GetPlayer(), playerInitialization.GetPlayerModel().PlayerStruct.Speed));
             _controllers.Add(new CameraController(playerInitialization.GetPlayer(), camera.transform));
-            _controllers.Add(new EnemyAsteroidController(enemyAsteroidInitialization, playerInitialization.GetPlayer()));
+            _controllers.Add(new EnemyAsteroidController(enemyAsteroidInitialization, playerInitialization.GetPlayer(), playerInitialization.GetPlayerCollision()));
             _controllers.Add(new PlayerShooterController(inputInitialization.GetInputMouse(), playerInitialization, bulletInitialization));
 
             _controllers.Initialization();

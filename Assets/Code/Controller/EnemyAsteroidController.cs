@@ -4,17 +4,18 @@ using UnityEngine;
 
 namespace JevLogin
 {
-    public sealed class EnemyAsteroidController : IExecute
+    public sealed class EnemyAsteroidController : IExecute, ICleanup
     {
         private EnemyAsteroidInitialization _enemyAsteroidInitialization;
         private Transform _transformPlayer;
         private List<Asteroid> _listAsteroids;
-        private Vector3 _offset;
+        private ICollisionDetect _collisionPlayer;
+
         private float _endTimer = 5.0f;
         private int _numberOfElementsInTheWave;
         private float _lifeTimeAsteroid = 2.0f;
 
-        public EnemyAsteroidController(EnemyAsteroidInitialization enemyAsteroidInitialization, Transform transformPlayer)
+        public EnemyAsteroidController(EnemyAsteroidInitialization enemyAsteroidInitialization, Transform transformPlayer, ICollisionDetect collisionPlayer)
         {
             _enemyAsteroidInitialization = enemyAsteroidInitialization;
 
@@ -25,6 +26,16 @@ namespace JevLogin
             //_numberOfElementsInTheWave = _enemyAsteroidInitialization.EnemyPool.Pool.Size;
             _numberOfElementsInTheWave = 2;
             _listAsteroids = _enemyAsteroidInitialization.EnemyPool.GetList();
+            _collisionPlayer = collisionPlayer;
+            _collisionPlayer.CollisionDetectChange += ThereWasACollisionWithThePlayer;
+        }
+
+        private void ThereWasACollisionWithThePlayer(Collider2D colliderPlayer)
+        {
+            if (colliderPlayer.GetComponent<Asteroid>())
+            {
+                Debug.Log("обработка события в классе EnemyAsteroidController");
+            }
         }
 
         private void SpawnWave()
@@ -80,6 +91,11 @@ namespace JevLogin
                 //_listAsteroids[i].transform.position = smooth;
                 _listAsteroids[i].gameObject.GetComponent<Rigidbody2D>().velocity = smooth * 0.01f;
             }
+        }
+
+        public void Cleanup()
+        {
+            _collisionPlayer.CollisionDetectChange -= ThereWasACollisionWithThePlayer;
         }
     }
 }

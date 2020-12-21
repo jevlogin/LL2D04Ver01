@@ -95,6 +95,7 @@
     <Compile Include="Assets\Code\Initialization\InputInitialization.cs" />
     <Compile Include="Assets\Code\Initialization\PlayerInitialization.cs" />
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />
+    <Compile Include="Assets\Code\Interface\ICollisionDetect.cs" />
     <Compile Include="Assets\Code\Interface\IController.cs" />
     <Compile Include="Assets\Code\Interface\IEnemyFactory.cs" />
     <Compile Include="Assets\Code\Interface\IExecute.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="Assets\Code\Player\Bullet.cs" />
     <Compile Include="Assets\Code\Player\PlayerFactory.cs" />
     <Compile Include="Assets\Code\Player\PlayerModel.cs" />
+    <Compile Include="Assets\Code\Player\PlayerView.cs" />
     <Compile Include="Assets\Code\Pool\Bullet\BulletPool.cs" />
     <Compile Include="Assets\Code\Pool\Enemy\EnemyAsteroidPool.cs" />
     <Compile Include="Assets\Code\Pool\GenericObjectPool.cs" />

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace JevLogin
 {
-    public sealed class PlayerShooterController : IExecute, ICleanup, IInitialization
+    public sealed class PlayerShooterController : IExecute, ICleanup
     {
         #region Fields
 
@@ -142,11 +142,6 @@ namespace JevLogin
         private void BoolOnAxisMouseOnChange(bool value)
         {
             _valueChange = value;
-        }
-
-        public void Initialization()
-        {
-            _lifeTime = 0.0f;
         }
 
         #endregion

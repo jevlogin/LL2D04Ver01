@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 namespace JevLogin
@@ -9,7 +6,6 @@ namespace JevLogin
     public abstract class Enemy : MonoBehaviour
     {
         public static IEnemyFactory Factory;
-        private Transform _rootPool;
         private HealthPoint _healthPoint;
 
         public HealthPoint HealthPoint

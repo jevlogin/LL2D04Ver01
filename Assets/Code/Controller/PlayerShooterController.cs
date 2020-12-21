@@ -54,6 +54,8 @@ namespace JevLogin
             _fireTimer += deltaTime;
             BulletShot();
             BulletControl(deltaTime);
+
+            
         }
 
         #endregion
@@ -100,6 +102,15 @@ namespace JevLogin
                 {
                     _fireTimer = 0;
                     _listBullets.Add(GetBullet());
+
+                    // в момент выстрела будет появляться новый кораблик из пулла вражеских кораблей, используя сервислокатор.
+                    // буду спавнить новый кораблик после выстрела используя сервис локатор
+                    var ship = ServiceLocator.Resolve<EnemyShipInitialization>().EnemyShipPool.Get();
+                    
+                    ship.transform.position = new Vector3(Random.Range(_barrel.position.x, _barrel.position.y), Random.Range(_barrel.position.x, _barrel.position.y), 0.0f);
+                    ship.gameObject.SetActive(true);
+                    
+                    Debug.Log($"Создали новый корабль");
                 }
             }
         }

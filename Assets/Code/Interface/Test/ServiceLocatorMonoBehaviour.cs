@@ -35,12 +35,12 @@ namespace JevLogin
             T type = Object.FindObjectOfType<T>();
             if (type != null)
             {
-                _serviceContainer.Add(typeof(T), true);
+                _serviceContainer.Add(typeof(T), type);
             }
             else if (createObjectIfNotFound)
             {
-                var go = new GameObject(typeof(T).Name, typeof(T));
-                _serviceContainer.Add(typeof(T), go.GetComponent<T>());
+                var gameObject = new GameObject(typeof(T).Name, typeof(T));
+                _serviceContainer.Add(typeof(T), gameObject.GetComponent<T>());
             }
             return (T)_serviceContainer[typeof(T)];
         }

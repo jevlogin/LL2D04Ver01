@@ -63,7 +63,7 @@ namespace JevLogin
             if (_lifeTimeAsteroid <= 0)
             {
                 SpawnWave();
-                _lifeTimeAsteroid = 5.0f;
+                _lifeTimeAsteroid = 10.0f;
             }
         }
 
@@ -93,8 +93,10 @@ namespace JevLogin
                 if (ReferenceEquals(collider.gameObject, _listAsteroids[i].gameObject))
                 {
                     Debug.Log("обработка события в классе EnemyAsteroidController");
+                    _listAsteroids[i].name += i;
                     _enemyAsteroidInitialization.EnemyPool.ReturnToPool(_listAsteroids[i]);
                     _activeAsteroid--;
+                    _listAsteroids.RemoveAt(i);
                 }
             }
 
@@ -103,6 +105,7 @@ namespace JevLogin
             //{
             //    Debug.Log("обработка события в классе EnemyAsteroidController");
             //    _enemyAsteroidInitialization.EnemyPool.ReturnToPool(component);
+            //_listAsteroids.Remove(component);
             //    _activeAsteroid--;
             //}
         }
@@ -126,14 +129,14 @@ namespace JevLogin
                     _activeAsteroid++;
                 }
             }
-           
+
         }
 
-        private Vector2 GetNewVector3(Asteroid asteroid, Transform transformPlayer)
+        private Vector3 GetNewVector3(Asteroid asteroid, Transform transformPlayer)
         {
             var res = Random.insideUnitSphere * 20;
-            res.z = 0.0f;
             res += transformPlayer.position;
+            res.z = 0.0f;
 
             return res;
         }

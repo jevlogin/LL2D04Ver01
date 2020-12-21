@@ -67,7 +67,6 @@
     <Compile Include="Assets\Code\Controller\CameraController.cs" />
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
     <Compile Include="Assets\Code\Controller\EnemyAsteroidController.cs" />
-    <Compile Include="Assets\Code\Controller\EnemyShipPool.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />
     <Compile Include="Assets\Code\Controller\InputController.cs" />
     <Compile Include="Assets\Code\Controller\MoveController.cs" />
@@ -89,6 +88,8 @@
     <Compile Include="Assets\Code\Enemy\HealthPoint.cs" />
     <Compile Include="Assets\Code\Enemy\Ship.cs" />
     <Compile Include="Assets\Code\Helper\BuilderExtentions.cs" />
+    <Compile Include="Assets\Code\Helper\ServiceLocator.cs" />
+    <Compile Include="Assets\Code\Helper\ServiceLocatorMonoBehaviour.cs" />
     <Compile Include="Assets\Code\Initialization\BulletInitialization.cs" />
     <Compile Include="Assets\Code\Initialization\EnemyAsteroidInitialization.cs" />
     <Compile Include="Assets\Code\Initialization\EnemyShipInitialization.cs" />
@@ -109,11 +110,6 @@
     <Compile Include="Assets\Code\Interface\IUserInputMouse.cs" />
     <Compile Include="Assets\Code\Interface\IUserInputProxy.cs" />
     <Compile Include="Assets\Code\Interface\IWindow.cs" />
-    <Compile Include="Assets\Code\Interface\Test\ExampleServiceLocator.cs" />
-    <Compile Include="Assets\Code\Interface\Test\IIservice.cs" />
-    <Compile Include="Assets\Code\Interface\Test\Service.cs" />
-    <Compile Include="Assets\Code\Interface\Test\ServiceLocator.cs" />
-    <Compile Include="Assets\Code\Interface\Test\ServiceLocatorMonoBehaviour.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />
@@ -123,6 +119,7 @@
     <Compile Include="Assets\Code\Player\PlayerView.cs" />
     <Compile Include="Assets\Code\Pool\Bullet\BulletPool.cs" />
     <Compile Include="Assets\Code\Pool\Enemy\EnemyAsteroidPool.cs" />
+    <Compile Include="Assets\Code\Pool\Enemy\EnemyShipPool.cs" />
     <Compile Include="Assets\Code\Pool\GenericObjectPool.cs" />
     <Compile Include="Assets\Code\Pool\Pool.cs" />
     <Compile Include="Assets\Code\UserInput\ConsoleInput.cs" />

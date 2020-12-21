@@ -62,7 +62,8 @@ namespace JevLogin
 
         private Bullet GetBullet()
         {
-            var bullet = BulletPool.Instance.Get();
+            //var bullet = BulletPool.Instance.Get();
+            var bullet = _bulletInitialization.GetBulletPool().Get();
             bullet.transform.SetParent(null);
             bullet.transform.rotation = _barrel.rotation;
             bullet.transform.position = _barrel.position;
@@ -84,7 +85,10 @@ namespace JevLogin
                     if (_listBullets[i].LifeTime > _maxLifeTime)
                     {
                         _listBullets[i].LifeTime = 0.0f;
-                        BulletPool.Instance.ReturnToPool(_listBullets[i]);
+                        
+                        _bulletInitialization.GetBulletPool().ReturnToPool(_listBullets[i]);
+
+                        //BulletPool.Instance.ReturnToPool(_listBullets[i]);
                         _listBullets.RemoveAt(i);
                     }
                 }

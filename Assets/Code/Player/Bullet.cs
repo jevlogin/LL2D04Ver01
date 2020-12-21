@@ -28,6 +28,7 @@ namespace JevLogin
             {
                 Debug.Log("Collision detect Asteroid");
                 BulletPool.Instance.ReturnToPool(this);
+                //TODO не совсем правильно, потому что не верно происходит обработка пуль
             }
         }
         #endregion

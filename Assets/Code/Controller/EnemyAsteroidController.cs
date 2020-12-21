@@ -77,9 +77,9 @@ namespace JevLogin
 
         #region Methods
 
-        private void ThereWasACollisionWithThePlayer(Collider2D colliderPlayer)
+        private void ThereWasACollisionWithThePlayer(Collider2D collider)
         {
-            if (colliderPlayer.TryGetComponent(out Asteroid component))
+            if (collider.TryGetComponent(out Asteroid component))
             {
                 Debug.Log("обработка события в классе EnemyAsteroidController");
                 EnemyAsteroidPool.Instance.ReturnToPool(component);

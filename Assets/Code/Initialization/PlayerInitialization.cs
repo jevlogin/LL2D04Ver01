@@ -11,7 +11,6 @@ namespace JevLogin
         private PlayerModel _playerModel;
         private ICollisionDetect _playerCollision;
 
-
         #endregion
 
 
@@ -21,8 +20,6 @@ namespace JevLogin
         {
             _playerFactory = playerFactory;
             _playerModel = _playerFactory.CreatePlayerModel();
-
-            _playerCollision = _playerFactory.GetPlayerCollision;
 
             _player = _playerModel.PlayerComponents.Player;
             _playerModel.PlayerComponents.BulletRigidbody = _playerFactory.CreateBulletRigidBody();
@@ -51,9 +48,13 @@ namespace JevLogin
             return _playerModel;
         }
 
-        public ICollisionDetect GetPlayerCollision()
-        { 
-            return _playerCollision; 
+
+        public ICollisionDetect GetPlayerCollision
+        {
+            get
+            {
+                return _playerModel.PlayerComponents.Player.GetComponent<PlayerView>();
+            }
         }
 
         #endregion

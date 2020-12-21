@@ -24,6 +24,7 @@ namespace JevLogin
             {
                 EnemyAsteroidPool.Instance.ReturnToPool(this);
                 Debug.Log("Астероид был уничтожен");
+                //TODO не совсем правильно, потому что не верно происходит обработка астероидов
             }
         }
     }

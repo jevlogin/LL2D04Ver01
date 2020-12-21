@@ -8,7 +8,6 @@ namespace JevLogin
 
         private readonly PlayerData _playerData;
         private PlayerModel _playerModel;
-        private ICollisionDetect _playerCollision;
 
         #endregion
 
@@ -19,8 +18,6 @@ namespace JevLogin
         {
             _playerData = playerData;
         }
-
-       
 
         #endregion
 
@@ -55,8 +52,6 @@ namespace JevLogin
 
                 var spawnPlayer = CreatePlayer();
 
-                GetPlayerCollision = spawnPlayer;
-
                 var barrel = new GameObject("Barrel");
                 playerComponents.BarrelTransform = barrel.transform;
                 barrel.transform.SetParent(spawnPlayer.transform);
@@ -73,18 +68,6 @@ namespace JevLogin
             return _playerModel;
         }
 
-
-        public ICollisionDetect GetPlayerCollision
-        {
-            get
-            {
-                return _playerCollision;
-            }
-            private set
-            {
-                _playerCollision = value;
-            }
-        }
         #endregion
 
     }

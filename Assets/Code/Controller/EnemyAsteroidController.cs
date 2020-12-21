@@ -82,7 +82,8 @@ namespace JevLogin
             if (collider.TryGetComponent(out Asteroid component))
             {
                 Debug.Log("обработка события в классе EnemyAsteroidController");
-                EnemyAsteroidPool.Instance.ReturnToPool(component);
+                _enemyAsteroidInitialization.EnemyPool.ReturnToPool(component);
+                //EnemyAsteroidPool.Instance.ReturnToPool(component);
                 _activeAsteroid--;
             }
         }

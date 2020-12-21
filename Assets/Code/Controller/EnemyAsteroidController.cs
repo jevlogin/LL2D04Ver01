@@ -40,10 +40,21 @@ namespace JevLogin
         #endregion
 
 
-
         #region IExecute
 
         public void Execute(float deltaTime)
+        {
+            SpawnAsteroids(deltaTime);
+
+            MoveAsteroids(deltaTime);
+        }
+
+        #endregion
+
+
+        #region Methods
+
+        private void SpawnAsteroids(float deltaTime)
         {
             if (_lifeTimeAsteroid > 0)
             {
@@ -54,7 +65,10 @@ namespace JevLogin
                 SpawnWave();
                 _lifeTimeAsteroid = 5.0f;
             }
+        }
 
+        private void MoveAsteroids(float deltaTime)
+        {
             for (int i = 0; i < _listAsteroids.Count; i++)
             {
                 _listAsteroids[i].TimeDoNewCoordinate += deltaTime;
@@ -72,19 +86,25 @@ namespace JevLogin
             }
         }
 
-        #endregion
-
-
-        #region Methods
-
         private void ThereWasACollisionWithThePlayer(Collider2D collider)
         {
-            if (collider.TryGetComponent(out Asteroid component))
+            for (int i = 0; i < _listAsteroids.Count; i++)
             {
-                Debug.Log("обработка события в классе EnemyAsteroidController");
-                _enemyAsteroidInitialization.EnemyPool.ReturnToPool(component);
-                _activeAsteroid--;
+                if (ReferenceEquals(collider.gameObject, _listAsteroids[i].gameObject))
+                {
+                    Debug.Log("обработка события в классе EnemyAsteroidController");
+                    _enemyAsteroidInitialization.EnemyPool.ReturnToPool(_listAsteroids[i]);
+                    _activeAsteroid--;
+                }
             }
+
+            //TODO - пытаюсь избавить от TryGetComponent
+            //if (collider.TryGetComponent(out Asteroid component))
+            //{
+            //    Debug.Log("обработка события в классе EnemyAsteroidController");
+            //    _enemyAsteroidInitialization.EnemyPool.ReturnToPool(component);
+            //    _activeAsteroid--;
+            //}
         }
 
         private void SpawnWave()

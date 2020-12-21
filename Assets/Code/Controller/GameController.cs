@@ -38,6 +38,7 @@ namespace JevLogin
             _controllers.Add(playerInitialization);
             _controllers.Add(enemyAsteroidInitialization);
             _controllers.Add(enemyShipInitialization);
+
             _controllers.Add(new InputController(inputInitialization.GetInput(), inputInitialization.GetInputMouse()));
             _controllers.Add(new RotationPlayerController(playerInitialization.GetPlayer(), camera));
             _controllers.Add(new MoveController(inputInitialization.GetInput(), playerInitialization.GetPlayer(), playerInitialization.GetPlayerModel().PlayerStruct.Speed));
@@ -46,9 +47,6 @@ namespace JevLogin
             _controllers.Add(new PlayerShooterController(inputInitialization.GetInputMouse(), playerInitialization, bulletInitialization));
 
             _controllers.Initialization();
-
-            //TODO только лишь чтобы показать что сделал статичный метод
-            //Enemy.CreateShipEnemy(new HealthPoint(100.0f, 50.0f));
         }
 
         private void Update()

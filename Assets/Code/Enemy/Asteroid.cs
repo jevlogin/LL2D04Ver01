@@ -17,5 +17,15 @@ namespace JevLogin
         {
             HealthPoint = healthPoint;
         }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.collider.GetComponent<Bullet>())
+            {
+                EnemyAsteroidPool.Instance.ReturnToPool(this);
+                Debug.Log("Астероид был уничтожен");
+                //TODO не совсем правильно, потому что не верно происходит обработка астероидов
+            }
+        }
     }
 }

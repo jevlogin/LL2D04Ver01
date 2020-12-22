@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace JevLogin
 {
-    public sealed class PlayerShooterController : IExecute, ICleanup, IInitialization
+    public sealed class PlayerShooterController : IExecute, ICleanup
     {
         #region Fields
 
@@ -21,7 +21,6 @@ namespace JevLogin
 
         /***************/
         public float MoveSpeed = 5.0f;
-        private float _lifeTime = 0.0f;
         private readonly float _maxLifeTime = 5.0f;
 
         #endregion
@@ -37,6 +36,7 @@ namespace JevLogin
             _bulletInitialization = bulletInitialization;
 
             _barrel = _playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform;
+
             _fireTimer = _refireTimer;
             _listBullets = new List<Bullet>();
 
@@ -62,10 +62,12 @@ namespace JevLogin
 
         private Bullet GetBullet()
         {
-            var bullet = BulletPool.Instance.Get();
+            //var bullet = BulletPool.Instance.Get();
+            var bullet = _bulletInitialization.GetBulletPool().Get();
             bullet.transform.SetParent(null);
             bullet.transform.rotation = _barrel.rotation;
             bullet.transform.position = _barrel.position;
+
             bullet.gameObject.SetActive(true);
             return bullet;
         }
@@ -83,7 +85,10 @@ namespace JevLogin
                     if (_listBullets[i].LifeTime > _maxLifeTime)
                     {
                         _listBullets[i].LifeTime = 0.0f;
-                        BulletPool.Instance.ReturnToPool(_listBullets[i]);
+                        
+                        _bulletInitialization.GetBulletPool().ReturnToPool(_listBullets[i]);
+
+                        //BulletPool.Instance.ReturnToPool(_listBullets[i]);
                         _listBullets.RemoveAt(i);
                     }
                 }
@@ -98,6 +103,15 @@ namespace JevLogin
                 {
                     _fireTimer = 0;
                     _listBullets.Add(GetBullet());
+
+                    // в момент выстрела будет появляться новый кораблик из пулла вражеских кораблей, используя сервислокатор.
+                    // буду спавнить новый кораблик после выстрела используя сервис локатор
+                    var ship = ServiceLocator.Resolve<EnemyShipInitialization>().EnemyShipPool.Get();
+                    
+                    ship.transform.position = new Vector3(Random.Range(_barrel.position.x, _barrel.position.y), Random.Range(_barrel.position.x, _barrel.position.y), 0.0f);
+                    ship.gameObject.SetActive(true);
+                    
+                    Debug.Log($"Создали новый корабль");
                 }
             }
         }
@@ -132,11 +146,6 @@ namespace JevLogin
         private void BoolOnAxisMouseOnChange(bool value)
         {
             _valueChange = value;
-        }
-
-        public void Initialization()
-        {
-            _lifeTime = 0.0f;
         }
 
         #endregion

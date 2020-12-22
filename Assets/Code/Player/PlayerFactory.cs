@@ -31,12 +31,13 @@ namespace JevLogin
             return bullet.GetComponent<Rigidbody2D>();
         }
 
-        public GameObject CreatePlayer()
+        public PlayerView CreatePlayer()
         {
             var player = new GameObject("Player")
                 .AddSprite(_playerData.PlayerSettingsData.SpritePlayer)
                 .AddCircleCollider2D()
-                .AddTrailRenderer(_playerData);
+                .AddTrailRenderer(_playerData)
+                .AddComponent<PlayerView>();
 
             return player;
         }

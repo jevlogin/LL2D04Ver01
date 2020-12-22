@@ -110,6 +110,7 @@
     <Compile Include="Assets\Code\Interface\IUserInputMouse.cs" />
     <Compile Include="Assets\Code\Interface\IUserInputProxy.cs" />
     <Compile Include="Assets\Code\Interface\IWindow.cs" />
+    <Compile Include="Assets\Code\Interface\Test\IFire.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />

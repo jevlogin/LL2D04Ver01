@@ -15,6 +15,9 @@ namespace JevLogin
         {
             _playerTransform = player;
             _cameraTransform = camera;
+            
+            _cameraTransform.position = new Vector3(_playerTransform.position.x, _playerTransform.position.y, -10.0f);
+
             _offset = _cameraTransform.position - _playerTransform.position;
         }
 

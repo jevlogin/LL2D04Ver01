@@ -9,7 +9,15 @@ namespace JevLogin.Bridge
     {
         private void Start()
         {
-            var enemy = new EnemyBridge(new MagicalAttack(), new Infanrty());
+            IAttack attack = new Unit();
+            Detachment attaks = new Detachment();
+
+            attaks.AddUnit(attack);
+
+            attack.Attack();
+            attaks.Attack();
+
+            attaks.RemoveUnit(attack);
         }
     }
 }

@@ -14,10 +14,26 @@ namespace JevLogin.Bridge
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private AudioClip _audioClip;
 
+        [Header("Muffler Gun")]
+        [SerializeField] private AudioClip _audioClipMuffler;
+        [SerializeField] private float _volumeFireOnMuffler;
+        [SerializeField] private Transform _barrelPositionMuffler;
+        [SerializeField] private GameObject _muffler;
+
+
+
         private void Start()
         {
             IAmmunition ammunition = new BulletDecorator(_bullet, 3.0f);
-            _fire = new Weapon(_barrelPosition, ammunition, 999.0f, _audioClip, _audioSource);
+            var weapon = new Weapon(_barrelPosition, ammunition, 999.0f, _audioClip, _audioSource);
+
+            var muffler = new Muffler(_audioClipMuffler, _barrelPositionMuffler, _muffler, _volumeFireOnMuffler);
+
+            ModificationWeapon modificationWeapon = new ModificationMuffler(_audioSource, muffler, _barrelPositionMuffler.position);
+            modificationWeapon.ApplyModification(weapon);
+
+
+            _fire = modificationWeapon;
         }
 
         private void Update()

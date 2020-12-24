@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
 
-namespace JevLogin
+namespace JevLogin.Bridge
 {
     public interface IAttack 
     {
-        void Attack(Vector3 position);
+        void Attack();
     }
 }

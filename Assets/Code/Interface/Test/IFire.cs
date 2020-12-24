@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-namespace JevLogin
+namespace JevLogin.Bridge
 {
     public interface IFire 
     {

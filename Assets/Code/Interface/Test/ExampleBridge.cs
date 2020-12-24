@@ -24,24 +24,12 @@ namespace JevLogin.Bridge
 
         private void Start()
         {
-            IAmmunition ammunition = new BulletDecorator(_bullet, 3.0f);
-            var weapon = new Weapon(_barrelPosition, ammunition, 999.0f, _audioClip, _audioSource);
-
-            var muffler = new Muffler(_audioClipMuffler, _barrelPositionMuffler, _muffler, _volumeFireOnMuffler);
-
-            ModificationWeapon modificationWeapon = new ModificationMuffler(_audioSource, muffler, _barrelPositionMuffler.position);
-            modificationWeapon.ApplyModification(weapon);
-
-
-            _fire = modificationWeapon;
-        }
-
-        private void Update()
-        {
-            if (Input.GetButtonDown(AxisManager.FIRE1))
-            {
-                _fire.Fire();
-            }
+            var unlockWeapon = new UnlockWeapon(false);
+            var weapon = new WeaponPro();
+            var weaponProxy = new WeaponProxy(weapon, unlockWeapon);
+            weaponProxy.Fire();
+            unlockWeapon.IsUnlock = true;
+            weaponProxy.Fire();
         }
     }
 }

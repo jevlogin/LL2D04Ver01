@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace JevLogin
+namespace JevLogin.Bridge
 {
     public sealed class LevelCompleted
     {

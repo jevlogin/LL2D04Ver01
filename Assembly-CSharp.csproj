@@ -120,6 +120,7 @@
     <Compile Include="Assets\Code\Interface\Test\IMove.cs" />
     <Compile Include="Assets\Code\Interface\Test\IMuffler.cs" />
     <Compile Include="Assets\Code\Interface\Test\Infanrty.cs" />
+    <Compile Include="Assets\Code\Interface\Test\LevelCompleted.cs" />
     <Compile Include="Assets\Code\Interface\Test\MagicalAttack.cs" />
     <Compile Include="Assets\Code\Interface\Test\ModificationMuffler.cs" />
     <Compile Include="Assets\Code\Interface\Test\ModificationWeapon.cs" />

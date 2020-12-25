@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24327a3f8180c9746babda2fe1cb3a15, type: 3}
   m_Name: DictionaryObjectData
   m_EditorClassIdentifier: 
-  _keys: 
-  _values: []
+  _keys: 0300000005000000
+  _values:
+  - Hello
+  - World

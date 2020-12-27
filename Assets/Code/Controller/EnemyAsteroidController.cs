@@ -99,15 +99,6 @@ namespace JevLogin
                     _listAsteroids.RemoveAt(i);
                 }
             }
-
-            //TODO - пытаюсь избавить от TryGetComponent
-            //if (collider.TryGetComponent(out Asteroid component))
-            //{
-            //    Debug.Log("обработка события в классе EnemyAsteroidController");
-            //    _enemyAsteroidInitialization.EnemyPool.ReturnToPool(component);
-            //_listAsteroids.Remove(component);
-            //    _activeAsteroid--;
-            //}
         }
 
         private void SpawnWave()

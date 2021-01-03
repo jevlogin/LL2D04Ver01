@@ -88,7 +88,6 @@ namespace JevLogin
                         
                         _bulletInitialization.GetBulletPool().ReturnToPool(_listBullets[i]);
 
-                        //BulletPool.Instance.ReturnToPool(_listBullets[i]);
                         _listBullets.RemoveAt(i);
                     }
                 }

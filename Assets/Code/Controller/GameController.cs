@@ -23,7 +23,7 @@ namespace JevLogin
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
 
-            var poolBullet = new Pool<Bullet>(20, ManagerPath.BULLET_PATH);
+            var poolBullet = new Pool<Bullet>(10, ManagerPath.BULLET_PATH);
             var bulletInitialization = new BulletInitialization(new BulletPool(poolBullet, playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform));
 
 

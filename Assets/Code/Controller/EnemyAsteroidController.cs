@@ -97,6 +97,7 @@ namespace JevLogin
                     _enemyAsteroidInitialization.EnemyPool.ReturnToPool(_listAsteroids[i]);
                     _activeAsteroid--;
                     _listAsteroids.RemoveAt(i);
+                    break;  //костыль
                 }
             }
         }

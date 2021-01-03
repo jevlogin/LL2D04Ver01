@@ -1,6 +1,6 @@
 ﻿namespace JevLogin
 {
-    internal sealed class InputInitialization : IInitialization
+    internal sealed class InputInitialization : IEmptyInitialization
     {
         #region Fields
 
@@ -25,10 +25,10 @@
 
         #region IInitialization
 
-        public void Initialization()
-        {
-            //TODO Здесть явно что-то будет... но я пока не знаю что...
-        }
+        //public void Initialization()
+        //{
+        //    //TODO Здесть явно что-то будет... но я пока не знаю что...
+        //}
 
         #endregion
 

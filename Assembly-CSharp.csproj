@@ -123,6 +123,10 @@
     <Compile Include="Assets\Code\Lesson\Bridge\Interface\IAttack.cs" />
     <Compile Include="Assets\Code\Lesson\Bridge\Interface\IMove.cs" />
     <Compile Include="Assets\Code\Lesson\Bridge\MagicalAttack.cs" />
+    <Compile Include="Assets\Code\Lesson\Composite\Detachment.cs" />
+    <Compile Include="Assets\Code\Lesson\Composite\Example.cs" />
+    <Compile Include="Assets\Code\Lesson\Composite\Interface\IAttack.cs" />
+    <Compile Include="Assets\Code\Lesson\Composite\Unit.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />

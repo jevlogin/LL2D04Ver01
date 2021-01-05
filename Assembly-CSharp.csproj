@@ -131,6 +131,10 @@
     <Compile Include="Assets\Code\Lesson\Decorator\Example.cs" />
     <Compile Include="Assets\Code\Lesson\Decorator\IAmmunition.cs" />
     <Compile Include="Assets\Code\Lesson\Decorator\Interface\IFire.cs" />
+    <Compile Include="Assets\Code\Lesson\Decorator\Interface\IMuffler.cs" />
+    <Compile Include="Assets\Code\Lesson\Decorator\ModificationMuffler.cs" />
+    <Compile Include="Assets\Code\Lesson\Decorator\ModificationWeapon.cs" />
+    <Compile Include="Assets\Code\Lesson\Decorator\Muffler.cs" />
     <Compile Include="Assets\Code\Lesson\Decorator\Weapon.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />

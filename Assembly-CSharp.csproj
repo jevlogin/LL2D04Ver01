@@ -117,12 +117,14 @@
     <Compile Include="Assets\Code\Lesson\Adapter\Example.cs" />
     <Compile Include="Assets\Code\Lesson\Adapter\Interface\IAttack.cs" />
     <Compile Include="Assets\Code\Lesson\Adapter\Interface\IFire.cs" />
+    <Compile Include="Assets\Code\Lesson\Bridge\Cavalry.cs" />
     <Compile Include="Assets\Code\Lesson\Bridge\Enemy.cs" />
     <Compile Include="Assets\Code\Lesson\Bridge\Example.cs" />
     <Compile Include="Assets\Code\Lesson\Bridge\Infantry.cs" />
     <Compile Include="Assets\Code\Lesson\Bridge\Interface\IAttack.cs" />
     <Compile Include="Assets\Code\Lesson\Bridge\Interface\IMove.cs" />
     <Compile Include="Assets\Code\Lesson\Bridge\MagicalAttack.cs" />
+    <Compile Include="Assets\Code\Lesson\Bridge\MiddleAttack.cs" />
     <Compile Include="Assets\Code\Lesson\Composite\Detachment.cs" />
     <Compile Include="Assets\Code\Lesson\Composite\Example.cs" />
     <Compile Include="Assets\Code\Lesson\Composite\Interface\IAttack.cs" />

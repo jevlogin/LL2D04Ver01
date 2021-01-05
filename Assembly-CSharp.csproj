@@ -142,6 +142,11 @@
     <Compile Include="Assets\Code\Lesson\Facade\Map.cs" />
     <Compile Include="Assets\Code\Lesson\Facade\Player.cs" />
     <Compile Include="Assets\Code\Lesson\Flyweight\LevelCompleted.cs" />
+    <Compile Include="Assets\Code\Lesson\Proxy\Example.cs" />
+    <Compile Include="Assets\Code\Lesson\Proxy\Interface\IWeapon.cs" />
+    <Compile Include="Assets\Code\Lesson\Proxy\UnlockWeapon.cs" />
+    <Compile Include="Assets\Code\Lesson\Proxy\Weapon.cs" />
+    <Compile Include="Assets\Code\Lesson\Proxy\WeaponProxy.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />

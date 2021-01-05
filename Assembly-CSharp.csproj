@@ -141,6 +141,7 @@
     <Compile Include="Assets\Code\Lesson\Facade\GameService.cs" />
     <Compile Include="Assets\Code\Lesson\Facade\Map.cs" />
     <Compile Include="Assets\Code\Lesson\Facade\Player.cs" />
+    <Compile Include="Assets\Code\Lesson\Flyweight\LevelCompleted.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />

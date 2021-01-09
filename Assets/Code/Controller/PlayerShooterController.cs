@@ -13,7 +13,7 @@ namespace JevLogin
         private BulletInitialization _bulletInitialization;
         private List<Bullet> _listBullets;
 
-        private IUserInputMouse _userInputMouse;
+        private IUserInputBool _userInputMouse;
 
         private bool _valueChange;
         private float _refireTimer = 0.3f;
@@ -26,7 +26,7 @@ namespace JevLogin
 
         #region Properties
 
-        public PlayerShooterController(IUserInputMouse userInputMouse, PlayerInitialization playerInitialization, BulletInitialization bulletInitialization)
+        public PlayerShooterController(IUserInputBool userInputMouse, PlayerInitialization playerInitialization, BulletInitialization bulletInitialization)
         {
             _userInputMouse = userInputMouse;
 

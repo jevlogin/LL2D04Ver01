@@ -109,7 +109,7 @@
     <Compile Include="Assets\Code\Interface\IPlatform.cs" />
     <Compile Include="Assets\Code\Interface\IPlayerFactory.cs" />
     <Compile Include="Assets\Code\Interface\IRotation.cs" />
-    <Compile Include="Assets\Code\Interface\IUserInputMouse.cs" />
+    <Compile Include="Assets\Code\Interface\IUserInputBool.cs" />
     <Compile Include="Assets\Code\Interface\IUserInputProxy.cs" />
     <Compile Include="Assets\Code\Interface\IWindow.cs" />
     <Compile Include="Assets\Code\Lesson\Adapter\AttackBullet.cs" />

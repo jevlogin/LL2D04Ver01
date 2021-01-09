@@ -12,5 +12,6 @@ namespace JevLogin
         public const string FIRE1 = "Fire1";
         public const string JUMP = "Jump";
         public const string SAVE = "Save";
+        public const string LOAD = "Load";
     }
 }

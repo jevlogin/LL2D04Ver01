@@ -8,14 +8,14 @@ namespace JevLogin
 
         private readonly IUserInputProxy _horizontal;
         private readonly IUserInputProxy _vertical;
-        private readonly IUserInputMouse _inputMouse;
+        private readonly IUserInputBool _inputMouse;
 
         #endregion
 
 
         #region Properties
 
-        public InputController((IUserInputProxy inputHorizontal, IUserInputProxy inputVertical) input, IUserInputMouse userInputMouse)
+        public InputController((IUserInputProxy inputHorizontal, IUserInputProxy inputVertical) input, IUserInputBool userInputMouse)
         {
             _horizontal = input.inputHorizontal;
             _vertical = input.inputVertical;
@@ -31,7 +31,7 @@ namespace JevLogin
         {
             _horizontal.GetAxis();
             _vertical.GetAxis();
-            _inputMouse.GetMouseDownAndUp();
+            _inputMouse.GetButtonDownAndUp();
         }
 
         #endregion

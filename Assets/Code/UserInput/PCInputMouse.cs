@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace JevLogin
 {
-    public sealed class PCInputMouse : IUserInputMouse
+    public sealed class PCInputMouse : IUserInputBool
     {
         #region Fields
 
@@ -15,7 +15,7 @@ namespace JevLogin
 
         #region IUserInputMouse
 
-        public void GetMouseDownAndUp()
+        public void GetButtonDownAndUp()
         {
             MouseOnChange.Invoke(Input.GetButtonDown(AxisManager.FIRE1));
         }

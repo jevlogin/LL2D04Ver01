@@ -6,7 +6,7 @@
 
         private IUserInputProxy _pcInputHorizontal;
         private IUserInputProxy _pcInputVertical;
-        private IUserInputMouse _inputMouse;
+        private IUserInputBool _inputMouse;
 
         #endregion
 
@@ -41,7 +41,7 @@
             return result;
         }
 
-        public IUserInputMouse GetInputMouse()
+        public IUserInputBool GetInputMouse()
         {
             return _inputMouse;
         }

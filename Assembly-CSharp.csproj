@@ -69,10 +69,15 @@
     <Compile Include="Assets\Code\Controller\EnemyAsteroidController.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />
     <Compile Include="Assets\Code\Controller\InputController.cs" />
+    <Compile Include="Assets\Code\Controller\JsonData.cs" />
     <Compile Include="Assets\Code\Controller\MoveController.cs" />
     <Compile Include="Assets\Code\Controller\PlayerShooterController.cs" />
     <Compile Include="Assets\Code\Controller\RotationPlayerController.cs" />
     <Compile Include="Assets\Code\Controller\SaveController.cs" />
+    <Compile Include="Assets\Code\Controller\SaveData.cs" />
+    <Compile Include="Assets\Code\Controller\SaveDataRepository.cs" />
+    <Compile Include="Assets\Code\Controller\SaveListObject.cs" />
+    <Compile Include="Assets\Code\Controller\UnitCompositeFactory.cs" />
     <Compile Include="Assets\Code\Data\Data.cs" />
     <Compile Include="Assets\Code\Data\DictionaryScriptableObject.cs" />
     <Compile Include="Assets\Code\Data\Enemy\EnemyComponents.cs" />
@@ -102,6 +107,7 @@
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />
     <Compile Include="Assets\Code\Interface\ICollisionDetect.cs" />
     <Compile Include="Assets\Code\Interface\IController.cs" />
+    <Compile Include="Assets\Code\Interface\IData.cs" />
     <Compile Include="Assets\Code\Interface\IEmptyInitialization.cs" />
     <Compile Include="Assets\Code\Interface\IEnemyFactory.cs" />
     <Compile Include="Assets\Code\Interface\IExecute.cs" />

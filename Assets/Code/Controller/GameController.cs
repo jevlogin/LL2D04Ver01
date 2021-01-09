@@ -10,6 +10,8 @@ namespace JevLogin
 
         [SerializeField] private Data _data;
         private Controllers _controllers;
+        private SaveDataRepository _saveDataRepository;
+        private SaveListObject _saveListObject;
 
         #endregion
 
@@ -19,14 +21,16 @@ namespace JevLogin
         private void Start()
         {
             Camera camera = Camera.main;
+            _saveDataRepository = new SaveDataRepository(new UnitCompositeFactory());
 
             var inputInitialization = new InputInitialization();
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
+            _saveListObject = new SaveListObject(playerInitialization.GetPlayerModel());
 
             var poolBullet = new Pool<Bullet>(10, ManagerPath.BULLET_PATH);
             var bulletInitialization = new BulletInitialization(new BulletPool(poolBullet, playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform));
-
+            
 
             var poolAsteroid = new Pool<Asteroid>(10, ManagerPath.ASTEROID_PATH);
             var enemyAsteroidInitialization = new EnemyAsteroidInitialization(new EnemyAsteroidPool(poolAsteroid, new GameObject(ManagerName.POOL_ASTEROIDS).transform));
@@ -49,7 +53,7 @@ namespace JevLogin
             _controllers.Add(new CameraController(playerInitialization.GetPlayer(), camera.transform));
             _controllers.Add(new EnemyAsteroidController(enemyAsteroidInitialization, playerInitialization.GetPlayer(), playerInitialization.GetPlayerCollision));
             _controllers.Add(new PlayerShooterController(inputInitialization.GetInputMouse(), playerInitialization, bulletInitialization));
-            _controllers.Add(new SaveController(inputInitialization.GetInputSaveOrLoadButtonDown()));
+            _controllers.Add(new SaveController(inputInitialization.GetInputSaveOrLoadButtonDown(), _saveDataRepository, _saveListObject));
 
             _controllers.Initialization();
         }

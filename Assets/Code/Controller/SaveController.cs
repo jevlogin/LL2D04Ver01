@@ -1,12 +1,15 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 namespace JevLogin
 {
-    internal class SaveController : IExecute, ICleanup
+    public sealed class SaveController : IExecute, ICleanup
     {
         #region Fields
-        
+
+        private SaveDataRepository _saveDataRepository;
+        private SaveListObject _saveListObject;
+
         private IUserInputBool _inputSave;
         private IUserInputBool _inputLoad;
 
@@ -18,10 +21,12 @@ namespace JevLogin
 
         #region ClassLifeCycles
 
-        public SaveController((IUserInputBool inputSave, IUserInputBool inputLoad) userInputBool)
+        public SaveController((IUserInputBool inputSave, IUserInputBool inputLoad) userInputBool, SaveDataRepository saveDataRepository, SaveListObject saveListObject)
         {
             _inputSave = userInputBool.inputSave;
             _inputLoad = userInputBool.inputLoad;
+            _saveDataRepository = saveDataRepository;
+            _saveListObject = saveListObject;
 
             _inputSave.UserInputBoolOnChange += PressSaveButton;
             _inputLoad.UserInputBoolOnChange += PressLoadButton;
@@ -41,6 +46,7 @@ namespace JevLogin
             if (_isLoadedPress)
             {
                 Debug.Log("Load Event");
+                _saveDataRepository.Load(_saveListObject.ListObject);
             }
         } 
 

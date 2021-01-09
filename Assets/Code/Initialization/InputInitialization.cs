@@ -1,4 +1,6 @@
-﻿namespace JevLogin
+﻿using System;
+
+namespace JevLogin
 {
     internal sealed class InputInitialization : IEmptyInitialization
     {
@@ -7,6 +9,8 @@
         private IUserInputProxy _pcInputHorizontal;
         private IUserInputProxy _pcInputVertical;
         private IUserInputBool _inputMouse;
+        private IUserInputBool _inputSave;
+        private IUserInputBool _inputLoad;
 
         #endregion
 
@@ -18,6 +22,8 @@
             _pcInputHorizontal = new PCInputHorizontal();
             _pcInputVertical = new PCInputVertical();
             _inputMouse = new PCInputMouse();
+            _inputSave = new PCInputSave();
+            _inputLoad = new PCInputLoad();
         }
 
         #endregion
@@ -44,6 +50,12 @@
         public IUserInputBool GetInputMouse()
         {
             return _inputMouse;
+        }
+
+        public (IUserInputBool inputSave, IUserInputBool inputLoad) GetInputSaveOrLoadButtonDown()
+        {
+            (IUserInputBool inputSave, IUserInputBool inputLoad) result = (_inputSave, _inputLoad);
+            return result;
         }
 
         #endregion

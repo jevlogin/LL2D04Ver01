@@ -8,7 +8,7 @@ namespace JevLogin
     {
         #region Fields
 
-        public event Action<bool> MouseOnChange = delegate (bool value) { };
+        public event Action<bool> UserInputBoolOnChange = delegate (bool value) { };
 
         #endregion
 
@@ -17,7 +17,7 @@ namespace JevLogin
 
         public void GetButtonDownAndUp()
         {
-            MouseOnChange.Invoke(Input.GetButtonDown(AxisManager.FIRE1));
+            UserInputBoolOnChange.Invoke(Input.GetButtonDown(AxisManager.FIRE1));
         }
 
         #endregion

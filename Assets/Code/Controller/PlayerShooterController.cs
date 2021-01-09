@@ -38,7 +38,7 @@ namespace JevLogin
             _fireTimer = _refireTimer;
             _listBullets = new List<Bullet>();
 
-            _userInputMouse.MouseOnChange += BoolOnAxisMouseOnChange;
+            _userInputMouse.UserInputBoolOnChange += BoolOnAxisMouseOnChange;
         }
 
         #endregion
@@ -132,7 +132,7 @@ namespace JevLogin
 
         public void Cleanup()
         {
-            _userInputMouse.MouseOnChange -= BoolOnAxisMouseOnChange;
+            _userInputMouse.UserInputBoolOnChange -= BoolOnAxisMouseOnChange;
         }
 
         #endregion

@@ -5,7 +5,7 @@ namespace JevLogin
 {
     public interface IUserInputBool 
     {
-        event Action<bool> MouseOnChange;
+        event Action<bool> UserInputBoolOnChange;
         void GetButtonDownAndUp();
     }
 }

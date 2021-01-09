@@ -95,6 +95,8 @@
     <Compile Include="Assets\Code\Initialization\EnemyAsteroidInitialization.cs" />
     <Compile Include="Assets\Code\Initialization\EnemyShipInitialization.cs" />
     <Compile Include="Assets\Code\Initialization\InputInitialization.cs" />
+    <Compile Include="Assets\Code\Initialization\PCInputLoad.cs" />
+    <Compile Include="Assets\Code\Initialization\PCInputSave.cs" />
     <Compile Include="Assets\Code\Initialization\PlayerInitialization.cs" />
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />
     <Compile Include="Assets\Code\Interface\ICollisionDetect.cs" />

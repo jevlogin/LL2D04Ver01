@@ -19,6 +19,7 @@ namespace JevLogin
         private void Start()
         {
             Camera camera = Camera.main;
+
             var inputInitialization = new InputInitialization();
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
@@ -48,6 +49,7 @@ namespace JevLogin
             _controllers.Add(new CameraController(playerInitialization.GetPlayer(), camera.transform));
             _controllers.Add(new EnemyAsteroidController(enemyAsteroidInitialization, playerInitialization.GetPlayer(), playerInitialization.GetPlayerCollision));
             _controllers.Add(new PlayerShooterController(inputInitialization.GetInputMouse(), playerInitialization, bulletInitialization));
+            //_controllers.Add(new SaveController(inputInitialization.GetInputSaveOrLoadButtonDown()))
 
             _controllers.Initialization();
         }

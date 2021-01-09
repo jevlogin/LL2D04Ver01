@@ -1,4 +1,6 @@
-﻿namespace JevLogin
+﻿using System;
+
+namespace JevLogin
 {
     public sealed class InputController : IExecute
     {

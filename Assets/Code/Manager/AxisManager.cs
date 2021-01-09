@@ -11,5 +11,6 @@ namespace JevLogin
         public const string VERTICAL = "Vertical";
         public const string FIRE1 = "Fire1";
         public const string JUMP = "Jump";
+        public const string SAVE = "Save";
     }
 }

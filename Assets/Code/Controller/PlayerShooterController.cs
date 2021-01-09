@@ -18,8 +18,6 @@ namespace JevLogin
         private bool _valueChange;
         private float _refireTimer = 0.3f;
         private float _fireTimer;
-
-        /***************/
         public float MoveSpeed = 5.0f;
         private readonly float _maxLifeTime = 5.0f;
 

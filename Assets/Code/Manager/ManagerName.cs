@@ -10,5 +10,6 @@
         public const string ASTEROID = "Asteroid";
         public const string BULLET = "Bullet";
         public const string SHIP = "Ship";
+        public const string DATABAT = "Data.bat";
     }
 }

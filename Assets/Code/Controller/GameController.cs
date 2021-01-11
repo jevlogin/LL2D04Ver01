@@ -10,8 +10,6 @@ namespace JevLogin
 
         [SerializeField] private Data _data;
         private Controllers _controllers;
-        private SaveDataRepository _saveDataRepository;
-        private SaveListObject _saveListObject;
 
         #endregion
 
@@ -21,12 +19,10 @@ namespace JevLogin
         private void Start()
         {
             Camera camera = Camera.main;
-            _saveDataRepository = new SaveDataRepository(new UnitCompositeFactory());
 
             var inputInitialization = new InputInitialization();
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
-            _saveListObject = new SaveListObject(playerInitialization.GetPlayerModel());
 
             var poolBullet = new Pool<Bullet>(10, ManagerPath.BULLET_PATH);
             var bulletInitialization = new BulletInitialization(new BulletPool(poolBullet, playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform));
@@ -47,13 +43,12 @@ namespace JevLogin
             _controllers.Add(enemyAsteroidInitialization);
             _controllers.Add(enemyShipInitialization);
 
-            _controllers.Add(new InputController(inputInitialization.GetInput(), inputInitialization.GetInputMouse(), inputInitialization.GetInputSaveOrLoadButtonDown()));
+            _controllers.Add(new InputController(inputInitialization.GetInput(), inputInitialization.GetInputMouse()));
             _controllers.Add(new RotationPlayerController(playerInitialization.GetPlayer(), camera));
             _controllers.Add(new MoveController(inputInitialization.GetInput(), playerInitialization.GetPlayer(), playerInitialization.GetPlayerModel().PlayerStruct.Speed));
             _controllers.Add(new CameraController(playerInitialization.GetPlayer(), camera.transform));
             _controllers.Add(new EnemyAsteroidController(enemyAsteroidInitialization, playerInitialization.GetPlayer(), playerInitialization.GetPlayerCollision));
             _controllers.Add(new PlayerShooterController(inputInitialization.GetInputMouse(), playerInitialization, bulletInitialization));
-            _controllers.Add(new SaveController(inputInitialization.GetInputSaveOrLoadButtonDown(), _saveDataRepository, _saveListObject));
 
             _controllers.Initialization();
         }

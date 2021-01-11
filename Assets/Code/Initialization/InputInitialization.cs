@@ -9,8 +9,6 @@ namespace JevLogin
         private IUserInputProxy _pcInputHorizontal;
         private IUserInputProxy _pcInputVertical;
         private IUserInputBool _inputMouse;
-        private IUserInputBool _inputSave;
-        private IUserInputBool _inputLoad;
 
         #endregion
 
@@ -22,8 +20,6 @@ namespace JevLogin
             _pcInputHorizontal = new PCInputHorizontal();
             _pcInputVertical = new PCInputVertical();
             _inputMouse = new PCInputMouse();
-            _inputSave = new PCInputSave();
-            _inputLoad = new PCInputLoad();
         }
 
         #endregion
@@ -50,12 +46,6 @@ namespace JevLogin
         public IUserInputBool GetInputMouse()
         {
             return _inputMouse;
-        }
-
-        public (IUserInputBool inputSave, IUserInputBool inputLoad) GetInputSaveOrLoadButtonDown()
-        {
-            (IUserInputBool inputSave, IUserInputBool inputLoad) result = (_inputSave, _inputLoad);
-            return result;
         }
 
         #endregion

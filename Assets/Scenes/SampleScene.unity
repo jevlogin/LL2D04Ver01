@@ -276,7 +276,6 @@ GameObject:
   - component: {fileID: 1632952830}
   - component: {fileID: 1632952832}
   - component: {fileID: 1632952833}
-  - component: {fileID: 1632952834}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -352,18 +351,6 @@ MonoBehaviour:
   _barrelPositionMuffler: {fileID: 1018509012}
   _muffler: {fileID: 2690218334946535002, guid: 4fe76fe9f8aea384182acef13be3f2c1,
     type: 3}
---- !u!114 &1632952834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632952829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 122019c8a5f1ddc48836d6dab547ecf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2038130269
 GameObject:
   m_ObjectHideFlags: 0

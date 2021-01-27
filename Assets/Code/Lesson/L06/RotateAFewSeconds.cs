@@ -16,22 +16,22 @@ namespace JevLogin
 
         #region Methods
 
-        public override IGameHandler Handle()
-        {
-            StartCoroutine(StartRotation());
-            return this;
-        }
-
         private IEnumerator StartRotation()
         {
             var time = 0.0f;
             while (time < _rotationDuration)
             {
-                time += Time.deltaTime;
                 transform.Rotate(Vector3.forward * (_rotationSpeed * Time.deltaTime));
+                time += Time.deltaTime;
                 yield return null;
             }
             base.Handle();
+        }
+
+        public override IGameHandler Handle()
+        {
+            StartCoroutine(StartRotation());
+            return this;
         }
 
         #endregion

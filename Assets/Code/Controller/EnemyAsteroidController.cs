@@ -92,22 +92,13 @@ namespace JevLogin
             {
                 if (ReferenceEquals(collider.gameObject, _listAsteroids[i].gameObject))
                 {
-                    Debug.Log("обработка события в классе EnemyAsteroidController");
                     _listAsteroids[i].name += i;
                     _enemyAsteroidInitialization.EnemyPool.ReturnToPool(_listAsteroids[i]);
                     _activeAsteroid--;
                     _listAsteroids.RemoveAt(i);
+                    break;  //костыль
                 }
             }
-
-            //TODO - пытаюсь избавить от TryGetComponent
-            //if (collider.TryGetComponent(out Asteroid component))
-            //{
-            //    Debug.Log("обработка события в классе EnemyAsteroidController");
-            //    _enemyAsteroidInitialization.EnemyPool.ReturnToPool(component);
-            //_listAsteroids.Remove(component);
-            //    _activeAsteroid--;
-            //}
         }
 
         private void SpawnWave()

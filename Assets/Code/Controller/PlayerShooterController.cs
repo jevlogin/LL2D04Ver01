@@ -13,13 +13,11 @@ namespace JevLogin
         private BulletInitialization _bulletInitialization;
         private List<Bullet> _listBullets;
 
-        private IUserInputMouse _userInputMouse;
+        private IUserInputBool _userInputMouse;
 
         private bool _valueChange;
         private float _refireTimer = 0.3f;
         private float _fireTimer;
-
-        /***************/
         public float MoveSpeed = 5.0f;
         private readonly float _maxLifeTime = 5.0f;
 
@@ -28,7 +26,7 @@ namespace JevLogin
 
         #region Properties
 
-        public PlayerShooterController(IUserInputMouse userInputMouse, PlayerInitialization playerInitialization, BulletInitialization bulletInitialization)
+        public PlayerShooterController(IUserInputBool userInputMouse, PlayerInitialization playerInitialization, BulletInitialization bulletInitialization)
         {
             _userInputMouse = userInputMouse;
 
@@ -40,7 +38,7 @@ namespace JevLogin
             _fireTimer = _refireTimer;
             _listBullets = new List<Bullet>();
 
-            _userInputMouse.MouseOnChange += BoolOnAxisMouseOnChange;
+            _userInputMouse.UserInputBoolOnChange += BoolOnAxisMouseOnChange;
         }
 
         #endregion
@@ -88,7 +86,6 @@ namespace JevLogin
                         
                         _bulletInitialization.GetBulletPool().ReturnToPool(_listBullets[i]);
 
-                        //BulletPool.Instance.ReturnToPool(_listBullets[i]);
                         _listBullets.RemoveAt(i);
                     }
                 }
@@ -135,7 +132,7 @@ namespace JevLogin
 
         public void Cleanup()
         {
-            _userInputMouse.MouseOnChange -= BoolOnAxisMouseOnChange;
+            _userInputMouse.UserInputBoolOnChange -= BoolOnAxisMouseOnChange;
         }
 
         #endregion

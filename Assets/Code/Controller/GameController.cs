@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json;
 
 
 namespace JevLogin
@@ -19,13 +20,14 @@ namespace JevLogin
         private void Start()
         {
             Camera camera = Camera.main;
+
             var inputInitialization = new InputInitialization();
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
 
-            var poolBullet = new Pool<Bullet>(20, ManagerPath.BULLET_PATH);
+            var poolBullet = new Pool<Bullet>(10, ManagerPath.BULLET_PATH);
             var bulletInitialization = new BulletInitialization(new BulletPool(poolBullet, playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform));
-
+            
 
             var poolAsteroid = new Pool<Asteroid>(10, ManagerPath.ASTEROID_PATH);
             var enemyAsteroidInitialization = new EnemyAsteroidInitialization(new EnemyAsteroidPool(poolAsteroid, new GameObject(ManagerName.POOL_ASTEROIDS).transform));

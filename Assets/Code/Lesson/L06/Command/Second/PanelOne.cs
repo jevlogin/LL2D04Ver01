@@ -8,7 +8,7 @@ namespace JevLogin.Command.Second
     {
         #region Fields
 
-        private readonly Text _text;
+        [SerializeField] private Text _text;
 
         #endregion
 

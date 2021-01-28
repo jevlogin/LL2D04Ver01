@@ -172,6 +172,7 @@
     <Compile Include="Assets\Code\Lesson\L06\Command\Second\PanelTwo.cs" />
     <Compile Include="Assets\Code\Lesson\L06\Command\Second\StateUI.cs" />
     <Compile Include="Assets\Code\Lesson\L06\Command\Second\UserInterface.cs" />
+    <Compile Include="Assets\Code\Lesson\L06\Interpreter\Example.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />

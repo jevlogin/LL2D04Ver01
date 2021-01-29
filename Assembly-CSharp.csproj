@@ -173,6 +173,13 @@
     <Compile Include="Assets\Code\Lesson\L06\Command\Second\StateUI.cs" />
     <Compile Include="Assets\Code\Lesson\L06\Command\Second\UserInterface.cs" />
     <Compile Include="Assets\Code\Lesson\L06\Interpreter\Example.cs" />
+    <Compile Include="Assets\Code\Lesson\L06\Iterator\Ability.cs" />
+    <Compile Include="Assets\Code\Lesson\L06\Iterator\DamageType.cs" />
+    <Compile Include="Assets\Code\Lesson\L06\Iterator\Enemy.cs" />
+    <Compile Include="Assets\Code\Lesson\L06\Iterator\ExampleIterator.cs" />
+    <Compile Include="Assets\Code\Lesson\L06\Iterator\Interface\IAbility.cs" />
+    <Compile Include="Assets\Code\Lesson\L06\Iterator\Interface\IEnemy.cs" />
+    <Compile Include="Assets\Code\Lesson\L06\Iterator\Target.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />

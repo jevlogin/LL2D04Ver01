@@ -49,19 +49,19 @@ namespace JevLogin.Lesson06
             }
             if (number < 1_000_000)
             {
-                return $"{number / 1_000}{NumberEnum.K}";
+                return $"{number / (long)NumberEnum.K}{NumberEnum.K}";
             }
             if (number < 1_000_000_000)
             {
-                return $"{number / 1_000_000}{NumberEnum.M}";
+                return $"{number / (long)NumberEnum.M}{NumberEnum.M}";
             }
             if (number < 1_000_000_000_000)
             {
-                return $"{number / 1_000_000_000}{NumberEnum.B}";
+                return $"{number / (long)NumberEnum.B}{NumberEnum.B}";
             }
             if (number < 1_000_000_000_000_000)
             {
-                return $"{number / 1_000_000_000_000}{NumberEnum.T}";
+                return $"{number / (long)NumberEnum.T}{NumberEnum.T}";
             }
 
             throw new ArgumentOutOfRangeException(nameof(number));

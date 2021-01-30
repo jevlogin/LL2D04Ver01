@@ -194,7 +194,9 @@
     <Compile Include="Assets\Code\Pool\Enemy\EnemyShipPool.cs" />
     <Compile Include="Assets\Code\Pool\GenericObjectPool.cs" />
     <Compile Include="Assets\Code\Pool\Pool.cs" />
-    <Compile Include="Assets\Code\Task\Task01.cs" />
+    <Compile Include="Assets\Code\Task\L05\Task01.cs" />
+    <Compile Include="Assets\Code\Task\L06\NumberEnum.cs" />
+    <Compile Include="Assets\Code\Task\L06\Task03.cs" />
     <Compile Include="Assets\Code\UserInput\ConsoleInput.cs" />
     <Compile Include="Assets\Code\UserInput\InputFactory.cs" />
     <Compile Include="Assets\Code\UserInput\PCInput.cs" />

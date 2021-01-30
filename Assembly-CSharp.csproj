@@ -180,6 +180,8 @@
     <Compile Include="Assets\Code\Lesson\L06\Iterator\Interface\IAbility.cs" />
     <Compile Include="Assets\Code\Lesson\L06\Iterator\Interface\IEnemy.cs" />
     <Compile Include="Assets\Code\Lesson\L06\Iterator\Target.cs" />
+    <Compile Include="Assets\Code\Lesson\L06\Memento\PointInTime.cs" />
+    <Compile Include="Assets\Code\Lesson\L06\Memento\TimeBody.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />

@@ -187,6 +187,11 @@
     <Compile Include="Assets\Code\Lesson\L07\Observer\Interface\IHit.cs" />
     <Compile Include="Assets\Code\Lesson\L07\Observer\ListenerHitShowDamage.cs" />
     <Compile Include="Assets\Code\Lesson\L07\Observer\ObserverTest.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\State\ConcreteStateA.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\State\ConcreteStateB.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\State\Context.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\State\State.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\State\StateTest.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />

@@ -183,6 +183,10 @@
     <Compile Include="Assets\Code\Lesson\L06\Memento\PointInTime.cs" />
     <Compile Include="Assets\Code\Lesson\L06\Memento\TimeBody.cs" />
     <Compile Include="Assets\Code\Lesson\L07\NullObject\NullObjectTest.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\Observer\Enemy.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\Observer\Interface\IHit.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\Observer\ListenerHitShowDamage.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\Observer\ObserverTest.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />

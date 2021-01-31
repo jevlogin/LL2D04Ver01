@@ -192,6 +192,10 @@
     <Compile Include="Assets\Code\Lesson\L07\State\Context.cs" />
     <Compile Include="Assets\Code\Lesson\L07\State\State.cs" />
     <Compile Include="Assets\Code\Lesson\L07\State\StateTest.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\Strategy\BaseBehaviour.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\Strategy\MoveBehaviour.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\Strategy\RotateBehaviour.cs" />
+    <Compile Include="Assets\Code\Lesson\L07\Strategy\StrategyTest.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />

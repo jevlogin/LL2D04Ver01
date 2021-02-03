@@ -20,10 +20,10 @@ namespace JevLogin.Lesson07.Visitor
             {
                 if (Physics.Raycast(_mainCamera.ScreenPointToRay(Input.mousePosition), out var hit, _deticateDistance))
                 {
-                    if (hit.collider.TryGetComponent<Hit>(out var damage))
+                    if (hit.collider.TryGetComponent<Hit>(component: out var damage))
                     {
-                        damage.Activate(new ConsoleDisplay(), Damage);
                         damage.Activate(new ApplyDamage(), Damage);
+                        damage.Activate(new ConsoleDisplay(), Damage);
                     }
                 }
             }

@@ -65,6 +65,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Code\Controller\CameraController.cs" />
+    <Compile Include="Assets\Code\Controller\CanvasController.cs" />
+    <Compile Include="Assets\Code\Controller\CanvasFactory.cs" />
+    <Compile Include="Assets\Code\Controller\CanvasInitialization.cs" />
+    <Compile Include="Assets\Code\Controller\CanvasModel.cs" />
     <Compile Include="Assets\Code\Controller\Controllers.cs" />
     <Compile Include="Assets\Code\Controller\EnemyAsteroidController.cs" />
     <Compile Include="Assets\Code\Controller\GameController.cs" />
@@ -78,7 +82,9 @@
     <Compile Include="Assets\Code\Data\Enemy\EnemyData.cs" />
     <Compile Include="Assets\Code\Data\Enemy\EnemySettingsData.cs" />
     <Compile Include="Assets\Code\Data\Enemy\EnemyStruct.cs" />
-    <Compile Include="Assets\Code\Data\LightData.cs" />
+    <Compile Include="Assets\Code\Data\HUD\CanvasData.cs" />
+    <Compile Include="Assets\Code\Data\HUD\CanvasSettingsData.cs" />
+    <Compile Include="Assets\Code\Data\Light\LightData.cs" />
     <Compile Include="Assets\Code\Data\Player\PlayerComponents.cs" />
     <Compile Include="Assets\Code\Data\Player\PlayerData.cs" />
     <Compile Include="Assets\Code\Data\Player\PlayerSettingsData.cs" />
@@ -99,6 +105,7 @@
     <Compile Include="Assets\Code\Interface\ICleanup.cs" />
     <Compile Include="Assets\Code\Interface\ICollisionDetect.cs" />
     <Compile Include="Assets\Code\Interface\IController.cs" />
+    <Compile Include="Assets\Code\Interface\IDie.cs" />
     <Compile Include="Assets\Code\Interface\IEmptyInitialization.cs" />
     <Compile Include="Assets\Code\Interface\IEnemyFactory.cs" />
     <Compile Include="Assets\Code\Interface\IExecute.cs" />
@@ -208,6 +215,7 @@
     <Compile Include="Assets\Code\Lesson\L07\Visitor\InfoCollision.cs" />
     <Compile Include="Assets\Code\Lesson\L07\Visitor\Knight.cs" />
     <Compile Include="Assets\Code\Lesson\L07\Visitor\VisitorTest.cs" />
+    <Compile Include="Assets\Code\Listener\ListenerDieShowHUD.cs" />
     <Compile Include="Assets\Code\Manager\AxisManager.cs" />
     <Compile Include="Assets\Code\Manager\ManagerName.cs" />
     <Compile Include="Assets\Code\Manager\ManagerPath.cs" />

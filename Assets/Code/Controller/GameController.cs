@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 
 namespace JevLogin
@@ -9,6 +10,8 @@ namespace JevLogin
 
         [SerializeField] private Data _data;
         private Controllers _controllers;
+        private ListenerDieShowHUD _listenerDieShowHUD;
+        private CanvasController _canvasController;
 
         #endregion
 
@@ -18,17 +21,25 @@ namespace JevLogin
         private void Start()
         {
             Camera camera = Camera.main;
+            _listenerDieShowHUD = new ListenerDieShowHUD();
+
+            var canvasFactory = new CanvasFactory(_data.CanvasData);
+            var canvasInitialization = new CanvasInitialization(canvasFactory);
+
+            _canvasController = new CanvasController(_listenerDieShowHUD, canvasInitialization);
 
             var inputInitialization = new InputInitialization();
+
             var playerFactory = new PlayerFactory(_data.Player);
             var playerInitialization = new PlayerInitialization(playerFactory);
 
             var poolBullet = new Pool<Bullet>(10, ManagerPath.BULLET_PATH);
             var bulletInitialization = new BulletInitialization(new BulletPool(poolBullet, playerInitialization.GetPlayerModel().PlayerComponents.BarrelTransform));
             
-
             var poolAsteroid = new Pool<Asteroid>(10, ManagerPath.ASTEROID_PATH);
             var enemyAsteroidInitialization = new EnemyAsteroidInitialization(new EnemyAsteroidPool(poolAsteroid, new GameObject(ManagerName.POOL_ASTEROIDS).transform));
+            
+            _listenerDieShowHUD.AddListObject(enemyAsteroidInitialization.EnemyPool);
 
             var poolEnemyShip = new Pool<Ship>(20, ManagerPath.ENEMY_PATH_SHIP);
             var enemyShipInitialization = new EnemyShipInitialization(new EnemyShipPool(poolEnemyShip, new GameObject(ManagerName.POOL_ENEMY_SHIP).transform));

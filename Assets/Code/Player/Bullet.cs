@@ -7,12 +7,12 @@ namespace JevLogin
     {
         #region Fields
 
-        //TODO - переделать на ScriptableOb
         public int DamageAttack;
 
         public float LifeTime;
 
         #endregion
+
 
         #region UnityMethods
 

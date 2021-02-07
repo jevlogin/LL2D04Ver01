@@ -3,7 +3,7 @@
 
 namespace JevLogin.Lesson07.Observer
 {
-    public interface IHit 
+    public interface IHit
     {
         event Action<float> OnHitChange;
         void Hit(float damage);

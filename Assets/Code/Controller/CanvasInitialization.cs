@@ -21,7 +21,7 @@ namespace JevLogin
             if (_textScore == null)
             {
                 var textScore = _canvasModel._canvasSettingsData.ScoreHUDPrefab.transform.GetComponentInChildren<Text>();
-                textScore.text = string.Empty;
+                textScore.text = $"{ManagerName.SCORE} 0";
                _textScore = Object.Instantiate(textScore, GameObject.Find(ManagerName.CANVAS).transform);
             }
             return _textScore;

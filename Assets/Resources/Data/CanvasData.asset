@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86475ef73957bb49b095584bcc26bb9, type: 3}
   m_Name: CanvasData
   m_EditorClassIdentifier: 
+  CanvasSettingsData:
+    _scoreHUDPrefabScore: {fileID: 45005139078807267, guid: eb8123a062ae26e46b5cf062a5abc923,
+      type: 3}
+    _scoreHUDPrefabInfoKilled: {fileID: 2094624853982396477, guid: 2b516fd303aa40e42bf6ad34d8456e81,
+      type: 3}

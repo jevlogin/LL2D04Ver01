@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 namespace JevLogin
 {
     public sealed class PlayerInitialization : IInitialization
@@ -29,6 +30,7 @@ namespace JevLogin
 
 
         #region IInitialization
+
         public void Initialization()
         {
         }

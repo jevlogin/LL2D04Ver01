@@ -12,15 +12,29 @@ namespace JevLogin
         [SerializeField] private string _playerDataPath;
         [SerializeField] private string _enemyDataPath;
         [SerializeField] private string _directionLightPath;
+        [SerializeField] private string _canvasDataPath;
 
         private PlayerData _player;
         private EnemyData _enemy;
         private LightData _directionLight;
+        private CanvasData _canvasData;
 
         #endregion
 
 
         #region Properties
+
+        public CanvasData CanvasData
+        {
+            get
+            {
+                if (_canvasData == null)
+                {
+                    _canvasData = Load<CanvasData>(Path.Combine(ManagerPath.DATA, _canvasDataPath));
+                }
+                return _canvasData;
+            }
+        }
 
         public PlayerData Player
         {
@@ -57,6 +71,8 @@ namespace JevLogin
                 return _directionLight;
             }
         }
+
+        
 
         #endregion
 

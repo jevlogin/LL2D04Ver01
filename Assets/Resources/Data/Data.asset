@@ -15,3 +15,4 @@ MonoBehaviour:
   _playerDataPath: PlayerData
   _enemyDataPath: EnemyData
   _directionLightPath: LightData
+  _canvasDataPath: CanvasData
